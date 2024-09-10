@@ -178,7 +178,7 @@ def get_location_rules(player):
         "Top of Clock Tower (Song of Time)":
             lambda state: has_projectiles(state, player),
         "Stock Pot Inn Midnight Meeting":
-            lambda state: state.has("Kafei's Mask", player),
+            lambda state: state.has("Kafei's Mask", player) and state.has("Deku Mask", player) and state.has("Room Key", player),
         "Stock Pot Inn Knife Chamber Chest":
             lambda state: state.has("Room Key", player),
         "Stock Pot Inn ??? Hand":
