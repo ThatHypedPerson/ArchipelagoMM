@@ -521,10 +521,10 @@ def get_location_rules(player):
             # ~ lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
         # ~ "Ocean Spider House HP":
             # ~ lambda state: state.has("Hookshot", player) and state.has("Captain's Hat", player) and state.has("Progressive Bow", player),
-        
-        
-        
-        
+        # ~ "Ocean Spider House Reward":
+            # ~ lambda state: state.has("Ocean Skulltula Token", player, 30),
+
+                      
         # ~ "Pirates' Fortress Tunnels HP":
             # ~ lambda state: state.has("Goron's Mask", player),
         # ~ "Pirates' Fortress Tunnels Cage Chest":
