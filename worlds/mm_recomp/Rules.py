@@ -216,6 +216,12 @@ def get_location_rules(player):
             # ~ lambda state: can_play_song("Sonanta of Awakening", state, player) or can_play_song("Gorons Lullaby", state, player) or can_play_song("New Wave Bossa Nova", state, player),
         # ~ "Business Scrub HP":
             # ~ lambda state: state.has("Moon's Tear", state, plater) and state.has("Progressive Wallet", state, player),
+        # ~ "Bio Deku Baba Grotto":
+            # ~ lambda state: has_projectiles(state, player) and (state.has("Goron Mask", player) or has_explosives(state, player),
+        # ~ "Swamp Shooting Gallery 2120 Prize":
+            # ~ lambda state: state.has("Progressive Bow", player),
+        # ~ "Swamp Shooting Gallery 2180 Prize":
+            # ~ lambda state: state.has("Progressive Bow", player),
 
 
         "Romani Ranch Grog":
@@ -238,6 +244,8 @@ def get_location_rules(player):
             lambda state: state.has("Deku Mask", player),
         "Song of Soaring":
             lambda state: state.has("Deku Mask", player),
+        # ~ "Koume Target Shooting":
+            # ~ lambda state: state.has("Progressive Bow", player) and state.has("Odolwa's Remains", player),
 
 
         "Swamphouse First Room Pot Near Entrance Token":
@@ -458,6 +466,7 @@ def get_location_rules(player):
             # ~ lambda state: state.has("Zora Mask", player) and state.has("Progressive Magic Upgrade", state, player) and has_bottle(state, player),
         # ~ "Fisherman Island Game HP":
             # ~ lambda state: can_clear_greatbay(state, player),
+        
             
         # ~ "Ocean Spider House Ramp Top Token":
             # ~ lambda state: state.has("Hookshot", player),
@@ -523,8 +532,8 @@ def get_location_rules(player):
             # ~ lambda state: state.has("Hookshot", player) and state.has("Captain's Hat", player) and state.has("Progressive Bow", player),
         # ~ "Ocean Spider House Reward":
             # ~ lambda state: state.has("Ocean Skulltula Token", player, 30),
-
-                      
+        
+        
         # ~ "Pirates' Fortress Tunnels HP":
             # ~ lambda state: state.has("Goron's Mask", player),
         # ~ "Pirates' Fortress Tunnels Cage Chest":
@@ -705,5 +714,5 @@ def get_location_rules(player):
 
 
         "Defeat Majora":
-            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Progressive Magic Upgrade", player) and ((state.has("Great Fairy Sword", player) or has_gilded_sword(state, player)) and state.has("Progressive Bow", player))
+            lambda state: state.has("Progressive Bow", player) and (state.has("Great Fairy Sword", player) or has_gilded_sword(state, player)) or (state.has("Fierce Diety's Mask", player) and state.has("Progressive Magic Upgrade", player))
     }
