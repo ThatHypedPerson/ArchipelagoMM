@@ -365,11 +365,11 @@ def get_location_rules(player):
         "Mountain Village Spring Ramp Grotto":
             lambda state: state.has("Hookshot", player) or can_clear_snowhead(state, player),
         # ~ "Don Gero HP":
-            # ~ lambda state: state.has("Don Gero Mask", player) and can_clear_snowhead(state, player) and can_reach("Woodfall Temple Boss Key Chest", 'Location', player) and can_reach("Great Bay Temple Boss Key Chest", 'Location', player),
+            # ~ lambda state: state.has("Don Gero Mask", player) and can_clear_snowhead(state, player) and state.can_reach("Woodfall Boss Key Chest", 'Location', player) and state.can_reach("Great Bay Temple", 'Region', player) and can_use_ice_arrows(player, state),
         # ~ "Mountain Village Smithy Day 1":
-            # ~ lambda state: state.has("Progressive Wallet", player) and (can_clear_snowhead(state, player) or (has_bottle(state, player) and can_reach("Mountain Village Darmani", 'Location', player))),
+            # ~ lambda state: state.has("Progressive Wallet", player) and (can_clear_snowhead(state, player) or (has_bottle(state, player) and state.can_reach("Mountain Village Darmani", 'Location', player))),
         # ~ "Mountain Village Smithy Day 2":
-            # ~ lambda state: state.has("Bottle of Gold Dust", state, player) and can_reach("Mountain Village Smithy Day 1", 'Location', player),
+            # ~ lambda state: state.has("Bottle of Gold Dust", state, player) and state.can_reach("Mountain Village Smithy Day 1", 'Location', player),
             
             
         "Twin Islands Ramp Grotto Chest":
@@ -383,7 +383,7 @@ def get_location_rules(player):
         # ~ "Goron Racetrack Bottle Prize":
             # ~ lambda state: state.has("Powder Keg", state, player) and can_clear_snowhead(state, player),
         # ~ "Gorons Lullaby Intro":
-            # ~ lambda state: state.has("Goron Mask", player) and ((can_reach("Mountain Village Darmani", 'Location', player) and has_bottle(state, player)) or can_use_fire_arrows(state, player)),
+            # ~ lambda state: state.has("Goron Mask", player) and ((state.can_reach("Mountain Village Darmani", 'Location', player) and has_bottle(state, player)) or can_use_fire_arrows(state, player)),
             
             
         "Goron Village Lens Cave Rock Chest":
@@ -594,7 +594,7 @@ def get_location_rules(player):
             # ~ lambda state: can_use_fire_arrows(state, player),
         # ~ "Great Bay Temple Wart Chest":
             # ~ lambda state: state.has("Progressive Bow", player),
-        # ~ "Great Bay Temple Gekko Entrance Room Caged Chest":
+        # ~ "Great Bay Temple Boss Key Chest":
             # ~ lambda state: can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player),
         # ~ "Great Bay Temple Red-Green Pipe First Room Chest":
             # ~ lambda state: can_use_ice_arrows(state, player),
