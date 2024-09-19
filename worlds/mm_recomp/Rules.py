@@ -367,7 +367,7 @@ def get_location_rules(player):
         # ~ "Don Gero HP":
             # ~ lambda state: state.has("Don Gero Mask", player) and can_clear_snowhead(state, player) and state.can_reach("Woodfall Boss Key Chest", 'Location', player) and state.can_reach("Great Bay Temple", 'Region', player) and can_use_ice_arrows(player, state),
         # ~ "Mountain Village Smithy Day 1":
-            # ~ lambda state: state.has("Progressive Wallet", player) and (can_clear_snowhead(state, player) or (has_bottle(state, player) and state.can_reach("Mountain Village Darmani", 'Location', player))),
+            # ~ lambda state: state.has("Progressive Wallet", player) and (can_clear_snowhead(state, player) or (has_bottle(state, player) and state.can_reach("Mountain Village Darmani", 'Location', player)) or can_use_fire_arrows(state, player)),
         # ~ "Mountain Village Smithy Day 2":
             # ~ lambda state: state.has("Bottle of Gold Dust", state, player) and state.can_reach("Mountain Village Smithy Day 1", 'Location', player),
             
