@@ -64,7 +64,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Heart Container": MMRItemData(
         code=0x3476942000000D,
         type=ItemClassification.filler,
-        num_exist=12
+        num_exist=14
         #num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
