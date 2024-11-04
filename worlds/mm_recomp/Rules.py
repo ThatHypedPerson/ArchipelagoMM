@@ -9,7 +9,7 @@ def can_play_song(song, state, player):
     return state.has(song, player) and state.has("Ocarina of Time", player)
 
 def can_get_magic_beans(state, player):
-    return state.has("Magic Bean", player) or (state.has("Deku Mask", player) and state.can_reach("Deku Palace", 'Region', player))
+    return state.has("Magic Bean", player) and state.has("Deku Mask", player) and state.can_reach("Deku Palace", 'Region', player)
 
 def has_bombchus(state, player):
     return state.has("Bombchu (1)", player) or state.has("Bombchu (5)", player) or state.has("Bombchu (10)", player)
@@ -73,7 +73,7 @@ def get_region_rules(player):
         "Clock Town -> The Moon":
             lambda state: state.has("Ocarina of Time", player) and state.has("Oath to Order", player) and state.has("Odolwa's Remains", player) and state.has("Goht's Remains", player) and state.has("Gyorg's Remains", player) and state.has("Twinmold's Remains", player),
         "Southern Swamp -> Southern Swamp (Deku Palace)":
-            lambda state: state.has("Bottle of Red Potion", player) or (has_hard_projectiles(state, player) and state.has("Deku Mask", player)), # or state.has("Pictograph Box", player)
+            lambda state: state.has("Bottle of Red Potion", player) and has_hard_projectiles(state, player) and state.has("Deku Mask", player), # or state.has("Pictograph Box", player)
         "Southern Swamp (Deku Palace) -> Swamphouse":
             lambda state: state.has("Deku Mask", player) and can_use_fire_arrows(state, player),
         "Southern Swamp (Deku Palace) -> Deku Palace":
@@ -292,7 +292,7 @@ def get_location_rules(player):
             lambda state: can_smack(state, player),
         "Swamphouse Tree Room Beehive Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
-        "Southern Swamp Swamphouse Reward":
+        "Swamphouse Reward":
             lambda state: state.has("Swamp Skulltula Token", player, 30),
 
 
