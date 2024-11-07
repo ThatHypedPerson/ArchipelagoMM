@@ -243,6 +243,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x3469420000089
     ),
+    "Termina Bio Baba Grotto HP": MMRLocationData(
+        region="Termina Field",
+        address=0x3469420050702
+    ),
     "Milk Road Gorman Ranch Race": MMRLocationData(
         region="Termina Field",
         address=0x3469420000081
@@ -260,8 +264,16 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420054001
     ),
     "Road to Swamp Grotto Chest": MMRLocationData(
-        region="Clock Town",
+        region="Southern Swamp",
         address=0x346942006071E
+    ),
+    "Swamp Shooting Gallery (2120 Points)": MMRLocationData(
+        region="Southern Swamp",
+        address=0x3469420000024
+    ),
+    "Swamp Shooting Gallery (2180 Points)": MMRLocationData(
+        region="Southern Swamp",
+        address=0x346942008011D
     ),
     "Southern Swamp Deku Trade": MMRLocationData(
         region="Southern Swamp",
@@ -564,6 +576,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Woodfall Temple Odolwa's Remains": MMRLocationData(
         region="Woodfall Temple",
         address=0x3469420000055
+    ),
+    "Koume Target Shooting": MMRLocationData(
+        region="Southern Swamp",
+        address=0x3469420070168
     ),
     # ~ "Mountain Deku Trade": MMRLocationData(
         # ~ region="Clock Town",

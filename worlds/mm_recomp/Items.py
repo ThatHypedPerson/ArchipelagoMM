@@ -82,14 +82,14 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3469420040061,
         type=ItemClassification.progression
     ),
-    # ~ "Goron's Lullaby": MMRItemData(
-        # ~ code=0x3469420040062,
-        # ~ type=ItemClassification.progression
-    # ~ ),
-    # ~ "New Wave Bossa Nova": MMRItemData(
-        # ~ code=0x3469420040063,
-        # ~ type=ItemClassification.progression
-    # ~ ),
+    "Goron's Lullaby": MMRItemData(
+        code=0x3469420040062,
+        type=ItemClassification.progression
+    ),
+    "New Wave Bossa Nova": MMRItemData(
+        code=0x3469420040063,
+        type=ItemClassification.progression
+    ),
     # ~ "Elegy of Emptiness": MMRItemData(
         # ~ code=0x3469420040064,
         # ~ type=ItemClassification.progression
@@ -420,7 +420,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Bombchu (10)": MMRItemData(
         code=0x346942000001A,
         type=ItemClassification.progression,
-        num_exist=1
+        num_exist=3
     ),
     # ~ "Blue Rupee": MMRItemData(
         # ~ code=0x3469420000002,
@@ -435,14 +435,14 @@ item_data_table: Dict[str, MMRItemData] = {
     "Purple Rupee": MMRItemData(
         code=0x3469420000005,
         type=ItemClassification.filler,
-        num_exist=7,
+        num_exist=8,
         can_create=lambda options: False
     ),
     "Silver Rupee": MMRItemData(
         code=0x3469420000006,
         type=ItemClassification.useful,
         #num_exist=9
-        num_exist=3
+        num_exist=5
     ),
     "Victory": MMRItemData(
         type=ItemClassification.progression,

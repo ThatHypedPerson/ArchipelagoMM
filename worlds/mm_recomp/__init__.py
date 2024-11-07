@@ -130,8 +130,8 @@ class MMRWorld(World):
             sword_location.place_locked_item(self.create_item("Progressive Sword"))
 
         # TODO: check options to see what player starts with
-        mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
-        mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
+        # ~ mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
+        # ~ mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
 
     def get_filler_item_name(self) -> str:
         return "Purple Rupee"
