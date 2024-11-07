@@ -210,6 +210,10 @@ def get_location_rules(player):
             lambda state: has_explosives(state, player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and has_projectiles(state, player),
         "Termina Kamaro":
             lambda state: state.has("Ocarina of Time", player) and state.has("Song of Healing", player),
+        "Termina Gossip Stones HP":
+            lambda state: (state.has("Deku Mask", player) and can_play_song("Sonata of Awakening", state, player)) and (state.has("Goron Mask", player) and can_play_song("Goron's Lullaby", state, player)) and (state.has("Zora Mask", player) and can_play_song("New Wave Bossa Nova", state, player)),
+        "Termina Moon's Tear Scrub HP":
+            lambda state: state.can_reach("East Clock Town Astral Observatory", 'Location', player) and state.has("Moon's Tear", state, player) and state.has("Progressive Wallet", player),
         "Milk Road Gorman Ranch Race":
             lambda state: state.has("Ocarina of Time", player) and state.has("Epona's Song", player),
         "Road to Swamp Tree HP":
@@ -218,10 +222,6 @@ def get_location_rules(player):
             lambda state: state.has("Progressive Bow", player),
         "Swamp Shooting Gallery 2180 Points":
             lambda state: state.has("Progressive Bow", player),
-        "Termina Gossip Stones HP":
-            lambda state: (state.has("Deku Mask", player) and can_play_song("Sonata of Awakening", state, player)) and (state.has("Goron Mask", player) and can_play_song("Goron's Lullaby", state, player)) and (state.has("Zora Mask", player) and can_play_song("New Wave Bossa Nova", state, player)),
-        "Termina Moon's Tear Scrub HP":
-            lambda state: state.can_reach("East Clock Town Astral Observatory", 'Location', player) and state.has("Moon's Tear", state, plater) and state.has("Progressive Wallet", state, player),
 
 
         "Romani Ranch Grog":
