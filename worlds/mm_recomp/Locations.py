@@ -275,11 +275,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Southern Swamp",
         address=0x346942006071E
     ),
-    "Swamp Shooting Gallery (2120 Points)": MMRLocationData(
+    "Swamp Shooting Gallery 2120 Points": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420000024
     ),
-    "Swamp Shooting Gallery (2180 Points)": MMRLocationData(
+    "Swamp Shooting Gallery 2180 Points": MMRLocationData(
         region="Southern Swamp",
         address=0x346942008011D
     ),

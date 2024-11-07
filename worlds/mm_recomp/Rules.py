@@ -206,22 +206,22 @@ def get_location_rules(player):
             lambda state: can_smack_hard(state, player),
         "Termina Dodongo Grotto Chest":
             lambda state: can_smack_hard(state, player),
+        "Termina Bio Baba Grotto HP":
+            lambda state: has_explosives(state, player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and has_projectiles(state, player),
         "Termina Kamaro":
             lambda state: state.has("Ocarina of Time", player) and state.has("Song of Healing", player),
         "Milk Road Gorman Ranch Race":
             lambda state: state.has("Ocarina of Time", player) and state.has("Epona's Song", player),
         "Road to Swamp Tree HP":
             lambda state: has_projectiles(state, player),
+        "Swamp Shooting Gallery 2120 Points":
+            lambda state: state.has("Progressive Bow", player),
+        "Swamp Shooting Gallery 2180 Points":
+            lambda state: state.has("Progressive Bow", player),
         # ~ "Four Grottos HP":
             # ~ lambda state: can_play_song("Sonanta of Awakening", state, player) or can_play_song("Gorons Lullaby", state, player) or can_play_song("New Wave Bossa Nova", state, player),
         # ~ "Business Scrub HP":
             # ~ lambda state: state.has("Moon's Tear", state, plater) and state.has("Progressive Wallet", state, player),
-        # ~ "Bio Deku Baba Grotto":
-            # ~ lambda state: has_projectiles(state, player) and (state.has("Goron Mask", player) or has_explosives(state, player),
-        # ~ "Swamp Shooting Gallery 2120 Prize":
-            # ~ lambda state: state.has("Progressive Bow", player),
-        # ~ "Swamp Shooting Gallery 2180 Prize":
-            # ~ lambda state: state.has("Progressive Bow", player),
 
 
         "Romani Ranch Grog":
@@ -242,7 +242,7 @@ def get_location_rules(player):
             lambda state: state.has("Bottle of Red Potion", player),
         "Southern Swamp Near Swamphouse Grotto Chest":
             lambda state: state.has("Deku Mask", player),
-        "Song of Soaring":
+        "Southern Swamp Song Tablet":
             lambda state: state.has("Deku Mask", player),
         # ~ "Koume Target Shooting":
             # ~ lambda state: state.has("Progressive Bow", player) and state.has("Odolwa's Remains", player),
@@ -314,9 +314,9 @@ def get_location_rules(player):
 
         "Deku Palace Bean Grotto Chest":
             lambda state: can_plant_beans(state, player) or state.has("Hookshot", player),
-        "Sonata of Awakening":
-            lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player),
-        "Mask of Scents":
+        "Deku Palace Monkey Song":
+            lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player) and state.has("Deku Mask", player),
+        "Deku Palace Butler Race":
             lambda state: can_clear_woodfall(state, player) and has_bottle(state, player),
 
 
@@ -356,6 +356,10 @@ def get_location_rules(player):
             lambda state: state.has("Progressive Bow", player) and (state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player)),
         "Woodfall Temple Odolwa's Remains":
             lambda state: state.has("Progressive Bow", player) and (state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player)),
+            
+            
+        "Koume Target Shooting":
+            lambda state: can_clear_woodfall(state, player) and state.has("Bottle of Red Potion", player) and state.has("Bottle of Chateau Romani", player) and state.has("Progressive Bow", player),
             
             
         "Mountain Village Darmani":
@@ -716,5 +720,5 @@ def get_location_rules(player):
 
 
         "Defeat Majora":
-            lambda state: state.has("Progressive Bow", player) and (state.has("Great Fairy Sword", player) or has_gilded_sword(state, player)) or (state.has("Fierce Diety's Mask", player) and state.has("Progressive Magic Upgrade", player))
+            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Progressive Magic Upgrade", player) and state.has("Great Fairy Sword", player) and has_gilded_sword(state, player) and state.has("Progressive Bow", player) and state.has("Light Arrow", player)
     }
