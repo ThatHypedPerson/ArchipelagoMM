@@ -312,8 +312,10 @@ def get_location_rules(player):
             lambda state: state.has("Swamp Skulltula Token", player, 30),
 
 
+        "Deku Palace Bean Seller":
+            lambda state: state.has("Deku Mask", player),
         "Deku Palace Bean Grotto Chest":
-            lambda state: can_plant_beans(state, player) or state.has("Hookshot", player),
+            lambda state: can_plant_beans(state, player) and state.has("Hookshot", player),
         "Deku Palace Monkey Song":
             lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player) and state.has("Deku Mask", player),
         "Deku Palace Butler Race":

@@ -469,6 +469,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Deku Palace",
         address=0x3469420052B1E
     ),
+    "Deku Palace Bean Seller": MMRLocationData(
+        region="Deku Palace",
+        address=0x34694200800A5
+    ),
     "Deku Palace Bean Grotto Chest": MMRLocationData(
         region="Deku Palace",
         address=0x3469420060705
