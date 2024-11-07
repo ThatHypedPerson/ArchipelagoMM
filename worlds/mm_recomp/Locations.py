@@ -147,6 +147,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420000008
     ),
+    "West Clock Town Bank 500 Rupees": MMRLocationData(
+        region="Clock Town",
+        address=0x3469420080177
+    ),
     "West Clock Town Bank 1000 Rupees": MMRLocationData(
         region="Clock Town",
         address=0x3469420070177
