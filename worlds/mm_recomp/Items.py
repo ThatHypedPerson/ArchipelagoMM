@@ -275,10 +275,10 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3469420000041,
         type=ItemClassification.progression
     ),
-    # ~ "Mirror Shield": MMRItemData(
-        # ~ code=0x3469420000033,
-        # ~ type=ItemClassification.progression
-    # ~ ),
+    "Mirror Shield": MMRItemData(
+        code=0x3469420000033,
+        type=ItemClassification.progression
+    ),
     "Powder Keg": MMRItemData(
         code=0x3469420000034,
         type=ItemClassification.progression
@@ -442,7 +442,7 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3469420000006,
         type=ItemClassification.useful,
         #num_exist=9
-        num_exist=5
+        num_exist=6
     ),
     "Victory": MMRItemData(
         type=ItemClassification.progression,

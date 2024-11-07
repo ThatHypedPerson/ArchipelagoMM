@@ -247,11 +247,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x3469420050702
     ),
-    "Termina Gossip Stones": MMRLocationData(
+    "Termina Gossip Stones HP": MMRLocationData(
         region="Termina Field",
         address=0x34694200700EF
     ),
-    "Termina Moon's Tear Scrub": MMRLocationData(
+    "Termina Moon's Tear Scrub HP": MMRLocationData(
         region="Termina Field",
         address=0x346942007024C
     ),
