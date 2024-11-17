@@ -694,15 +694,15 @@ location_data_table: Dict[str, MMRLocationData] = {
         # ~ address=0x346942001492F
     # ~ ),
     "Road to Ikana Pillar Chest": MMRLocationData(
-        region="Termina Field",
+        region="Road to Ikana",
         address=0x3469420065300
     ),
     "Road to Ikana Rock Grotto Chest": MMRLocationData(
-        region="Termina Field",
+        region="Road to Ikana",
         address=0x3469420060716
     ),
     "Road to Ikana Stone Soldier": MMRLocationData(
-        region="Termina Field",
+        region="Ikana Graveyard",
         address=0x346942000008B
     ),
     # ~ "Graveyard Day 1 Chest": MMRLocationData(
