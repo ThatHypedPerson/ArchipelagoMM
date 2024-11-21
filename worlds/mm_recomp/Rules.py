@@ -250,67 +250,67 @@ def get_location_rules(player):
             lambda state: state.has("Progressive Bow", player) and state.has("Odolwa's Remains", player),
 
 
-        "Swamphouse First Room Pot Near Entrance Token":
+        "Swamp Spider House First Room Pot Near Entrance Token":
             lambda state: can_smack(state, player),
-        "Swamphouse First Room Crawling In Water Token":
+        "Swamp Spider House First Room Crawling In Water Token":
             lambda state: can_smack(state, player),
-        "Swamphouse First Room Crawling Right Column Token":
+        "Swamp Spider House First Room Crawling Right Column Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player),
-        "Swamphouse First Room Crawling Left Column Token":
+        "Swamp Spider House First Room Crawling Left Column Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player),
-        "Swamphouse First Room Against Far Wall Token":
+        "Swamp Spider House First Room Against Far Wall Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
-        "Swamphouse First Room Left Bugpatch Token":
+        "Swamp Spider House First Room Left Bugpatch Token":
             lambda state: can_smack(state, player) and has_bottle(state, player),
-        "Swamphouse First Room Right Bugpatch Token":
+        "Swamp Spider House First Room Right Bugpatch Token":
             lambda state: can_smack(state, player) and has_bottle(state, player),
-        "Swamphouse First Room Upper Right Bugpatch Token":
+        "Swamp Spider House First Room Upper Right Bugpatch Token":
             lambda state: can_smack(state, player) and has_bottle(state, player),
-        "Swamphouse Monument Room Left Crate Token":
+        "Swamp Spider House Monument Room Left Crate Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Monument Room Right Crate Token":
+        "Swamp Spider House Monument Room Right Crate Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Monument Room Crawling Wall Token":
+        "Swamp Spider House Monument Room Crawling Wall Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
-        "Swamphouse Monument Room Crawling On Monument Token":
+        "Swamp Spider House Monument Room Crawling On Monument Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
-        "Swamphouse Monument Room Behind Torch Token":
+        "Swamp Spider House Monument Room Behind Torch Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Pottery Room Beehive #1 Token":
+        "Swamp Spider House Pottery Room Beehive #1 Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
-        "Swamphouse Pottery Room Beehive #2 Token":
+        "Swamp Spider House Pottery Room Beehive #2 Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
-        "Swamphouse Pottery Room Small Pot Token":
+        "Swamp Spider House Pottery Room Small Pot Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Pottery Room Left Large Pot Token":
+        "Swamp Spider House Pottery Room Left Large Pot Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Pottery Room Right Large Pot Token":
+        "Swamp Spider House Pottery Room Right Large Pot Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Pottery Room Behind Vines Token":
+        "Swamp Spider House Pottery Room Behind Vines Token":
             lambda state: can_smack_hard(state, player),
-        "Swamphouse Pottery Room Upper Wall Token":
+        "Swamp Spider House Pottery Room Upper Wall Token":
             lambda state: can_smack(state, player) and can_play_song("Sonata of Awakening", state, player) and state.has("Deku Mask", player) and state.has("Hookshot", player),
-        "Swamphouse Golden Room Crawling Left Wall Token":
+        "Swamp Spider House Golden Room Crawling Left Wall Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_play_song("Sonata of Awakening", state, player) and state.has("Deku Mask", player),
-        "Swamphouse Golden Room Crawling Right Column Token":
+        "Swamp Spider House Golden Room Crawling Right Column Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player),
-        "Swamphouse Golden Room Against Far Wall Token":
+        "Swamp Spider House Golden Room Against Far Wall Token":
             lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
-        "Swamphouse Golden Room Beehive Token":
+        "Swamp Spider House Golden Room Beehive Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
-        "Swamphouse Tree Room Tall Grass #1 Token":
+        "Swamp Spider House Tree Room Tall Grass #1 Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Tree Room Tall Grass #2 Token":
+        "Swamp Spider House Tree Room Tall Grass #2 Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Tree Room Tree #1 Token":
+        "Swamp Spider House Tree Room Tree #1 Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Tree Room Tree #2 Token":
+        "Swamp Spider House Tree Room Tree #2 Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Tree Room Tree #3 Token":
+        "Swamp Spider House Tree Room Tree #3 Token":
             lambda state: can_smack(state, player),
-        "Swamphouse Tree Room Beehive Token":
+        "Swamp Spider House Tree Room Beehive Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
-        "Swamphouse Reward":
+        "Swamp Spider House Reward":
             lambda state: state.has("Swamp Skulltula Token", player, 30),
 
 

@@ -59,10 +59,11 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x346942000000C,
         type=ItemClassification.useful,
         num_exist=32
+        # ~ num_exist=52
     ),
     "Heart Container": MMRItemData(
         code=0x346942000000D,
-        type=ItemClassification.filler,
+        type=ItemClassification.useful,
         num_exist=8
     ),
     "Swamp Skulltula Token": MMRItemData(

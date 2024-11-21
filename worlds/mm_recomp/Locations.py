@@ -605,7 +605,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Mountain Village",
         address=0x346942006071B
     ),
-    "Mountain Village Darmani": MMRLocationData(
+    "Mountain Village Ghost Goron": MMRLocationData(
         region="Mountain Village",
         address=0x3469420000079
     ),
@@ -889,6 +889,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay Temple",
         address=0x346942001492F
     ),
+    "Great Bay Temple B2 Before Boss Room Green Pipe Valve Underneath Platform Bubble SF": MMRLocationData(
+        region="Great Bay Temple",
+        address=0x3469420014931
+    ),
     "Great Bay Temple Four Torches Chest": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420064918
@@ -936,6 +940,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Great Bay Temple Gyorg Heart Container": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420055F00
+    ),
+    "Great Bay Temple Gyorg's Remains": MMRLocationData(
+        region="Great Bay Temple",
+        address=0x3469420000057
     ),
     "Road to Ikana Pillar Chest": MMRLocationData(
         region="Road to Ikana",
@@ -997,7 +1005,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Ikana Canyon",
         address=0x346942005131E
     ),
-    "Ikana Canyon Pamela's Father": MMRLocationData(
+    "Ikana Canyon Music Box Mummy": MMRLocationData(
         region="Ikana Canyon",
         address=0x3469420000087
     ),
@@ -1105,7 +1113,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower Temple (Inverted)",
         address=0x346942006180E
     ),
-    "Stone Tower Temple Inverted Eastern Air Gust Room Snugly Tucked Cranny Chest": MMRLocationData(
+    "Stone Tower Temple Inverted Eastern Air Gust Room Ice Eye Switch Chest": MMRLocationData(
         region="Stone Tower Temple (Inverted)",
         address=0x3469420061813
     ),
@@ -1133,7 +1141,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower Temple (Inverted)",
         address=0x3469420053600
     ),
-    "Stone Tower Temple Inverted Twinmold Remains": MMRLocationData(
+    "Stone Tower Temple Inverted Twinmold's Remains": MMRLocationData(
         region="Stone Tower Temple (Inverted)",
         address=0x3469420000058
     ),
@@ -1153,7 +1161,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="The Moon",
         address=0x3469420066601
     ),
-    "Moon Link Trial Iron Knuckle Lower Chest": MMRLocationData(
+    "Moon Link Trial Iron Knuckle Chest": MMRLocationData(
         region="The Moon",
         address=0x3469420066602
     ),
