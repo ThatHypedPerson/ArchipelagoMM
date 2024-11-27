@@ -43,7 +43,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x346942001007F
     ),
-    "Laundry Pool Guru-Guru": MMRLocationData(
+    "Laundry Pool Musician": MMRLocationData(
         region="Clock Town",
         address=0x346942000008C
     ),
@@ -67,15 +67,15 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420066F01
     ),
-    "East Clock Town Chest": MMRLocationData(
+    "East Clock Town Archery Roof Chest": MMRLocationData(
         region="Clock Town",
         address=0x3469420066C0A
     ),
-    "East Clock Town Madame Aroma": MMRLocationData(
+    "East Clock Town Mayors Wife": MMRLocationData(
         region="Clock Town",
         address=0x346942000008F
     ),
-    "East Clock Town Mayor Dotour": MMRLocationData(
+    "East Clock Town Couples Mask on Mayor": MMRLocationData(
         region="Clock Town",
         address=0x346942007026F
     ),
@@ -119,7 +119,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34694200701C9
     ),
-    "North Clock Town Old Lady": MMRLocationData(
+    "North Clock Town Save Old Lady": MMRLocationData(
         region="Clock Town",
         address=0x346942000008D
     ),
@@ -139,7 +139,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x346942007017D
     ),
-    "West Clock Town Rosa Sisters": MMRLocationData(
+    "West Clock Town Dancing Sisters": MMRLocationData(
         region="Clock Town",
         address=0x346942007027B
     ),
@@ -183,15 +183,15 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34694200000AA
     ),
-    "Stock Pot Inn Knife Chamber Chest": MMRLocationData(
+    "Stock Pot Inn Upstairs Middle Room Chest": MMRLocationData(
         region="Clock Town",
         address=0x3469420066100
     ),
-    "Stock Pot Inn Employees Only Room Chest": MMRLocationData(
+    "Stock Pot Inn Employees Only Room Night 3 Chest": MMRLocationData(
         region="Clock Town",
         address=0x3469420066101
     ),
-    "Stock Pot Inn ??? Hand": MMRLocationData(
+    "Stock Pot Inn Midnight Toilet Hand": MMRLocationData(
         region="Clock Town",
         address=0x346942007027D
     ),
@@ -243,7 +243,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x346942006071A
     ),
-    "Termina Kamaro": MMRLocationData(
+    "Termina Northern Midnight Dancer": MMRLocationData(
         region="Termina Field",
         address=0x3469420000089
     ),
@@ -295,7 +295,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Southern Swamp",
         address=0x346942005451E
     ),
-    "Southern Swamp Kotake Request": MMRLocationData(
+    "Southern Swamp Healthy Witch Request": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420000059
     ),
@@ -303,11 +303,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Southern Swamp",
         address=0x346942006071C
     ),
-    "Southern Swamp Koume Tour Gift": MMRLocationData(
+    "Southern Swamp Tour Witch Gift": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420000043
     ),
-    "Swamphouse First Room Pot Near Entrance Token": MMRLocationData(
+    "Swamp Spider House First Room Pot Near Entrance Token": MMRLocationData(
         region="Swamp Spider House",
         address=0x346942006271E,
         can_create=lambda options: options.skullsanity.value != 2
@@ -332,12 +332,12 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420062700,
         can_create=lambda options: options.skullsanity.value != 2
     ),
-    "Swamp Spider House First Room Left Bugpatch Token": MMRLocationData(
+    "Swamp Spider House First Room Lower Left Bugpatch Token": MMRLocationData(
         region="Swamp Spider House",
         address=0x3469420062709,
         can_create=lambda options: options.skullsanity.value != 2
     ),
-    "Swamp Spider House First Room Right Bugpatch Token": MMRLocationData(
+    "Swamp Spider House First Room Lower Right Bugpatch Token": MMRLocationData(
         region="Swamp Spider House",
         address=0x346942006270C,
         can_create=lambda options: options.skullsanity.value != 2
@@ -461,7 +461,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Swamp Spider House",
         address=0x346942000008A
     ),
-    "Southern Swamp Near Swamphouse Grotto Chest": MMRLocationData(
+    "Southern Swamp Near Swamp Spider House Grotto Chest": MMRLocationData(
         region="Southern Swamp (Deku Palace)",
         address=0x346942006071D
     ),
@@ -529,7 +529,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Woodfall Temple",
         address=0x3469420061B17
     ),
-    "Woodfall Temple Dinofols Chest": MMRLocationData(
+    "Woodfall Temple Dinolfos Chest": MMRLocationData(
         region="Woodfall Temple",
         address=0x3469420061B1B
     ),
@@ -593,7 +593,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Woodfall Temple",
         address=0x3469420000055
     ),
-    "Koume Target Shooting": MMRLocationData(
+    "Tour Witch Target Shooting": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420070168
     ),
@@ -605,11 +605,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Mountain Village",
         address=0x346942006071B
     ),
-    "Mountain Village Ghost Goron": MMRLocationData(
+    "Mountain Village Invisible Ladder Cave Healing Invisible Goron": MMRLocationData(
         region="Mountain Village",
         address=0x3469420000079
     ),
-    "Mountain Village Hungry Goron": MMRLocationData(
+    "Mountain Village Feeding Freezing Goron": MMRLocationData(
         region="Mountain Village",
         address=0x3469420000088
     ),
@@ -617,7 +617,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Twin Islands",
         address=0x3469420065E00
     ),
-    "Twin Islands Spring Underwater Center Chest": MMRLocationData(
+    "Twin Islands Spring Underwater Near Ramp Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420065E06
     ),
@@ -677,7 +677,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x3469420012132
     ),
-    "Snowhead Temple Grey Door Box SF": MMRLocationData(
+    "Snowhead Temple Grey Door Near Bombable Stairs Box SF": MMRLocationData(
         region="Snowhead Temple",
         address=0x346942001211E
     ),
@@ -689,15 +689,15 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x346942001212B
     ),
-    "Snowhead Temple Dinofols Room First SF": MMRLocationData(
+    "Snowhead Temple Dinolfos Room First SF": MMRLocationData(
         region="Snowhead Temple",
         address=0x3469420012131
     ),
-    "Snowhead Temple Dinofols Room Second SF": MMRLocationData(
+    "Snowhead Temple Dinolfos Room Second SF": MMRLocationData(
         region="Snowhead Temple",
         address=0x346942001212D
     ),
-    "Snowhead Temple Initial Runway Ice Owls Chest": MMRLocationData(
+    "Snowhead Temple Initial Runway Ice Blowers Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x3469420062101
     ),
@@ -709,7 +709,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x3469420062114
     ),
-    "Snowhead Temple Green Door Ice Owls Chest": MMRLocationData(
+    "Snowhead Temple Green Door Ice Blowers Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x3469420062118
     ),
@@ -737,7 +737,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x3469420062104
     ),
-    "Snowhead Temple Wizzrobe Chest": MMRLocationData(
+    "Snowhead Temple 2nd Wizzrobe Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x346942006211E
     ),
@@ -773,14 +773,6 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Zora Cape",
         address=0x3469420053807
     ),
-    "Zora Cape Goron Trade": MMRLocationData(
-        region="Zora Cape",
-        address=0x346942000009A
-    ),
-    "Zora Cape Goron Trade Freestanding HP": MMRLocationData(
-        region="Zora Cape",
-        address=0x3469420054C1E
-    ),
     "Zora Cape Underwater Chest": MMRLocationData(
         region="Zora Cape",
         address=0x3469420063800
@@ -797,11 +789,19 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Zora Cape",
         address=0x3469420060715
     ),
+    "Zora Hall Goron Scrub Trade": MMRLocationData(
+        region="Zora Hall",
+        address=0x346942000009A
+    ),
+    "Zora Hall Goron Scrub Trade Freestanding HP": MMRLocationData(
+        region="Zora Hall",
+        address=0x3469420054C1E
+    ),
     "Pirates' Fortress Sewers HP": MMRLocationData(
         region="Pirates' Fortress Sewers",
         address=0x346942005230C
     ),
-    "Pirates' Fortress Sewers Cage Chest": MMRLocationData(
+    "Pirates' Fortress Sewers Cage HP": MMRLocationData(
         region="Pirates' Fortress Sewers",
         address=0x3469420062301
     ),
@@ -853,11 +853,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Pinnacle Rock",
         address=0x3469420062501
     ),
-    "Ocean Spider House Chest": MMRLocationData(
+    "Ocean Spider House Coloured Mask Sequence HP": MMRLocationData(
         region="Ocean Spider House",
         address=0x3469420062800
     ),
-    "Great Bay Temple Hub B2 Pot SF": MMRLocationData(
+    "Great Bay Temple Pot At Bottom Of Blender SF": MMRLocationData(
         region="Great Bay Temple",
         address=0x346942001491B
     ),
@@ -865,7 +865,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay Temple",
         address=0x3469420014932
     ),
-    "Great Bay Temple Waterwheel Room Bubble SF": MMRLocationData(
+    "Great Bay Temple Waterwheel Room Bubble Under Platform SF": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420014930
     ),
@@ -881,23 +881,15 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay Temple",
         address=0x346942001491D
     ),
-    "Great Bay Temple Green Pipe Lever Room Underwater Barrel SF": MMRLocationData(
+    "Great Bay Temple Seesaw Room Underwater Barrel SF": MMRLocationData(
         region="Great Bay Temple",
         address=0x346942001491A
-    ),
-    "Great Bay Temple B2 Before Boss Room Green Pipe Valve Exit Tunnel Bubble SF": MMRLocationData(
-        region="Great Bay Temple",
-        address=0x346942001492F
-    ),
-    "Great Bay Temple B2 Before Boss Room Green Pipe Valve Underneath Platform Bubble SF": MMRLocationData(
-        region="Great Bay Temple",
-        address=0x3469420014931
     ),
     "Great Bay Temple Four Torches Chest": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420064918
     ),
-    "Great Bay Temple Eye Miniboss Chest": MMRLocationData(
+    "Great Bay Temple Behind Locked Door Chest": MMRLocationData(
         region="Great Bay Temple",
         address=0x346942006491B
     ),
@@ -921,7 +913,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay Temple",
         address=0x346942006491E
     ),
-    "Great Bay Temple Green-Yellow Pipe Chest": MMRLocationData(
+    "Great Bay Temple Room Behind Waterfall Ceiling Chest": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420064915
     ),
@@ -933,11 +925,19 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay Temple",
         address=0x3469420064917
     ),
-    "Great Bay Temple Green Pipe Lever Room Chest": MMRLocationData(
+    "Great Bay Temple Seesaw Room Chest": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420064916
     ),
-    "Great Bay Temple Gyorg Heart Container": MMRLocationData(
+    "Great Bay Temple Before Boss Room Underneath Platform Bubble SF": MMRLocationData(
+        region="Great Bay Temple",
+        address=0x3469420014931
+    ),
+    "Great Bay Temple Before Boss Room Exit Tunnel Bubble SF": MMRLocationData(
+        region="Great Bay Temple",
+        address=0x346942001492F
+    ),
+    "Great Bay Temple Heart Container": MMRLocationData(
         region="Great Bay Temple",
         address=0x3469420055F00
     ),
@@ -953,27 +953,27 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Road to Ikana",
         address=0x3469420060716
     ),
-    "Road to Ikana Stone Soldier": MMRLocationData(
+    "Road to Ikana Invisible Soldier": MMRLocationData(
         region="Road to Ikana",
         address=0x346942000008B
     ),
-    "Ikana Graveyard Grotto Chest": MMRLocationData(
+    "Ikana Graveyard Bombable Grotto Chest": MMRLocationData(
         region="Ikana Graveyard",
         address=0x3469420060718
     ),
-    "Graveyard Day 1 Chest": MMRLocationData(
+    "Graveyard Day 1 Bats Chest": MMRLocationData(
         region="Ikana Graveyard",
         address=0x3469420060C03
     ),
-    "Graveyard Day 2 Chest": MMRLocationData(
+    "Graveyard Day 2 Iron Knuckle Chest": MMRLocationData(
         region="Ikana Graveyard",
         address=0x3469420060C00
     ),
-    "Graveyard Day 3 Chest": MMRLocationData(
+    "Graveyard Day 3 Dampe Big Poe Chest": MMRLocationData(
         region="Ikana Graveyard",
         address=0x3469420063000
     ),
-    "Graveyard Skull Keeta Chest": MMRLocationData(
+    "Graveyard Sonata To Wake Sleeping Skeleton Chest": MMRLocationData(
         region="Ikana Graveyard",
         address=0x3469420064300
     ),
@@ -1025,6 +1025,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Ikana Castle",
         address=0x3469420051D0A
     ),
+   # ~"Ikana Castle King Song" MMRLocationData(
+     #  ~ region="Ikana Castle",
+      # ~ address=0x34694200xxxx
+    ),
     # ~ "Stone Tower Temple 1F Bridge Room Underwater Switch Chest Glitched": MMRLocationData(
         # ~ region="Stone Tower Temple",
         # ~ address=0x346942006160E
@@ -1041,7 +1045,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower (Inverted)",
         address=0x346942006591D
     ),
-    "Stone Tower Temple First Room Center Chest": MMRLocationData(
+    "Stone Tower Temple First Room Eye Switch Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061616
     ),
@@ -1073,23 +1077,23 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower Temple",
         address=0x3469420061617
     ),
-    "Stone Tower Temple 1F Bridge Room Dexihand Ledge Chest": MMRLocationData(
+    "Stone Tower Temple Eyegore Room Dexi Hand Ledge Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061601
     ),
-    "Stone Tower Temple Wall Suns Room Sun Block Chest": MMRLocationData(
+    "Stone Tower Temple Mirror Room Sun Block Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x346942006160B
     ),
-    "Stone Tower Temple Wall Suns Room Center Chest": MMRLocationData(
+    "Stone Tower Temple Mirror Room Sun Face Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x346942006160F
     ),
-    "Stone Tower Temple Wall Air Gust Room Side Chest": MMRLocationData(
+    "Stone Tower Temple Air Gust Room Side Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061619
     ),
-    "Stone Tower Temple Wall Air Gust Room End Chest": MMRLocationData(
+    "Stone Tower Temple Air Gust Room Goron Switch Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x346942006160D
     ),
@@ -1105,7 +1109,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower Temple",
         address=0x346942006160C
     ),
-    "Stone Tower Temple Inverted First Room Lower Chest": MMRLocationData(
+    "Stone Tower Temple Inverted Entrance Room Sun Face": MMRLocationData(
         region="Stone Tower Temple (Inverted)",
         address=0x3469420061810
     ),
@@ -1137,7 +1141,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower Temple (Inverted)",
         address=0x346942006181A
     ),
-    "Stone Tower Temple Inverted Twinmold Heart Container": MMRLocationData(
+    "Stone Tower Temple Inverted Heart Container": MMRLocationData(
         region="Stone Tower Temple (Inverted)",
         address=0x3469420053600
     ),
