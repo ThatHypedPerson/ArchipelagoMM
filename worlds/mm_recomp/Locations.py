@@ -99,7 +99,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420061700
     ),
-    "East Clock Town Sewer Chest": MMRLocationData(
+    "Bomber's Hideout Chest": MMRLocationData(
         region="Clock Town",
         address=0x3469420062900
     ),
@@ -721,11 +721,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x3469420062115
     ),
-    "Snowhead Temple Grey Door Center Chest": MMRLocationData(
+    "Snowhead Temple Light Blue Door Center Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x346942006211C
     ),
-    "Snowhead Temple Grey Door Upper Chest": MMRLocationData(
+    "Snowhead Temple Light Blue Door Upper Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x3469420062119
     ),

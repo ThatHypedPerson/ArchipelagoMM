@@ -20,7 +20,7 @@ item_data_table: Dict[str, MMRItemData] = {
         type=ItemClassification.progression,
         can_create=lambda options: options.fairysanity.value
     ),
-    "Progressive Magic Upgrade": MMRItemData(
+    "Progressive Magic": MMRItemData(
         code=0x3469420020000,
         type=ItemClassification.progression,
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
@@ -65,6 +65,7 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x346942000000D,
         type=ItemClassification.useful,
         num_exist=8
+        # ~ num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
         code=0x3469420000052,
