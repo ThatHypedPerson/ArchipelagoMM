@@ -90,7 +90,7 @@ class MMRWorld(World):
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
         if not self.options.shuffle_swamphouse_reward.value:
-            mw.get_location("Swamphouse Reward", player).place_locked_item(self.create_item("Mask of Truth"))
+            mw.get_location("Swamp Spider House Reward", player).place_locked_item(self.create_item("Mask of Truth"))
 
         if self.options.skullsanity.value == 0:
             for i in range(0, 31):
@@ -100,7 +100,7 @@ class MMRWorld(World):
                 
 
         if not self.options.shuffle_great_fairy_rewards.value:
-            mw.get_location("North Clock Town Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic Upgrade"))
+            mw.get_location("North Clock Town Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic"))
             mw.get_location("North Clock Town Great Fairy Reward (Has Transformation Mask)", player).place_locked_item(self.create_item("Great Fairy Mask"))
             mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack"))
 
@@ -134,7 +134,7 @@ class MMRWorld(World):
         # ~ mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
 
     def get_filler_item_name(self) -> str:
-        return "Purple Rupee"
+        return "Blue Rupee"
 
     def set_rules(self) -> None:
         player = self.player
@@ -146,12 +146,12 @@ class MMRWorld(World):
         if (self.options.logic_difficulty == 4):
             return
 
-        region_rules = get_region_rules(player)
+        region_rules = get_baby_region_rules(player)
         for entrance_name, rule in region_rules.items():
             entrance = mw.get_entrance(entrance_name, player)
             entrance.access_rule = rule
 
-        location_rules = get_location_rules(player)
+        location_rules = get_baby_location_rules(player)
         for location in mw.get_locations(player):
             name = location.name
             if name == "Swamp Spider House Reward" and self.options.skullsanity.value == 2:
