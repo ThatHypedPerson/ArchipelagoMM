@@ -267,6 +267,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Romani Ranch",
         address=0x346942000007F
     ),
+    "Romani Ranch Doggy Race": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420070117
+    ),
     "Romani Ranch Helping Cremia": MMRLocationData(
         region="Romani Ranch",
         address=0x3469420000082
