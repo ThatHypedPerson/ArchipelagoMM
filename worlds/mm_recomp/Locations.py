@@ -103,7 +103,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420062900
     ),
-    "East Clock Town Astral Observatory": MMRLocationData(
+    "Bomber's Hideout Astral Observatory": MMRLocationData(
         region="Clock Town",
         address=0x3469420000096
     ),
@@ -130,6 +130,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "North Clock Town Great Fairy Reward (Has Transformation Mask)": MMRLocationData(
         region="Clock Town",
         address=0x3469420000086
+    ),
+    "West Clock Town Lottery Any Day": MMRLocationData(
+        region="Clock Town",
+        address=0x3469420080239
     ),
     "West Clock Town Swordsman Expert Course": MMRLocationData(
         region="Clock Town",
@@ -159,11 +163,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420000084
     ),
-    "Moon's Tear Trade": MMRLocationData(
+    "South Clock Town Moon's Tear Trade": MMRLocationData(
         region="Clock Town",
         address=0x3469420000097
     ),
-    "Moon's Tear Trade Freestanding HP": MMRLocationData(
+    "South Clock Town Clock Tower Freestanding HP": MMRLocationData(
         region="Clock Town",
         address=0x3469420056F0A
     ),
@@ -258,22 +262,6 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Termina Moon's Tear Scrub HP": MMRLocationData(
         region="Termina Field",
         address=0x346942007024C
-    ),
-    "Milk Road Gorman Ranch Race": MMRLocationData(
-        region="Gorman Brothers Track",
-        address=0x3469420000081
-    ),
-    "Romani Ranch Grog": MMRLocationData(
-        region="Romani Ranch",
-        address=0x346942000007F
-    ),
-    "Romani Ranch Doggy Race": MMRLocationData(
-        region="Romani Ranch",
-        address=0x3469420070117
-    ),
-    "Romani Ranch Helping Cremia": MMRLocationData(
-        region="Romani Ranch",
-        address=0x3469420000082
     ),
     "Road to Swamp Tree HP": MMRLocationData(
         region="Southern Swamp",
@@ -757,9 +745,25 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x3469420000056
     ),
+    "Milk Road Gorman Ranch Race": MMRLocationData(
+        region="Gorman Brothers Track",
+        address=0x3469420000081
+    ),
+    "Romani Ranch Grog": MMRLocationData(
+        region="Romani Ranch",
+        address=0x346942000007F
+    ),
     "Romani Ranch Doggy Racetrack Rooftop Chest": MMRLocationData(
         region="Romani Ranch",
         address=0x3469420064100
+    ),
+    "Romani Ranch Doggy Race": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420070117
+    ),
+    "Romani Ranch Helping Cremia": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420000082
     ),
     "Great Bay Dying Zora": MMRLocationData(
         region="Great Bay",
@@ -1005,7 +1009,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Secret Shrine",
         address=0x3469420060714
     ),
-    "Canyon Deku Trade Freestanding HP": MMRLocationData(
+    "Ikana Canyon Zora Trade Freestanding HP": MMRLocationData(
         region="Ikana Canyon",
         address=0x346942005131E
     ),
@@ -1029,10 +1033,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Ikana Castle",
         address=0x3469420051D0A
     ),
-   # ~"Ikana Castle King Song" MMRLocationData(
-     #  ~ region="Ikana Castle",
-      # ~ address=0x34694200xxxx
-    ),
+    # ~ "Ikana Castle King Song" MMRLocationData(
+        # ~ region="Ikana Castle",
+        # ~ address=0x34694200xxxx
+    # ~ ),
     # ~ "Stone Tower Temple 1F Bridge Room Underwater Switch Chest Glitched": MMRLocationData(
         # ~ region="Stone Tower Temple",
         # ~ address=0x346942006160E

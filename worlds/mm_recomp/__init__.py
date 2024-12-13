@@ -154,7 +154,7 @@ class MMRWorld(World):
         location_rules = get_baby_location_rules(player)
         for location in mw.get_locations(player):
             name = location.name
-            if name == "Swamp Spider House Reward" and self.options.skullsanity.value == 2:
+            if self.options.skullsanity.value == 2 and name == "Swamp Spider House Reward":
                 continue
             if name in location_rules and location_data_table[name].can_create(self.options):
                 location.access_rule = location_rules[name]

@@ -64,7 +64,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Heart Container": MMRItemData(
         code=0x346942000000D,
         type=ItemClassification.useful,
-        num_exist=8
+        num_exist=9
         # ~ num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
@@ -263,10 +263,10 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3469420000027,
         type=ItemClassification.progression
     ),
-    # ~ "Pictograph Box": MMRItemData(
-        # ~ code=0x3469420000043,
-        # ~ type=ItemClassification.progression
-    # ~ ),
+    "Pictograph Box": MMRItemData(
+        code=0x3469420000043,
+        type=ItemClassification.progression
+    ),
     "Lens of Truth": MMRItemData(
         code=0x3469420000042,
         type=ItemClassification.progression
@@ -408,7 +408,8 @@ item_data_table: Dict[str, MMRItemData] = {
     "Bundle of 30 Arrows": MMRItemData(
         code=0x346942000001F,
         type=ItemClassification.filler,
-        num_exist=1
+        num_exist=2
+        # ~ num_exist=1
     ),
     "Bombchu (1)": MMRItemData(
         code=0x3469420000036,
