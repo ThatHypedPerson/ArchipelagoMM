@@ -66,6 +66,11 @@ Majora's Mask Recompiled:
     easy: 50
     no_logic: 0
 
+  camc:
+    # Set whether chest appearance matches contents.
+    'false': 50
+    'true': 0
+
   shuffle_swamphouse_reward:
     # Choose whether to shuffle the Mask of Truth given at the end of the Southern Swamphouse.
     'false': 50

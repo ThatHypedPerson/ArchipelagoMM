@@ -162,5 +162,6 @@ class MMRWorld(World):
     def fill_slot_data(self):
         return {
             "skullsanity": self.options.skullsanity.value,
-            "death_link": self.options.death_link.value
+            "death_link": self.options.death_link.value,
+            "camc": self.options.camc.value
         }

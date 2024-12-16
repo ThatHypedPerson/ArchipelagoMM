@@ -16,6 +16,11 @@ class LogicDifficulty(Choice):
     default = 0
 
 
+class CAMC(Toggle):
+    """Set whether chest appearance matches contents."""
+    display_name = "CAMC"
+
+
 class Swordless(Toggle):
     """Start the game without a sword, and shuffle an extra Progressive Sword into the pool."""
     display_name = "Swordless"
@@ -53,6 +58,7 @@ class Fairysanity(Toggle):
 class MMROptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     logic_difficulty: LogicDifficulty
+    camc: CAMC
     swordless: Swordless
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
