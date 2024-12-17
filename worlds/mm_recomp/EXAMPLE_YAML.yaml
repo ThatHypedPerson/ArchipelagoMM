@@ -32,7 +32,7 @@ description: Default Majora's Mask Recompiled Template
 
 game: Majora's Mask Recompiled
 requires:
-  version: 0.5.0 # Version of Archipelago required for this yaml to work as expected.
+  version: 0.5.1 # Version of Archipelago required for this yaml to work as expected.
 
 Majora's Mask Recompiled:
   # Game Options
@@ -54,11 +54,10 @@ Majora's Mask Recompiled:
   accessibility:
     # Set rules for reachability of your items/locations.
     # 
-    # - **Locations:** ensure everything can be reached and acquired.
-    # - **Items:** ensure all logically relevant items can be acquired.
-    # - **Minimal:** ensure what is needed to reach your goal can be acquired.
-    locations: 0
-    items: 50
+    # **Full:** ensure everything can be reached and acquired.
+    # 
+    # **Minimal:** ensure what is needed to reach your goal can be acquired.
+    full: 50
     minimal: 0
 
   logic_difficulty:
@@ -68,6 +67,16 @@ Majora's Mask Recompiled:
 
   camc:
     # Set whether chest appearance matches contents.
+    'false': 50
+    'true': 0
+
+  swordless:
+    # Start the game without a sword, and shuffle an extra Progressive Sword into the pool.
+    'false': 50
+    'true': 0
+
+  shieldless:
+    # Start the game without a shield, and shuffle an extra Progressive Shield into the pool.
     'false': 50
     'true': 0
 
@@ -97,7 +106,7 @@ Majora's Mask Recompiled:
     'true': 0
 
   death_link:
-    # When you die, everyone dies. Of course the reverse is true too.
+    # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
     'false': 50
     'true': 0
 

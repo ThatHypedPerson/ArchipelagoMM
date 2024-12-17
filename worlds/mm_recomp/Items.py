@@ -58,13 +58,13 @@ item_data_table: Dict[str, MMRItemData] = {
     "Heart Piece": MMRItemData(
         code=0x346942000000C,
         type=ItemClassification.useful,
-        num_exist=32
+        num_exist=36
         # ~ num_exist=52
     ),
     "Heart Container": MMRItemData(
         code=0x346942000000D,
         type=ItemClassification.useful,
-        num_exist=9
+        num_exist=8
         # ~ num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
@@ -82,7 +82,7 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3469420040061,
         type=ItemClassification.progression
     ),
-    "Goron's Lullaby": MMRItemData(
+    "Goron Lullaby": MMRItemData(
         code=0x3469420040062,
         type=ItemClassification.progression
     ),
@@ -275,8 +275,8 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3469420000041,
         type=ItemClassification.progression
     ),
-    "Mirror Shield": MMRItemData(
-        code=0x3469420000033,
+    "Progressive Shield": MMRItemData(
+        code=0x3469420000032,
         type=ItemClassification.progression
     ),
     "Powder Keg": MMRItemData(
@@ -408,8 +408,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Bundle of 30 Arrows": MMRItemData(
         code=0x346942000001F,
         type=ItemClassification.filler,
-        num_exist=2
-        # ~ num_exist=1
+        num_exist=1
     ),
     "Bombchu (1)": MMRItemData(
         code=0x3469420000036,
@@ -434,7 +433,8 @@ item_data_table: Dict[str, MMRItemData] = {
     "Red Rupee": MMRItemData(
         code=0x3469420000004,
         type=ItemClassification.filler,
-        num_exist=29
+        num_exist=28
+        # ~ num_exist=29
     ),
     "Purple Rupee": MMRItemData(
         code=0x3469420000005,

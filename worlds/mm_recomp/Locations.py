@@ -19,6 +19,42 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420000037
     ),
+    "Link's Inventory (Hero's Shield)": MMRLocationData(
+        region="Clock Town",
+        address=0x3469420000032
+    ),
+    "Link's Inventory (Heart Container 2 Piece #1)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0003
+    ),
+    "Link's Inventory (Heart Container 2 Piece #2)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0004
+    ),
+    "Link's Inventory (Heart Container 2 Piece #3)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0005
+    ),
+    "Link's Inventory (Heart Container 2 Piece #4)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0006
+    ),
+    "Link's Inventory (Heart Container 3 Piece #1)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0007
+    ),
+    "Link's Inventory (Heart Container 3 Piece #2)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0008
+    ),
+    "Link's Inventory (Heart Container 3 Piece #3)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D0009
+    ),
+    "Link's Inventory (Heart Container 3 Piece #4)": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200D000A
+    ),
     "Keaton Quiz": MMRLocationData(
         region="Clock Town",
         address=0x346942007028C

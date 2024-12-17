@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from typing import Dict
 
-from Options import Choice, Option, Toggle, StartInventoryPool, DeathLink, PerGameCommonOptions
+from Options import Choice, Option, Toggle, Range, StartInventoryPool, DeathLink, PerGameCommonOptions
 
 
 class LogicDifficulty(Choice):
@@ -24,6 +24,20 @@ class CAMC(Toggle):
 class Swordless(Toggle):
     """Start the game without a sword, and shuffle an extra Progressive Sword into the pool."""
     display_name = "Swordless"
+
+
+class Shieldless(Toggle):
+    """Start the game without a shield, and shuffle an extra Progressive Shield into the pool."""
+    display_name = "Shieldless"
+
+
+class StartingHeartPieces(Range):
+    """The number of Heart Pieces Link starts with.
+    If less than 12, extra Heart Pieces will be shuffled into the pool to accommodate."""
+    display_name = "Starting Heart Pieces"
+    range_start = 4
+    range_end = 12
+    default = 12
 
 
 class ShuffleSwamphouseReward(Toggle):
@@ -60,6 +74,8 @@ class MMROptions(PerGameCommonOptions):
     logic_difficulty: LogicDifficulty
     camc: CAMC
     swordless: Swordless
+    shieldless: Shieldless
+    starting_heart_pieces: StartingHeartPieces
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
     shuffle_great_fairy_rewards: ShuffleGreatFairyRewards

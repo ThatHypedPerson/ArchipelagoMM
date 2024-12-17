@@ -62,6 +62,13 @@ class MMRWorld(World):
         if self.options.swordless.value:
             mw.itempool.append(self.create_item("Progressive Sword"))
 
+        if self.options.shieldless.value:
+            mw.itempool.append(self.create_item("Progressive Shield"))
+
+        shp = self.options.starting_heart_pieces
+        for i in range(0, 12 - shp):
+            mw.itempool.append(self.create_item("Heart Piece"))
+
     def create_regions(self) -> None:
         player = self.player
         mw = self.multiworld
@@ -128,6 +135,18 @@ class MMRWorld(World):
             sword_location.item_rule = lambda item: item.name != "Progressive Sword"
         else:
             sword_location.place_locked_item(self.create_item("Progressive Sword"))
+
+        shield_location = mw.get_location("Link's Inventory (Hero's Shield)", player)
+        if self.options.shieldless.value:
+            shield_location.item_rule = lambda item: item.name != "Progressive Shield"
+        else:
+            shield_location.place_locked_item(self.create_item("Progressive Shield"))
+
+        shp = self.options.starting_heart_pieces
+        for i in range(3, shp - 1):
+            mw.get_location(code_to_location_table[0x34694200D0000 | i], player).place_locked_item(self.create_item("Heart Piece"))
+        for i in range(shp - 1, 11):
+            mw.get_location(code_to_location_table[0x34694200D0000 | i], player).item_rule = lambda item: item.name != "Heart Piece" and item.name != "Heart Container"
 
         # TODO: check options to see what player starts with
         # ~ mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
