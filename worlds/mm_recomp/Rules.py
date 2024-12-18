@@ -470,7 +470,7 @@ def get_baby_location_rules(player):
             
         "Path to Snowhead Grotto Chest":
             lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and baby_has_explosives(state, player),
-        "Path to Snowhead HP":
+        "Path to Snowhead Scarecrow Pillar HP":
             lambda state: baby_can_reach_scarecrow(state, player) and state.has("Goron Mask", player) and can_use_lens(state, player) and state.has("Hookshot", player),
             
             
