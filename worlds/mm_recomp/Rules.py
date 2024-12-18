@@ -426,6 +426,8 @@ def get_baby_location_rules(player):
             lambda state: can_use_lens(state, player) and can_play_song("Song of Healing", state, player),
         "Mountain Village Feeding Freezing Goron":
             lambda state: state.has("Goron Mask", player) and can_use_fire_arrows(state, player),
+        "Mountain Village Spring Waterfall Chest":
+            lambda state: can_clear_snowhead(state, player),
         "Mountain Village Spring Ramp Grotto":
             lambda state: can_clear_snowhead(state, player),
         "Don Gero Mask Frog Song HP":
