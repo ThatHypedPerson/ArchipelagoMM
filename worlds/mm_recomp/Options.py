@@ -31,13 +31,21 @@ class Shieldless(Toggle):
     display_name = "Shieldless"
 
 
-class StartingHeartPieces(Range):
-    """The number of Heart Pieces Link starts with.
-    If less than 12, extra Heart Pieces will be shuffled into the pool to accommodate."""
-    display_name = "Starting Heart Pieces"
+class StartingHeartQuarters(Range):
+    """The number of heart quarters Link starts with.
+    If less than 12, extra heart items will be shuffled into the pool to accommodate."""
+    display_name = "Starting Hearts"
     range_start = 4
     range_end = 12
     default = 12
+
+
+class StartingHeartsAreContainersOrPieces(Choice):
+    """Choose whether Link's starting hearts are shuffled into the pool as Heart Containers (plus the remainder as Heart Pieces) or as all Heart Pieces."""
+    display_name = "Starting Hearts are Containers or Pieces"
+    option_containers = 0
+    option_pieces = 1
+    default = 0
 
 
 class ShuffleSwamphouseReward(Toggle):
@@ -68,6 +76,26 @@ class Fairysanity(Toggle):
     display_name = "Fairysanity"
 
 
+class StartWithConsumables(Toggle):
+    """Choose whether to start with basic consumables (99 rupees, 10 deku sticks, 20 deku nuts)."""
+    display_name = "Start With Consumables"
+
+
+class PermanentChateauRomani(Toggle):
+    """Choose whether the Chateau Romani stays even after a reset."""
+    display_name = "Permanent Chateau Romani"
+
+
+class ResetWithInvertedTime(Toggle):
+    """Choose whether time starts out inverted at Day 1, even after a reset."""
+    display_name = "Reset With Inverted Time"
+
+
+class ReceiveFilledWallets(Toggle):
+    """Choose whether you receive wallets pre-filled (not including the starting wallet)."""
+    display_name = "Receive Filled Wallets"
+
+
 @dataclass
 class MMROptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -75,9 +103,14 @@ class MMROptions(PerGameCommonOptions):
     camc: CAMC
     swordless: Swordless
     shieldless: Shieldless
-    starting_heart_pieces: StartingHeartPieces
+    starting_hearts: StartingHeartQuarters
+    starting_hearts_are_containers_or_pieces: StartingHeartsAreContainersOrPieces
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
     shuffle_great_fairy_rewards: ShuffleGreatFairyRewards
     fairysanity: Fairysanity
+    start_with_consumables: StartWithConsumables
+    permanent_chateau_romani: PermanentChateauRomani
+    reset_with_inverted_time: ResetWithInvertedTime
+    receive_filled_wallets: ReceiveFilledWallets
     death_link: DeathLink

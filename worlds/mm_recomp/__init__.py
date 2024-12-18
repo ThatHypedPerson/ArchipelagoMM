@@ -65,9 +65,15 @@ class MMRWorld(World):
         if self.options.shieldless.value:
             mw.itempool.append(self.create_item("Progressive Shield"))
 
-        shp = self.options.starting_heart_pieces
-        for i in range(0, 12 - shp):
-            mw.itempool.append(self.create_item("Heart Piece"))
+        shp = self.options.starting_hearts.value
+        if self.options.starting_hearts_are_containers_or_pieces.value == 0:
+            for i in range(0, int((12 - shp)/4)):
+                mw.itempool.append(self.create_item("Heart Container"))
+            for i in range(0, (12 - shp) % 4):
+                mw.itempool.append(self.create_item("Heart Piece"))
+        else:
+            for i in range(0, 12 - shp):
+                mw.itempool.append(self.create_item("Heart Piece"))
 
     def create_regions(self) -> None:
         player = self.player
@@ -142,11 +148,24 @@ class MMRWorld(World):
         else:
             shield_location.place_locked_item(self.create_item("Progressive Shield"))
 
-        shp = self.options.starting_heart_pieces
-        for i in range(3, shp - 1):
-            mw.get_location(code_to_location_table[0x34694200D0000 | i], player).place_locked_item(self.create_item("Heart Piece"))
-        for i in range(shp - 1, 11):
-            mw.get_location(code_to_location_table[0x34694200D0000 | i], player).item_rule = lambda item: item.name != "Heart Piece" and item.name != "Heart Container"
+        shp = self.options.starting_hearts.value
+        if self.options.starting_hearts_are_containers_or_pieces.value == 0:
+            containers = int(shp/4) - 1
+            for i in range(0, containers):
+                mw.get_location(code_to_location_table[0x34694200D0000 | i], player).place_locked_item(self.create_item("Heart Container"))
+
+            hearts_left = shp % 4
+            for i in range(0, hearts_left):
+                mw.get_location(code_to_location_table[0x34694200D0000 | (containers + i)], player).place_locked_item(self.create_item("Heart Piece"))
+
+            for i in range(containers + hearts_left, containers + 4):
+                mw.get_location(code_to_location_table[0x34694200D0000 | i], player).item_rule = lambda item: item.name != "Heart Piece" and item.name != "Heart Container"
+        else:
+            for i in range(0, shp - 4):
+                mw.get_location(code_to_location_table[0x34694200D0000 | i], player).place_locked_item(self.create_item("Heart Piece"))
+
+            for i in range(shp - 4, 8):
+                mw.get_location(code_to_location_table[0x34694200D0000 | i], player).item_rule = lambda item: item.name != "Heart Piece" and item.name != "Heart Container"
 
         # TODO: check options to see what player starts with
         # ~ mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
@@ -179,8 +198,14 @@ class MMRWorld(World):
                 location.access_rule = location_rules[name]
 
     def fill_slot_data(self):
+        shp = self.options.starting_hearts.value
         return {
             "skullsanity": self.options.skullsanity.value,
             "death_link": self.options.death_link.value,
-            "camc": self.options.camc.value
+            "camc": self.options.camc.value,
+            "starting_heart_locations": 12 - shp if self.options.starting_hearts_are_containers_or_pieces == 1 else int(shp)/4 - 1 + (shp % 4),
+            "start_with_consumables": self.options.start_with_consumables.value,
+            "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
+            "reset_with_inverted_time": self.options.reset_with_inverted_time.value,
+            "receive_filled_wallets": self.options.receive_filled_wallets.value
         }

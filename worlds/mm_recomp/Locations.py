@@ -14,6 +14,16 @@ class MMRLocationData(NamedTuple):
     locked_item: Optional[str] = None
 
 
+def can_create_heart_location(shp, c_or_p, loc_index):
+    if c_or_p == 0:
+        starting_containers = int(shp/4) - 1
+        starting_pieces = shp % 4
+        shuffled_containers = int((12 - shp)/4)
+        shuffled_pieces = (12 - shp) % 4
+        return starting_containers + starting_pieces + shuffled_containers + shuffled_pieces >= loc_index
+    else:
+        return True
+
 location_data_table: Dict[str, MMRLocationData] = {
     "Link's Inventory (Kokiri Sword)": MMRLocationData(
         region="Clock Town",
@@ -23,37 +33,45 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420000032
     ),
-    "Link's Inventory (Heart Container 2 Piece #1)": MMRLocationData(
+    "Link's Inventory (Heart Item #1)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0003
+        address=0x34694200D0000,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 1)
     ),
-    "Link's Inventory (Heart Container 2 Piece #2)": MMRLocationData(
+    "Link's Inventory (Heart Item #2)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0004
+        address=0x34694200D0001,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 2)
     ),
-    "Link's Inventory (Heart Container 2 Piece #3)": MMRLocationData(
+    "Link's Inventory (Heart Item #3)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0005
+        address=0x34694200D0002,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 3)
     ),
-    "Link's Inventory (Heart Container 2 Piece #4)": MMRLocationData(
+    "Link's Inventory (Heart Item #4)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0006
+        address=0x34694200D0003,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 4)
     ),
-    "Link's Inventory (Heart Container 3 Piece #1)": MMRLocationData(
+    "Link's Inventory (Heart Item #5)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0007
+        address=0x34694200D0004,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 5)
     ),
-    "Link's Inventory (Heart Container 3 Piece #2)": MMRLocationData(
+    "Link's Inventory (Heart Item #6)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0008
+        address=0x34694200D0005,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 6)
     ),
-    "Link's Inventory (Heart Container 3 Piece #3)": MMRLocationData(
+    "Link's Inventory (Heart Item #7)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D0009
+        address=0x34694200D0006,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 7)
     ),
-    "Link's Inventory (Heart Container 3 Piece #4)": MMRLocationData(
+    "Link's Inventory (Heart Item #8)": MMRLocationData(
         region="Clock Town",
-        address=0x34694200D000A
+        address=0x34694200D0007,
+        can_create=lambda options: can_create_heart_location(options.starting_hearts.value, options.starting_hearts_are_containers_or_pieces.value, 8)
     ),
     "Keaton Quiz": MMRLocationData(
         region="Clock Town",
