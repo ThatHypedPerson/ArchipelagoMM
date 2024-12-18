@@ -203,7 +203,7 @@ class MMRWorld(World):
             "skullsanity": self.options.skullsanity.value,
             "death_link": self.options.death_link.value,
             "camc": self.options.camc.value,
-            "starting_heart_locations": 12 - shp if self.options.starting_hearts_are_containers_or_pieces == 1 else int(shp)/4 - 1 + (shp % 4),
+            "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces == 1 else int(shp)/4 - 1 + (shp % 4),
             "start_with_consumables": self.options.start_with_consumables.value,
             "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
             "reset_with_inverted_time": self.options.reset_with_inverted_time.value,
