@@ -80,6 +80,23 @@ Majora's Mask Recompiled:
     'false': 50
     'true': 0
 
+  starting_hearts:
+    # The number of heart quarters Link starts with.
+    # If less than 12, extra heart items will be shuffled into the pool to accommodate.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 4
+    # Maximum value is 12
+    12: 50
+    random: 0
+    random-low: 0
+    random-high: 0
+
+  starting_hearts_are_containers_or_pieces:
+    # Choose whether Link's starting hearts are shuffled into the pool as Heart Containers (plus the remainder as Heart Pieces) or as all Heart Pieces.
+    containers: 50
+    pieces: 0
+
   shuffle_swamphouse_reward:
     # Choose whether to shuffle the Mask of Truth given at the end of the Southern Swamphouse.
     'false': 50
@@ -102,6 +119,26 @@ Majora's Mask Recompiled:
 
   fairysanity:
     # Choose whether Stray Fairies are shuffled into the pool.
+    'false': 50
+    'true': 0
+
+  start_with_consumables:
+    # Choose whether to start with basic consumables (99 rupees, 10 deku sticks, 20 deku nuts).
+    'false': 50
+    'true': 0
+
+  permanent_chateau_romani:
+    # Choose whether the Chateau Romani stays even after a reset.
+    'false': 50
+    'true': 0
+
+  reset_with_inverted_time:
+    # Choose whether time starts out inverted at Day 1, even after a reset.
+    'false': 50
+    'true': 0
+
+  receive_filled_wallets:
+    # Choose whether you receive wallets pre-filled (not including the starting wallet).
     'false': 50
     'true': 0
 
