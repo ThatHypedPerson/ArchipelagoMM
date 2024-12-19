@@ -158,8 +158,9 @@ class MMRWorld(World):
             for i in range(0, hearts_left):
                 mw.get_location(code_to_location_table[0x34694200D0000 | (containers + i)], player).place_locked_item(self.create_item("Heart Piece"))
 
-            for i in range(containers + hearts_left, containers + 4):
-                mw.get_location(code_to_location_table[0x34694200D0000 | i], player).item_rule = lambda item: item.name != "Heart Piece" and item.name != "Heart Container"
+            if (shp % 4) != 0:
+                for i in range(containers + hearts_left, containers + 4):
+                    mw.get_location(code_to_location_table[0x34694200D0000 | i], player).item_rule = lambda item: item.name != "Heart Piece" and item.name != "Heart Container"
         else:
             for i in range(0, shp - 4):
                 mw.get_location(code_to_location_table[0x34694200D0000 | i], player).place_locked_item(self.create_item("Heart Piece"))
