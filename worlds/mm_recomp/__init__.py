@@ -102,6 +102,20 @@ class MMRWorld(World):
             locked_item = self.create_item(location_data_table[location_name].locked_item)
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
+        if self.options.shuffle_boss_remains.value == 0:
+            mw.get_location("Woodfall Temple Odolwa's Remains", player).place_locked_item(self.create_item("Odolwa's Remains"))
+            mw.get_location("Snowhead Temple Goht's Remains", player).place_locked_item(self.create_item("Goht's Remains"))
+            mw.get_location("Great Bay Temple Gyorg's Remains", player).place_locked_item(self.create_item("Gyorg's Remains"))
+            mw.get_location("Stone Tower Temple Inverted Twinmold's Remains", player).place_locked_item(self.create_item("Twinmold's Remains"))
+        
+        if self.options.shuffle_boss_remains.value == 2:
+            remains_list = ["Odolwa's Remains", "Goht's Remains", "Gyorg's Remains", "Twinmold's Remains"]
+            
+            mw.get_location("Woodfall Temple Odolwa's Remains", player).place_locked_item(self.create_item(remains_list.pop(self.random.randint(0, 3))))
+            mw.get_location("Snowhead Temple Goht's Remains", player).place_locked_item(self.create_item(remains_list.pop(self.random.randint(0, 2))))
+            mw.get_location("Great Bay Temple Gyorg's Remains", player).place_locked_item(self.create_item(remains_list.pop(self.random.randint(0, 1))))
+            mw.get_location("Stone Tower Temple Inverted Twinmold's Remains", player).place_locked_item(self.create_item(remains_list[0]))
+
         if not self.options.shuffle_swamphouse_reward.value:
             mw.get_location("Swamp Spider House Reward", player).place_locked_item(self.create_item("Mask of Truth"))
 
