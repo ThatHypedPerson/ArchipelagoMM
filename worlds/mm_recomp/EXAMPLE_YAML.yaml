@@ -67,8 +67,8 @@ Majora's Mask Recompiled:
 
   camc:
     # Set whether chest appearance matches contents.
-    'false': 50
-    'true': 0
+    'false': 0
+    'true': 50
 
   swordless:
     # Start the game without a sword, and shuffle an extra Progressive Sword into the pool.

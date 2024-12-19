@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from typing import Dict
 
-from Options import Choice, Option, Toggle, Range, StartInventoryPool, DeathLink, PerGameCommonOptions
+from Options import Choice, Option, DefaultOnToggle, Toggle, Range, StartInventoryPool, DeathLink, PerGameCommonOptions
 
 
 class LogicDifficulty(Choice):
@@ -16,7 +16,7 @@ class LogicDifficulty(Choice):
     default = 0
 
 
-class CAMC(Toggle):
+class CAMC(DefaultOnToggle):
     """Set whether chest appearance matches contents."""
     display_name = "CAMC"
 
