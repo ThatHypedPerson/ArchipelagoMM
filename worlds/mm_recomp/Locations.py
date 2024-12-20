@@ -113,6 +113,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34694200000A1
     ),
+    "South Clock Town Moon's Tear Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x3469420000097
+    ),
+    "South Clock Town Clock Tower Freestanding HP": MMRLocationData(
+        region="Clock Town",
+        address=0x3469420056F0A
+    ),
     "South Clock Town Corner Chest": MMRLocationData(
         region="Clock Town",
         address=0x3469420066F00
@@ -216,14 +224,6 @@ location_data_table: Dict[str, MMRLocationData] = {
     "West Clock Town Priority Mail to Postman": MMRLocationData(
         region="Clock Town",
         address=0x3469420000084
-    ),
-    "South Clock Town Moon's Tear Trade": MMRLocationData(
-        region="Clock Town",
-        address=0x3469420000097
-    ),
-    "South Clock Town Clock Tower Freestanding HP": MMRLocationData(
-        region="Clock Town",
-        address=0x3469420056F0A
     ),
     "Top of Clock Tower (Ocarina of Time)": MMRLocationData(
         region="Clock Town",
