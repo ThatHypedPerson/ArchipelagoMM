@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from typing import Dict
 
-from Options import Choice, Option, DefaultOnToggle, Toggle, Range, StartInventoryPool, DeathLink, PerGameCommonOptions
+from Options import Choice, Option, DefaultOnToggle, Toggle, Range, OptionList, StartInventoryPool, DeathLink, PerGameCommonOptions
 
 
 class LogicDifficulty(Choice):
@@ -96,6 +96,12 @@ class ReceiveFilledWallets(Toggle):
     display_name = "Receive Filled Wallets"
 
 
+class LinkTunicColor(OptionList):
+    """Choose a color for Link's tunic."""
+    display_name = "Link Tunic Color"
+    default = [30, 105, 27]
+
+
 @dataclass
 class MMROptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -114,3 +120,4 @@ class MMROptions(PerGameCommonOptions):
     reset_with_inverted_time: ResetWithInvertedTime
     receive_filled_wallets: ReceiveFilledWallets
     death_link: DeathLink
+    link_tunic_color: LinkTunicColor

@@ -208,5 +208,6 @@ class MMRWorld(World):
             "start_with_consumables": self.options.start_with_consumables.value,
             "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
             "reset_with_inverted_time": self.options.reset_with_inverted_time.value,
-            "receive_filled_wallets": self.options.receive_filled_wallets.value
+            "receive_filled_wallets": self.options.receive_filled_wallets.value,
+            "link_tunic_color": ((self.options.link_tunic_color.value[0] & 0xFF) << 16) | ((self.options.link_tunic_color.value[1] & 0xFF) << 8) | (self.options.link_tunic_color.value[2] & 0xFF)
         }
