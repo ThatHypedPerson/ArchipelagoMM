@@ -200,11 +200,15 @@ class MMRWorld(World):
 
     def fill_slot_data(self):
         shp = self.options.starting_hearts.value
+        starting_containers = int(shp/4) - 1
+        starting_pieces = shp % 4
+        shuffled_containers = int((12 - shp)/4)
+        shuffled_pieces = (12 - shp) % 4
         return {
             "skullsanity": self.options.skullsanity.value,
             "death_link": self.options.death_link.value,
             "camc": self.options.camc.value,
-            "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces == 1 else int(shp)/4 - 1 + (shp % 4),
+            "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces == 1 else starting_containers + starting_pieces + shuffled_containers + shuffled_pieces,
             "start_with_consumables": self.options.start_with_consumables.value,
             "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
             "reset_with_inverted_time": self.options.reset_with_inverted_time.value,
