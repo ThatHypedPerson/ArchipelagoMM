@@ -739,7 +739,9 @@ def get_baby_location_rules(player):
         "Road to Ikana Invisible Soldier":
             lambda state: can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player) and can_use_lens(state, player),
             
-            
+        
+        "Ikana Graveyard Bombable Grotto Chest":
+            lambda state: baby_has_explosive(state, player),    
         "Graveyard Day 1 Bats Chest":
             lambda state: state.has("Captain's Hat", player) and baby_can_smack_hard(state, player) and state.has("Progressive Magic", player),
         "Graveyard Day 2 Iron Knuckle Chest":
