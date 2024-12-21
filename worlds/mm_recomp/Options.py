@@ -48,6 +48,19 @@ class StartingHeartsAreContainersOrPieces(Choice):
     default = 0
 
 
+class ShuffleBossRemains(Choice):
+    """Choose whether to shuffle the Boss Remains received after beating a boss at the end of a dungeon.
+    
+    vanilla: Boss Remains are placed in their vanilla locations.
+    anything: Any item can be given by any of the Boss Remains, and Boss Remains can be found anywhere in any world.
+    bosses: Boss Remains are shuffled amongst themselves as the rewards for defeating bosses."""
+    display_name = "Shuffle Boss Remains"
+    option_vanila = 0
+    option_anywhere = 1
+    option_bosses = 2
+    default = 1
+
+
 class ShuffleSwamphouseReward(Toggle):
     """Choose whether to shuffle the Mask of Truth given at the end of the Southern Swamphouse."""
     display_name = "Shuffle Swamphouse Reward"
@@ -111,6 +124,7 @@ class MMROptions(PerGameCommonOptions):
     shieldless: Shieldless
     starting_hearts: StartingHeartQuarters
     starting_hearts_are_containers_or_pieces: StartingHeartsAreContainersOrPieces
+    shuffle_boss_remains: ShuffleBossRemains
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
     shuffle_great_fairy_rewards: ShuffleGreatFairyRewards
