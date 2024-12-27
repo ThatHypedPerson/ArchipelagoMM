@@ -107,6 +107,10 @@ Majora's Mask Recompiled:
     anywhere: 50
     bosses: 0
 
+  minimum_moon_remains:
+    # The number of remains needed to go to the Moon after playing Oath to Order.
+    4: 50
+
   shuffle_swamphouse_reward:
     # Choose whether to shuffle the Mask of Truth given at the end of the Southern Swamphouse.
     'false': 50

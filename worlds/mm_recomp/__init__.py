@@ -223,6 +223,7 @@ class MMRWorld(World):
             "death_link": self.options.death_link.value,
             "camc": self.options.camc.value,
             "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces == 1 else starting_containers + starting_pieces + shuffled_containers + shuffled_pieces,
+            "minimum_moon_remains": self.options.minimum_moon_remains.value,
             "start_with_consumables": self.options.start_with_consumables.value,
             "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
             "reset_with_inverted_time": self.options.reset_with_inverted_time.value,
