@@ -927,6 +927,156 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Pinnacle Rock",
         address=0x3469420062501
     ),
+    "Ocean Spider House Ramp Upper Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006280C,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Ramp Lower Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006280D,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Lobby Ceiling Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006280F,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Rafter Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062806,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Open Pot #1 Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062818,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Open Pot #2 Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062817,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Wall Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006281D,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Library Top Bookcase Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062804,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Library Passage Behind Bookcase Front Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006281C,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Library Passage Behind Bookcase Rear Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062815,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Libary Painting #1 Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062814,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Library Painting #2 Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062802,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Library Rafter Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062808,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Library Bookshelf Hole Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062803,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Downstairs Rafter Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062805,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Downstairs Open Pot Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006281B,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Downstairs Behind Staircase Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006281E,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Downstairs Crate Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006280B,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House First Room Downstairs Wall Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006280E,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Dining Room Open Pot Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062819,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Dining Room Painting Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062813,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Dining Room Ceiling Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062807,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Dining Room Chandelier #1 Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062810,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Dining Room Chandelier #2 Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062811,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Dining Room Chandelier #3 Token ": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062812,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Storage Room Web Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062809,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Storage Room North Wall Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062801,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Storage Room Crate Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420062816,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Storage Room Hidden Hole Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006280A,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
+    "Ocean Spider House Storage Room Ceiling Pot Token": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x346942006281A,
+        can_create=lambda options: options.skullsanity.value != 2
+    ),
     "Ocean Spider House Coloured Mask Sequence HP": MMRLocationData(
         region="Ocean Spider House",
         address=0x3469420062800

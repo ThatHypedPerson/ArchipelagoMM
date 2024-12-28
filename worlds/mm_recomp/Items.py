@@ -79,6 +79,12 @@ item_data_table: Dict[str, MMRItemData] = {
         num_exist=30,
         can_create=lambda options: options.skullsanity.value == 1
     ),
+    "Ocean Skulltula Token": MMRItemData(
+        code=0x3469420000052,
+        type=ItemClassification.progression,
+        num_exist=30,
+        can_create=lambda options: options.skullsanity.value == 1
+    ),
     "Progressive Wallet": MMRItemData(
         code=0x3469420000008,
         type=ItemClassification.progression,
