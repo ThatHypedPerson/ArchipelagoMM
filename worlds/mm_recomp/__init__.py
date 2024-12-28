@@ -129,7 +129,10 @@ class MMRWorld(World):
         if not self.options.shuffle_great_fairy_rewards.value:
             mw.get_location("North Clock Town Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic"))
             mw.get_location("North Clock Town Great Fairy Reward (Has Transformation Mask)", player).place_locked_item(self.create_item("Great Fairy Mask"))
-            mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack"))
+            mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack")),
+            mw.get_location("Snowhead Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic")),
+            mw.get_location("Great Bay Great Fairy Reward", player).place_locked_item(self.create_item("Double Defense")),
+            mw.get_location("Stone Tower Great Fairy Reward", player).place_locked_item(self.create_item("Great Fairy Sword")),
 
         if not self.options.fairysanity.value:
             mw.get_location("Laundry Pool Stray Fairy (Clock Town)", player).place_locked_item(self.create_item("Stray Fairy (Clock Town)"))
