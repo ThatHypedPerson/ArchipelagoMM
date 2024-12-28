@@ -703,6 +703,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Path to Snowhead",
         address=0x3469420055B08
     ),
+    "Snowhead Great Fairy Reward": MMRLocationData(
+        region="Snowhead Temple",
+        address=0x3469420030002
+    ),
     "Snowhead Temple Elevator Room Upper Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x3469420062113
@@ -851,6 +855,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Zora Cape",
         address=0x3469420060715
     ),
+    "Great Bay Great Fairy Reward": MMRLocationData(
+        region="Zora Cape",
+        address=0x3469420030003
+    ),
     "Zora Hall Goron Scrub Trade": MMRLocationData(
         region="Zora Hall",
         address=0x346942000009A
@@ -858,6 +866,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Zora Hall Goron Scrub Trade Freestanding HP": MMRLocationData(
         region="Zora Hall",
         address=0x3469420054C1E
+    ),
+    "Zora Hall Piano Zora Song": MMRLocationData(
+        region="Zora Hall",
+        address=0x3469420070241
     ),
     "Pirates' Fortress Sewers HP": MMRLocationData(
         region="Pirates' Fortress Sewers",
@@ -1070,6 +1082,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Ikana Canyon Music Box Mummy": MMRLocationData(
         region="Ikana Canyon",
         address=0x3469420000087
+    ),
+    "Stone Tower Great Fairy Reward": MMRLocationData(
+        region="Ikana Canyon",
+        address=0x3469420000010
     ),
     "Ikana Well Final Chest": MMRLocationData(
         region="Beneath the Well",

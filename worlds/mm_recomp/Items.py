@@ -23,10 +23,16 @@ item_data_table: Dict[str, MMRItemData] = {
     "Progressive Magic": MMRItemData(
         code=0x3469420020000,
         type=ItemClassification.progression,
-        can_create=lambda options: options.shuffle_great_fairy_rewards.value
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value,
+        num_exist=2
     ),
     "Great Spin Attack": MMRItemData(
         code=0x3469420020001,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
+    ),
+    "Double Defense": MMRItemData(
+        code=0x3469420020003,
         type=ItemClassification.useful,
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
@@ -244,7 +250,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Great Fairy Sword": MMRItemData(
         code=0x346942000003B,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Progressive Bow": MMRItemData(
         code=0x3469420000022,
@@ -437,7 +444,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Red Rupee": MMRItemData(
         code=0x3469420000004,
         type=ItemClassification.filler,
-        num_exist=28
+        num_exist=30
         # ~ num_exist=29
     ),
     "Purple Rupee": MMRItemData(
