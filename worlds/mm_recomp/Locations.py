@@ -704,7 +704,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420055B08
     ),
     "Snowhead Great Fairy Reward": MMRLocationData(
-        region="Snowhead",
+        region="Snowhead Temple",
         address=0x3469420030002
     ),
     "Snowhead Temple Elevator Room Upper Chest": MMRLocationData(
