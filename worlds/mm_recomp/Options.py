@@ -62,8 +62,16 @@ class ShuffleBossRemains(Choice):
 
 
 class MinimumMoonRemains(Range):
-    """The number of remains needed to go to the Moon after playing Oath to Order."""
+    """The number of boss remains needed to go to the Moon after playing Oath to Order."""
     display_name = "Boss Remains Required to Go to the Moon"
+    range_start = 0
+    range_end = 4
+    default = 4
+
+class MinimumMajoraRemains(Range):
+    """The number of boss remains needed to fight Majora on the Moon.
+    This should be set to more than or equal to the number of boss remains needed to go to the Moon."""
+    display_name = "Boss Remains Required to Fight Majora"
     range_start = 0
     range_end = 4
     default = 4
@@ -134,6 +142,7 @@ class MMROptions(PerGameCommonOptions):
     starting_hearts_are_containers_or_pieces: StartingHeartsAreContainersOrPieces
     shuffle_boss_remains: ShuffleBossRemains
     minimum_moon_remains: MinimumMoonRemains
+    minimum_majora_remains: MinimumMajoraRemains
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
     shuffle_great_fairy_rewards: ShuffleGreatFairyRewards
