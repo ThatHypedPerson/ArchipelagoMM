@@ -179,7 +179,7 @@ def get_baby_region_rules(player):
         "Stone Tower -> Stone Tower Temple":
             lambda state: can_use_ice_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player) and state.has("Goron Mask", player) and state.has("Zora Mask", player),
         "Stone Tower -> Stone Tower (Inverted)":
-            lambda state: state.can_reach("Stone Tower Temple", 'Location', player) and can_use_light_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player),
+            lambda state: state.can_reach("Stone Tower Temple", 'Region', player) and can_use_light_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player),
     }
 
 def get_baby_location_rules(player):
@@ -709,7 +709,7 @@ def get_baby_location_rules(player):
         "Great Bay Temple Froggy Entrance Room Underwater Chest":
             lambda state: state.has("Zora Mask", player),
         "Great Bay Temple Behind Locked Door Chest":
-            lambda state: state.has("Progressive Bow", player) and baby_has_explosives(state, player) and state.has("Great Fairy Sword", player) and has_mirror_shield(state, player), state.has("Zora Mask", player) state.has("Small Key (Great Bay)", player),
+            lambda state: state.has("Progressive Bow", player) and baby_has_explosives(state, player) and state.has("Great Fairy Sword", player) and has_mirror_shield(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Great Bay)", player),
         "Great Bay Temple Room Behind Waterfall Ceiling Chest":
             lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and state.has("Zora Mask", player),
         "Great Bay Temple Green Pipe Freezable Waterwheel Upper Chest":
