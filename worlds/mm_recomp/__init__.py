@@ -118,6 +118,7 @@ class MMRWorld(World):
 
         if not self.options.shuffle_swamphouse_reward.value:
             mw.get_location("Swamp Spider House Reward", player).place_locked_item(self.create_item("Mask of Truth"))
+            mw.get_location("Ocean Spider House Reward", player).place_locked_item(self.create_item("Progressive Wallet"))
 
         if self.options.skullsanity.value == 0:
             for i in range(0, 31):

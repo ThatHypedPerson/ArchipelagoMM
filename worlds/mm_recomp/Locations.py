@@ -1081,6 +1081,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Ocean Spider House",
         address=0x3469420062800
     ),
+    "Ocean Spider House Reward": MMRLocationData(
+        region="Ocean Spider House",
+        address=0x3469420000009
+    ),
     "Great Bay Temple Pot At Bottom Of Blender SF": MMRLocationData(
         region="Great Bay Temple",
         address=0x346942001491B
