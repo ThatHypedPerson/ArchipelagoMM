@@ -707,7 +707,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x3469420030002
     ),
-    "Snowhead Temple Elevator Room Upper Chest": MMRLocationData(
+    "Snowhead Temple Elevator Room Invisible Platform Chest": MMRLocationData(
         region="Snowhead Temple",
         address=0x3469420062113
     ),
@@ -735,7 +735,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Snowhead Temple",
         address=0x346942001212C
     ),
-    "Snowhead Temple Snowman Bubble SF": MMRLocationData(
+    "Snowhead Temple Snowmen Bubble SF": MMRLocationData(
         region="Snowhead Temple",
         address=0x346942001212B
     ),
@@ -823,11 +823,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         # ~ region="Romani Ranch",
         # ~ address=0x3469420000082
     # ~ ),
-    "Great Bay Dying Zora": MMRLocationData(
+    "Great Bay Healing Zora": MMRLocationData(
         region="Great Bay",
         address=0x346942000007A
     ),
-    "Great Bay Coast Behind Fishermans Hut Grotto Chest": MMRLocationData(
+    "Great Bay Behind Fishermans Hut Grotto Chest": MMRLocationData(
         region="Great Bay",
         address=0x3469420060717
     ),
@@ -871,7 +871,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Zora Hall",
         address=0x3469420070241
     ),
-    "Pirates' Fortress Sewers HP": MMRLocationData(
+    "Pirates' Fortress Sewers Cage HP": MMRLocationData(
         region="Pirates' Fortress Sewers",
         address=0x346942005230C
     ),
@@ -907,7 +907,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Pirates' Fortress Sewers",
         address=0x3469420062303
     ),
-    "Pirates' Fortress Hub Chest": MMRLocationData(
+    "Pirates' Fortress Hub Lower Chest": MMRLocationData(
         region="Pirates' Fortress Sewers",
         address=0x3469420061400
     ),
@@ -1101,7 +1101,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay Temple",
         address=0x346942001491C
     ),
-    "Great Bay Temple Red-Green Pipe First Room SF": MMRLocationData(
+    "Great Bay Temple Red-Green Pipe First Room Pot SF": MMRLocationData(
         region="Great Bay Temple",
         address=0x346942001491E
     ),

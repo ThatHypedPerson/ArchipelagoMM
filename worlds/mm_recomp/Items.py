@@ -32,7 +32,7 @@ item_data_table: Dict[str, MMRItemData] = {
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Double Defense": MMRItemData(
-        code=0x3469420020003,
+        code=0x3469420000073,
         type=ItemClassification.useful,
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
@@ -74,7 +74,7 @@ item_data_table: Dict[str, MMRItemData] = {
         # ~ num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
-        code=0x3469420000052,
+        code=0x3469420000075,
         type=ItemClassification.progression,
         num_exist=30,
         can_create=lambda options: options.skullsanity.value == 1
