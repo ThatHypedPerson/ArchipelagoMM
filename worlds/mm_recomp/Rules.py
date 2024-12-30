@@ -499,7 +499,7 @@ def get_baby_location_rules(player):
             lambda state: state.has("Small Key (Snowhead)", player, 3) and baby_has_explosives(state, player) and can_use_fire_arrows(state, player),
         "Snowhead Temple Initial Runway Ice Blowers Chest":
             lambda state: can_use_fire_arrows(state, player) and state.has("Hookshot", player),
-        "Snowhead Temple Green Door Freezards Chest":
+        "Snowhead Temple Green Door Ice Blowers Chest":
             lambda state: can_use_fire_arrows(state, player),
         #  "Snowhead Temple Orange Door Upper Chest" only needs 1 small key
         "Snowhead Temple Orange Door Upper Chest":
@@ -539,7 +539,7 @@ def get_baby_location_rules(player):
             lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
 
 
-        "Great Bay Dying Zora":
+        "Great Bay Healing Zora":
             lambda state: can_play_song("Song of Healing", state, player),
         "Great Bay Scarecrow Ledge HP":
             lambda state: state.has("Hookshot", player) and baby_can_plant_beans(state, player),
@@ -760,7 +760,7 @@ def get_baby_location_rules(player):
             lambda state: state.has("Deku Mask", player) and state.has("Hookshot", player) and state.has("Gibdo Mask", player) and state.has("Garo Mask", player) and state.has("Zora Mask", player) and state.has("Ocean Title Deed", player),
             
             
-        "Stone Temple Great Fairy Reward":
+        "Stone Tower Great Fairy Reward":
             lambda state: state.has("Stray Fairy (Stone Tower)", player, 15),
             
         
