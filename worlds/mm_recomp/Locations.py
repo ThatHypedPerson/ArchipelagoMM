@@ -655,10 +655,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Mountain Village",
         address=0x3469420000079
     ),
-    "Mountain Village Feeding Freezing Goron": MMRLocationData(
-        region="Mountain Village",
-        address=0x3469420000088
-    ),
+    # ~ "Mountain Village Feeding Freezing Goron": MMRLocationData(
+        # ~ region="Mountain Village",
+        # ~ address=0x3469420000088
+    # ~ ),
     "Twin Islands Spring Underwater Cave Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420065E00
@@ -819,10 +819,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Romani Ranch",
         address=0x3469420070117
     ),
-    "Romani Ranch Helping Cremia": MMRLocationData(
-        region="Romani Ranch",
-        address=0x3469420000082
-    ),
+    # ~ "Romani Ranch Helping Cremia": MMRLocationData(
+        # ~ region="Romani Ranch",
+        # ~ address=0x3469420000082
+    # ~ ),
     "Great Bay Dying Zora": MMRLocationData(
         region="Great Bay",
         address=0x346942000007A
