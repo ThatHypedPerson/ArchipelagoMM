@@ -586,7 +586,7 @@ def get_baby_location_rules(player):
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
         "Ocean Spider House First Room Downstairs Rafter Token":
             lambda state: state.has("Hookshot", player),
-        "Ocean Spider House First Room Downstairs Pot Token":
+        "Ocean Spider House First Room Downstairs Open Pot Token":
             lambda state: state.has("Hookshot", player),
         "Ocean Spider House First Room Downstairs Behind Staircase Token":
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
@@ -594,19 +594,19 @@ def get_baby_location_rules(player):
             lambda state: state.has("Hookshot", player),
         "Ocean Spider House First Room Downstairs Wall Token":
             lambda state: state.has("Hookshot", player),
-        "Ocean Spider House Dining Room Pot Token":
+        "Ocean Spider House Dining Room Open Pot Token":
             lambda state: state.has("Hookshot", player),
         "Ocean Spider House Dining Room Painting Token":
             lambda state: state.has("Hookshot", player),
         "Ocean Spider House Dining Room Ceiling Token":
             lambda state: state.has("Hookshot", player),
-        "Ocean spider House Dining Room Chandelier #1 Token":
+        "Ocean Spider House Dining Room Chandelier #1 Token":
             lambda state: state.has("Hookshot", player) and state.has("Goron Mask", player),
         "Ocean Spider House Dining Room Chandelier #2 Token":
             lambda state: state.has("Hookshot", player) and state.has("Goron Mask", player),
         "Ocean Spider House Dining Room Chandelier #3 Token ":
             lambda state: state.has("Hookshot", player) and state.has("Goron Mask", player),
-        "Ocean Spider House Storage Room SW Token":
+        "Ocean Spider House Storage Room Web Token":
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
         "Ocean Spider House Storage Room North Wall Token":
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
@@ -614,7 +614,7 @@ def get_baby_location_rules(player):
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
         "Ocean Spider House Storage Room Hidden Hole Token":
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
-        "Ocean Spider House Storage Room Ceiling Barrel Token":
+        "Ocean Spider House Storage Room Ceiling Pot Token":
             lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player),
         "Ocean Spider House Coloured Mask Sequence HP":
             lambda state: state.has("Hookshot", player) and state.has("Captain's Hat", player) and state.has("Progressive Bow", player),

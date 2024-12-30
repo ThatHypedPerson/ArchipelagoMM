@@ -118,12 +118,14 @@ class MMRWorld(World):
 
         if not self.options.shuffle_swamphouse_reward.value:
             mw.get_location("Swamp Spider House Reward", player).place_locked_item(self.create_item("Mask of Truth"))
+            mw.get_location("Ocean Spider House Reward", player).place_locked_item(self.create_item("Progressive Wallet"))
 
         if self.options.skullsanity.value == 0:
             for i in range(0, 31):
-                if i == 3:
-                    continue
-                mw.get_location(code_to_location_table[0x3469420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
+                if i != 3:
+                    mw.get_location(code_to_location_table[0x3469420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
+                if i != 0:
+                    mw.get_location(code_to_location_table[0x3469420062800 | i], player).place_locked_item(self.create_item("Ocean Skulltula Token"))
                 
 
         if not self.options.shuffle_great_fairy_rewards.value:
