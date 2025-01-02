@@ -65,6 +65,9 @@ class MMRWorld(World):
         if self.options.shieldless.value:
             mw.itempool.append(self.create_item("Progressive Shield"))
 
+        if self.options.start_with_soaring.value:
+            mw.push_precollected(self.create_item("Song of Soaring"))
+
         shp = self.options.starting_hearts.value
         if self.options.starting_hearts_are_containers_or_pieces.value == 0:
             for i in range(0, int((12 - shp)/4)):
