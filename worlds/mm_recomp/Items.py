@@ -317,20 +317,17 @@ item_data_table: Dict[str, MMRItemData] = {
     "Stray Fairy (Snowhead)": MMRItemData(
         code=0x3469420010001,
         type=ItemClassification.progression,
-        num_exist=15,
-        can_create=lambda options: options.fairysanity.value
+        num_exist=15
     ),
     "Stray Fairy (Great Bay)": MMRItemData(
         code=0x3469420010002,
         type=ItemClassification.progression,
-        num_exist=15,
-        can_create=lambda options: options.fairysanity.value
+        num_exist=15
     ),
     "Stray Fairy (Stone Tower)": MMRItemData(
         code=0x3469420010003,
         type=ItemClassification.progression,
-        num_exist=15,
-        can_create=lambda options: options.fairysanity.value
+        num_exist=15
     ),
     "Small Key (Woodfall)": MMRItemData(
         code=0x3469420090078,
