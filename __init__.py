@@ -102,39 +102,20 @@ class MMRWorld(World):
             locked_item = self.create_item(location_data_table[location_name].locked_item)
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
-        if self.options.shuffle_boss_remains.value == 0:
-            mw.get_location("Woodfall Temple Odolwa's Remains", player).place_locked_item(self.create_item("Odolwa's Remains"))
-            mw.get_location("Snowhead Temple Goht's Remains", player).place_locked_item(self.create_item("Goht's Remains"))
-            mw.get_location("Great Bay Temple Gyorg's Remains", player).place_locked_item(self.create_item("Gyorg's Remains"))
-            mw.get_location("Stone Tower Temple Inverted Twinmold's Remains", player).place_locked_item(self.create_item("Twinmold's Remains"))
-        
-        if self.options.shuffle_boss_remains.value == 2:
-            remains_list = ["Odolwa's Remains", "Goht's Remains", "Gyorg's Remains", "Twinmold's Remains"]
-            
-            mw.get_location("Woodfall Temple Odolwa's Remains", player).place_locked_item(self.create_item(remains_list.pop(self.random.randint(0, 3))))
-            mw.get_location("Snowhead Temple Goht's Remains", player).place_locked_item(self.create_item(remains_list.pop(self.random.randint(0, 2))))
-            mw.get_location("Great Bay Temple Gyorg's Remains", player).place_locked_item(self.create_item(remains_list.pop(self.random.randint(0, 1))))
-            mw.get_location("Stone Tower Temple Inverted Twinmold's Remains", player).place_locked_item(self.create_item(remains_list[0]))
-
         if not self.options.shuffle_swamphouse_reward.value:
             mw.get_location("Swamp Spider House Reward", player).place_locked_item(self.create_item("Mask of Truth"))
-            mw.get_location("Ocean Spider House Reward", player).place_locked_item(self.create_item("Progressive Wallet"))
 
         if self.options.skullsanity.value == 0:
             for i in range(0, 31):
-                if i != 3:
-                    mw.get_location(code_to_location_table[0x3469420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
-                if i != 0:
-                    mw.get_location(code_to_location_table[0x3469420062800 | i], player).place_locked_item(self.create_item("Ocean Skulltula Token"))
+                if i == 3:
+                    continue
+                mw.get_location(code_to_location_table[0x3469420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
                 
 
         if not self.options.shuffle_great_fairy_rewards.value:
             mw.get_location("North Clock Town Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic"))
             mw.get_location("North Clock Town Great Fairy Reward (Has Transformation Mask)", player).place_locked_item(self.create_item("Great Fairy Mask"))
             mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack"))
-            mw.get_location("Snowhead Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic"))
-            mw.get_location("Great Bay Great Fairy Reward", player).place_locked_item(self.create_item("Double Defense"))
-            mw.get_location("Stone Tower Great Fairy Reward", player).place_locked_item(self.create_item("Great Fairy Sword"))
 
         if not self.options.fairysanity.value:
             mw.get_location("Laundry Pool Stray Fairy (Clock Town)", player).place_locked_item(self.create_item("Stray Fairy (Clock Town)"))
@@ -181,14 +162,13 @@ class MMRWorld(World):
             mw.get_location("Great Bay Temple Waterwheel Room Bubble Under Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
             mw.get_location("Great Bay Temple Pot At Bottom Of Blender SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
             mw.get_location("Great Bay Temple Blender Room Barrel SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Red-Green Pipe First Room SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
+            mw.get_location("Great Bay Temple Red-Green Pipe First Room Pot SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
             mw.get_location("Great Bay Temple Froggy Entrance Room Pot SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
             mw.get_location("Great Bay Temple Seesaw Room Underwater Barrel SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
             mw.get_location("Great Bay Temple Before Boss Room Underneath Platform Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
             mw.get_location("Great Bay Temple Before Boss Room Exit Tunnel Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
 
-            mw.get_location("Stone Tower Temple First Room Eye Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple First Room Lower Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
+            mw.get_location("Stone Tower Temple Entrance Room Eye Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Armos Room Upper Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Eyegore Room Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Mirror Room Sun Face Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
@@ -196,11 +176,12 @@ class MMRWorld(World):
             mw.get_location("Stone Tower Temple Air Gust Room Side Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Air Gust Room Goron Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Eyegore Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
+            mw.get_location("Stone Tower Temple Eastern Water Room Underwater Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Inverted Entrance Room Sun Face", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Inverted Eastern Air Gust Room Ice Eye Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Eastern Water Room Underwater Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple Inverted Wizzrobe Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Inverted Death Armos Maze Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
+            mw.get_location("Stone Tower Temple Inverted Eastern Air Gust Room Fire Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
+            mw.get_location("Stone Tower Temple Entrance Room Lower Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
             mw.get_location("Stone Tower Temple After Garo Upside Down Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
 
         sword_location = mw.get_location("Link's Inventory (Kokiri Sword)", player)
@@ -267,18 +248,13 @@ class MMRWorld(World):
 
     def fill_slot_data(self):
         shp = self.options.starting_hearts.value
-        starting_containers = int(shp/4) - 1
-        starting_pieces = shp % 4
-        shuffled_containers = int((12 - shp)/4)
-        shuffled_pieces = (12 - shp) % 4
         return {
             "skullsanity": self.options.skullsanity.value,
             "death_link": self.options.death_link.value,
             "camc": self.options.camc.value,
-            "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces.value == 1 else starting_containers + starting_pieces + shuffled_containers + shuffled_pieces,
+            "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces == 1 else int(shp)/4 - 1 + (shp % 4),
             "start_with_consumables": self.options.start_with_consumables.value,
             "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
             "reset_with_inverted_time": self.options.reset_with_inverted_time.value,
-            "receive_filled_wallets": self.options.receive_filled_wallets.value,
-            "link_tunic_color": ((self.options.link_tunic_color.value[0] & 0xFF) << 16) | ((self.options.link_tunic_color.value[1] & 0xFF) << 8) | (self.options.link_tunic_color.value[2] & 0xFF)
+            "receive_filled_wallets": self.options.receive_filled_wallets.value
         }
