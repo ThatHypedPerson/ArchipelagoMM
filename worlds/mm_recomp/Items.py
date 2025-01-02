@@ -23,10 +23,16 @@ item_data_table: Dict[str, MMRItemData] = {
     "Progressive Magic": MMRItemData(
         code=0x3469420020000,
         type=ItemClassification.progression,
-        can_create=lambda options: options.shuffle_great_fairy_rewards.value
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value,
+        num_exist=2
     ),
     "Great Spin Attack": MMRItemData(
         code=0x3469420020001,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
+    ),
+    "Double Defense": MMRItemData(
+        code=0x3469420000073,
         type=ItemClassification.useful,
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
@@ -68,7 +74,13 @@ item_data_table: Dict[str, MMRItemData] = {
         # ~ num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
-        code=0x3469420000052,
+        code=0x3469420000075,
+        type=ItemClassification.progression,
+        num_exist=30,
+        can_create=lambda options: options.skullsanity.value == 1
+    ),
+    "Ocean Skulltula Token": MMRItemData(
+        code=0x3469420000072,
         type=ItemClassification.progression,
         num_exist=30,
         can_create=lambda options: options.skullsanity.value == 1
@@ -244,7 +256,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Great Fairy Sword": MMRItemData(
         code=0x346942000003B,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Progressive Bow": MMRItemData(
         code=0x3469420000022,
@@ -389,19 +402,23 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Odolwa's Remains": MMRItemData(
         code=0x3469420000055,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_boss_remains.value == 1
     ),
     "Goht's Remains": MMRItemData(
         code=0x3469420000056,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_boss_remains.value == 1
     ),
     "Gyorg's Remains": MMRItemData(
         code=0x3469420000057,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_boss_remains.value == 1
     ),
     "Twinmold's Remains": MMRItemData(
         code=0x3469420000058,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_boss_remains.value == 1
     ),
     "Progressive Bomb Bag": MMRItemData(
         code=0x346942000001B,
@@ -436,7 +453,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Red Rupee": MMRItemData(
         code=0x3469420000004,
         type=ItemClassification.filler,
-        num_exist=28
+        num_exist=29
         # ~ num_exist=29
     ),
     "Purple Rupee": MMRItemData(

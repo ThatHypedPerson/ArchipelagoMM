@@ -97,6 +97,16 @@ Majora's Mask Recompiled:
     containers: 50
     pieces: 0
 
+  shuffle_boss_remains:
+    # Choose whether to shuffle the Boss Remains received after beating a boss at the end of a dungeon.
+    #
+    # vanilla: Boss Remains are placed in their vanilla locations.
+    # anything: Any item can be given by any of the Boss Remains, and Boss Remains can be found anywhere in any world.
+    # bosses: Boss Remains are shuffled amongst themselves as the rewards for defeating bosses.
+    vanila: 0
+    anywhere: 50
+    bosses: 0
+
   shuffle_swamphouse_reward:
     # Choose whether to shuffle the Mask of Truth given at the end of the Southern Swamphouse.
     'false': 50
