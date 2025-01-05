@@ -47,6 +47,14 @@ class StartingHeartsAreContainersOrPieces(Choice):
     option_pieces = 1
     default = 0
 
+class ShuffleRegionalMaps(Choice):
+    """Choose whether to shuffle every regional map from Tingle."""
+    display_name = "Shuffle Regional Maps"
+    option_vanilla = 0
+    option_starting = 1
+    option_anywhere = 2
+    default = 1
+
 
 class ShuffleBossRemains(Choice):
     """Choose whether to shuffle the Boss Remains received after beating a boss at the end of a dungeon.
@@ -124,6 +132,7 @@ class MMROptions(PerGameCommonOptions):
     shieldless: Shieldless
     starting_hearts: StartingHeartQuarters
     starting_hearts_are_containers_or_pieces: StartingHeartsAreContainersOrPieces
+    shuffle_regional_maps: ShuffleRegionalMaps
     shuffle_boss_remains: ShuffleBossRemains
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity

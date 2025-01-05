@@ -65,6 +65,14 @@ class MMRWorld(World):
         if self.options.shieldless.value:
             mw.itempool.append(self.create_item("Progressive Shield"))
 
+        if self.options.shuffle_regional_maps.value == 1:
+            mw.push_precollected(self.create_item("Clock Town Map"))
+            mw.push_precollected(self.create_item("Woodfall Map"))
+            mw.push_precollected(self.create_item("Snowhead Map"))
+            mw.push_precollected(self.create_item("Romani Ranch Map"))
+            mw.push_precollected(self.create_item("Great Bay Map"))
+            mw.push_precollected(self.create_item("Stone Tower Map"))
+
         shp = self.options.starting_hearts.value
         if self.options.starting_hearts_are_containers_or_pieces.value == 0:
             for i in range(0, int((12 - shp)/4)):
@@ -101,6 +109,14 @@ class MMRWorld(World):
 
             locked_item = self.create_item(location_data_table[location_name].locked_item)
             mw.get_location(location_name, player).place_locked_item(locked_item)
+
+        if self.options.shuffle_regional_maps.value == 0:
+            mw.get_location("Tingle Clock Town Map Purchase", player).place_locked_item(self.create_item("Clock Town Map"))
+            mw.get_location("Tingle Woodfall Map Purchase", player).place_locked_item(self.create_item("Woodfall Map"))
+            mw.get_location("Tingle Snowhead Map Purchase", player).place_locked_item(self.create_item("Snowhead Map"))
+            mw.get_location("Tingle Romani Ranch Map Purchase", player).place_locked_item(self.create_item("Romani Ranch Map"))
+            mw.get_location("Tingle Great Bay Map Purchase", player).place_locked_item(self.create_item("Great Bay Map"))
+            mw.get_location("Tingle Stone Tower Map Purchase", player).place_locked_item(self.create_item("Stone Tower Map"))
 
         if self.options.shuffle_boss_remains.value == 0:
             mw.get_location("Woodfall Temple Odolwa's Remains", player).place_locked_item(self.create_item("Odolwa's Remains"))
