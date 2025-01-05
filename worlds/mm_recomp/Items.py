@@ -308,6 +308,30 @@ item_data_table: Dict[str, MMRItemData] = {
         # ~ code=0x346942000005D,
         # ~ type=ItemClassification.progression
     # ~ ),
+    "Clock Town Map": MMRItemData(
+        code=0x34694200000B4,
+        type=ItemClassification.useful
+    ),
+    "Woodfall Map": MMRItemData(
+        code=0x34694200000B5,
+        type=ItemClassification.useful
+    ),
+    "Snowhead Map": MMRItemData(
+        code=0x34694200000B6,
+        type=ItemClassification.useful
+    ),
+    "Romani Ranch Map": MMRItemData(
+        code=0x34694200000B7,
+        type=ItemClassification.useful
+    ),
+    "Great Bay Map": MMRItemData(
+        code=0x34694200000B8,
+        type=ItemClassification.useful
+    ),
+    "Stone Tower Map": MMRItemData(
+        code=0x34694200000B9,
+        type=ItemClassification.useful
+    ),
     "Stray Fairy (Woodfall)": MMRItemData(
         code=0x3469420010000,
         type=ItemClassification.progression,
