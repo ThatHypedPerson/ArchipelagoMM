@@ -1,9 +1,3 @@
-from typing import Callable, Dict
-
-from BaseClasses import CollectionState, MultiWorld
-
-
-
 def baby_has_bombchus(state, player):
     return state.has("Bombchu (1)", player) and state.has("Bombchu (5)", player) and state.has("Bombchu (10)", player)
 
@@ -201,7 +195,7 @@ def get_baby_location_rules(player):
         "Laundry Pool Curiosity Shop Salesman #2":
             lambda state: state.has("Letter to Kafei", player),
         "South Clock Town Moon's Tear Trade":
-            lambda state: state.has("Moon's Tear", player),
+            lambda state: state.has("Moon's Tear", player) and state.has("Deku Mask", player),
         "South Clock Town Corner Chest":
             lambda state: state.has("Hookshot", player),
         "South Clock Town Final Day Tower Chest":
