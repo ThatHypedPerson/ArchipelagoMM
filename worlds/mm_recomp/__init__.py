@@ -225,6 +225,7 @@ class MMRWorld(World):
         shuffled_pieces = (12 - shp) % 4
         return {
             "skullsanity": self.options.skullsanity.value,
+            "damage_multiplier": self.options.damage_mult.value,
             "death_link": self.options.death_link.value,
             "camc": self.options.camc.value,
             "starting_heart_locations": 8 if self.options.starting_hearts_are_containers_or_pieces.value == 1 else starting_containers + starting_pieces + shuffled_containers + shuffled_pieces,

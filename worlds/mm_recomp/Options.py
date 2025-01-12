@@ -109,6 +109,16 @@ class ReceiveFilledWallets(Toggle):
     display_name = "Receive Filled Wallets"
 
 
+class DamageMultiplier(Choice):
+    """Adjust the amount of damage taken."""
+    display_name = "Damage Multiplier"
+    option_normal = 0
+    option_double = 1
+    option_quad = 2
+    option_ohko = 3
+    default = 0
+
+
 class LinkTunicColor(OptionList):
     """Choose a color for Link's tunic."""
     display_name = "Link Tunic Color"
@@ -133,5 +143,6 @@ class MMROptions(PerGameCommonOptions):
     permanent_chateau_romani: PermanentChateauRomani
     reset_with_inverted_time: ResetWithInvertedTime
     receive_filled_wallets: ReceiveFilledWallets
+    damage_multiplier: DamageMultiplier
     death_link: DeathLink
     link_tunic_color: LinkTunicColor

@@ -152,6 +152,13 @@ Majora's Mask Recompiled:
     'false': 50
     'true': 0
 
+  damage_multiplier:
+    # Adjust the amount of damage taken.
+    'normal': 50
+    'double': 0
+    'quad': 0
+    'ohko': 0
+
   link_tunic_color:
     [30, 105, 27]
 
