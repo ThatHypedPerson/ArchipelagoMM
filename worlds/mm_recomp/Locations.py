@@ -293,6 +293,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x3469420060704
     ),
+    "Termina Log Bombable Grotto Left Cow": MMRLocationData(
+        region="Termina Field",
+        address=0x3469420BEEF14
+    ),
+    "Termina Log Bombable Grotto Right Cow": MMRLocationData(
+        region="Termina Field",
+        address=0x3469420BEEF13
+    ),
     "Termina Dodongo Grotto Chest": MMRLocationData(
         region="Termina Field",
         address=0x3469420060700
@@ -807,6 +815,18 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Gorman Brothers Track",
         address=0x3469420000081
     ),
+    "Romani Ranch Barn Free Cow": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420BEEF10
+    ),
+    "Romani Ranch Barn Stables Front Cow": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420BEEF11
+    ),
+    "Romani Ranch Barn Stables Back Cow": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420BEEF12
+    ),
     "Romani Ranch Grog": MMRLocationData(
         region="Romani Ranch",
         address=0x346942000007F
@@ -830,6 +850,14 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Great Bay Behind Fishermans Hut Grotto Chest": MMRLocationData(
         region="Great Bay",
         address=0x3469420060717
+    ),
+    "Great Bay Ledge Grotto Left Cow": MMRLocationData(
+        region="Great Bay",
+        address=0x3469420BEEF16
+    ),
+    "Great Bay Ledge Grotto Right Cow": MMRLocationData(
+        region="Great Bay",
+        address=0x3469420BEEF15
     ),
     "Great Bay Scarecrow Ledge HP": MMRLocationData(
         region="Great Bay",
@@ -1252,6 +1280,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Ikana Well Torch Chest": MMRLocationData(
         region="Beneath the Well",
         address=0x3469420064B01
+    ),
+    "Ikana Well Cow": MMRLocationData(
+        region="Beneath the Well",
+        address=0x3469420BEEF17
     ),
     "Ikana Castle Pillar Freestanding HP": MMRLocationData(
         region="Ikana Castle",
