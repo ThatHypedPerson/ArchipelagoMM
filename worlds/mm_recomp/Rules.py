@@ -134,6 +134,12 @@ def can_reach_scarecrow(state, player):
 def can_reach_seahorse(state, player):
     return state.can_reach("Fisherman's House", 'Region', player) and state.has("Zora Mask", player) and (state.has("Hookshot", player) or state.has("Goron Mask", player)) #and state.has("Pictograph Box", player)
 
+def can_purchase(state, player, price):
+    if price > 200:
+        return state.has("Progressive Wallet", player, 2)
+    elif price > 99:
+        return state.has("Progressive Wallet", player)
+    return True
 
 
 def get_baby_region_rules(player):
@@ -233,8 +239,7 @@ def get_baby_location_rules(player):
         "North Clock Town Great Fairy Reward":
             lambda state: state.has("Stray Fairy (Clock Town)", player),
         "Tingle Clock Town Map Purchase":
-            lambda state: baby_has_projectiles(state, player),
-            # lambda state: baby_has_projectiles(state, player) and state.can_reach("Ikana Canyon", 'Region', player) and can_use_ice_arrows(state, player),
+            lambda state: baby_has_projectiles(state, player) and state.can_reach("Ikana Canyon", 'Region', player) and can_use_ice_arrows(state, player),
         "West Clock Town Swordsman Expert Course":
             lambda state: state.has("Progressive Sword", player),
         "West Clock Town Postman Counting":
