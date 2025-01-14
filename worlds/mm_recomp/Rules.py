@@ -265,9 +265,9 @@ def get_baby_location_rules(player):
         "Termina Stump Chest":
             lambda state: state.has("Hookshot", player) and baby_can_plant_beans(state, player),
         "Termina Log Bombable Grotto Left Cow":
-            lambda state: baby_has_explosives(state, player) and can_play_song("Epona's Song", state, player),
+            lambda state: baby_has_explosives(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Termina Log Bombable Grotto Right Cow":
-            lambda state: baby_has_explosives(state, player) and can_play_song("Epona's Song", state, player),
+            lambda state: baby_has_explosives(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Termina Underwater Chest":
             lambda state: state.has("Zora Mask", player),
         "Termina Peahat Grotto Chest":
@@ -536,11 +536,11 @@ def get_baby_location_rules(player):
         "Romani Ranch Romani Game":
             lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
         "Romani Ranch Barn Free Cow":
-            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player),
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Romani Ranch Barn Stables Front Cow":
-            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player),
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Romani Ranch Barn Stables Back Cow":
-            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player),
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
 
 
         "Great Bay Healing Zora":
@@ -548,9 +548,9 @@ def get_baby_location_rules(player):
         "Great Bay Scarecrow Ledge HP":
             lambda state: state.has("Hookshot", player) and baby_can_plant_beans(state, player),
         "Great Bay Ledge Grotto Left Cow":
-            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player),
+            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Great Bay Ledge Grotto Right Cow":
-            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player),
+            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Pinnacle Rock HP":
             lambda state: baby_can_reach_seahorse(state, player) and state.has("Progressive Magic", player) and baby_has_bottle(state, player),
         "Pinnacle Rock Upper Eel Chest":
