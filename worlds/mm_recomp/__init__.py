@@ -64,9 +64,6 @@ class MMRWorld(World):
 
         if self.options.shieldless.value:
             mw.itempool.append(self.create_item("Progressive Shield"))
-            
-        if self.options.start_with_soaring.value:
-            mw.push_precollected(self.create_item("Song of Soaring"))
 
         if self.options.shuffle_regional_maps.value == 1:
             mw.push_precollected(self.create_item("Clock Town Map"))
@@ -75,7 +72,7 @@ class MMRWorld(World):
             mw.push_precollected(self.create_item("Romani Ranch Map"))
             mw.push_precollected(self.create_item("Great Bay Map"))
             mw.push_precollected(self.create_item("Stone Tower Map"))
-            
+
         shp = self.options.starting_hearts.value
         if self.options.starting_hearts_are_containers_or_pieces.value == 0:
             for i in range(0, int((12 - shp)/4)):
@@ -173,54 +170,6 @@ class MMRWorld(World):
             mw.get_location("Woodfall Temple Final Room Right Upper Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
             mw.get_location("Woodfall Temple Final Room Left Upper Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
             mw.get_location("Woodfall Temple Final Room Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
-            
-            mw.get_location("Snowhead Temple Bottom Floor Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Elevator Room Upper Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Orange Door Upper Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Green Door Ice Blowers Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Light Blue Door Upper Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Upstairs 2F Icicle Room Hidden Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Column Room 2F Hidden Chest", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Initial Runway Tower Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Initial Runway Under Platform Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Elevator Freestanding SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Grey Door Near Bombable Stairs Box SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Timed Switch Room Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Snowman Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Dinolfos Room First SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-            mw.get_location("Snowhead Temple Dinolfos Room Second SF", player).place_locked_item(self.create_item("Stray Fairy (Snowhead)"))
-
-            mw.get_location("Great Bay Temple Four Torches Chest", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Bio-Baba Hall Chest", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Green Pipe Freezable Waterwheel Upper Chest", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Green Pipe Freezable Waterwheel Lower Chest", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Seesaw Room Chest", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Room Behind Waterfall Ceiling Chest", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Waterwheel Room Skulltula SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Waterwheel Room Bubble Under Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Pot At Bottom Of Blender SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Blender Room Barrel SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Red-Green Pipe First Room Pot SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Froggy Entrance Room Pot SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Seesaw Room Underwater Barrel SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Before Boss Room Underneath Platform Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-            mw.get_location("Great Bay Temple Before Boss Room Exit Tunnel Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Great Bay)"))
-
-            mw.get_location("Stone Tower Temple Entrance Room Eye Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Armos Room Upper Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Eyegore Room Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Mirror Room Sun Face Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Mirror Room Sun Block Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Air Gust Room Side Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Air Gust Room Goron Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Eyegore Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Eastern Water Room Underwater Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Inverted Entrance Room Sun Face", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Inverted Eastern Air Gust Room Ice Eye Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Inverted Wizzrobe Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Inverted Eastern Air Gust Room Fire Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple Entrance Room Lower Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
-            mw.get_location("Stone Tower Temple After Garo Upside Down Chest", player).place_locked_item(self.create_item("Stray Fairy (Stone Tower)"))
 
         sword_location = mw.get_location("Link's Inventory (Kokiri Sword)", player)
         if self.options.swordless.value:
@@ -279,7 +228,7 @@ class MMRWorld(World):
         location_rules = get_baby_location_rules(player)
         for location in mw.get_locations(player):
             name = location.name
-            if self.options.skullsanity.value == 2 and (name == "Swamp Spider House Reward" or name == "Ocean Spider House Reward"):
+            if self.options.skullsanity.value == 2 and name == "Swamp Spider House Reward":
                 continue
             if name in location_rules and location_data_table[name].can_create(self.options):
                 location.access_rule = location_rules[name]
