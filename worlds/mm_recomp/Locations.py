@@ -273,30 +273,6 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x346942000006F
     ),
-    "Tingle Clock Town Map Purchase": MMRLocationData(
-        region="Clock Town",
-        address=0x34694200000B4
-    ),
-    "Tingle Woodfall Map Purchase": MMRLocationData(
-        region="Southern Swamp",
-        address=0x34694200000B5
-    ),
-    "Tingle Snowhead Map Purchase": MMRLocationData(
-        region="Twin Islands",
-        address=0x34694200000B6
-    ),
-    "Tingle Romani Ranch Map Purchase": MMRLocationData(
-        region="Milk Road",
-        address=0x34694200000B7
-    ),
-    "Tingle Great Bay Map Purchase": MMRLocationData(
-        region="Great Bay",
-        address=0x34694200000B8
-    ),
-    "Tingle Stone Tower Map Purchase": MMRLocationData(
-        region="Ikana Canyon",
-        address=0x34694200000B9
-    ),
     "Termina Stump Chest": MMRLocationData(
         region="Termina Field",
         address=0x3469420062D02
@@ -1333,11 +1309,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower (Inverted)",
         address=0x346942006591D
     ),
-    "Stone Tower Temple Entrance Room Eye Switch Chest": MMRLocationData(
+    "Stone Tower Temple First Room Eye Switch Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061616
     ),
-    "Stone Tower Temple Entrance Room Lower Chest": MMRLocationData(
+    "Stone Tower Temple First Room Lower Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061612
     ),

@@ -308,36 +308,6 @@ item_data_table: Dict[str, MMRItemData] = {
         # ~ code=0x346942000005D,
         # ~ type=ItemClassification.progression
     # ~ ),
-    "Clock Town Map": MMRItemData(
-        code=0x34694200000B4,
-        type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
-    ),
-    "Woodfall Map": MMRItemData(
-        code=0x34694200000B5,
-        type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
-    ),
-    "Snowhead Map": MMRItemData(
-        code=0x34694200000B6,
-        type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
-    ),
-    "Romani Ranch Map": MMRItemData(
-        code=0x34694200000B7,
-        type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
-    ),
-    "Great Bay Map": MMRItemData(
-        code=0x34694200000B8,
-        type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
-    ),
-    "Stone Tower Map": MMRItemData(
-        code=0x34694200000B9,
-        type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
-    ),
     "Stray Fairy (Woodfall)": MMRItemData(
         code=0x3469420010000,
         type=ItemClassification.progression,
@@ -347,20 +317,17 @@ item_data_table: Dict[str, MMRItemData] = {
     "Stray Fairy (Snowhead)": MMRItemData(
         code=0x3469420010001,
         type=ItemClassification.progression,
-        num_exist=15,
-        can_create=lambda options: options.fairysanity.value
+        num_exist=15
     ),
     "Stray Fairy (Great Bay)": MMRItemData(
         code=0x3469420010002,
         type=ItemClassification.progression,
-        num_exist=15,
-        can_create=lambda options: options.fairysanity.value
+        num_exist=15
     ),
     "Stray Fairy (Stone Tower)": MMRItemData(
         code=0x3469420010003,
         type=ItemClassification.progression,
-        num_exist=15,
-        can_create=lambda options: options.fairysanity.value
+        num_exist=15
     ),
     "Small Key (Woodfall)": MMRItemData(
         code=0x3469420090078,

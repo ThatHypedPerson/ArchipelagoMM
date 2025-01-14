@@ -31,11 +31,6 @@ class Shieldless(Toggle):
     display_name = "Shieldless"
 
 
-class StartWithSoaring(DefaultOnToggle):
-    """Start the game with Song of Soaring."""
-    display_name = "Start With Soaring"
-
-
 class StartingHeartQuarters(Range):
     """The number of heart quarters Link starts with.
     If less than 12, extra heart items will be shuffled into the pool to accommodate."""
@@ -52,14 +47,6 @@ class StartingHeartsAreContainersOrPieces(Choice):
     option_pieces = 1
     default = 0
 
-class ShuffleRegionalMaps(Choice):
-    """Choose whether to shuffle every regional map from Tingle."""
-    display_name = "Shuffle Regional Maps"
-    option_vanilla = 0
-    option_starting = 1
-    option_anywhere = 2
-    default = 1
-
 
 class ShuffleBossRemains(Choice):
     """Choose whether to shuffle the Boss Remains received after beating a boss at the end of a dungeon.
@@ -71,7 +58,7 @@ class ShuffleBossRemains(Choice):
     option_vanila = 0
     option_anywhere = 1
     option_bosses = 2
-    default = 0
+    default = 1
 
 
 class ShuffleSwamphouseReward(Toggle):
@@ -102,12 +89,12 @@ class Fairysanity(Toggle):
     display_name = "Fairysanity"
 
 
-class StartWithConsumables(DefaultOnToggle):
+class StartWithConsumables(Toggle):
     """Choose whether to start with basic consumables (99 rupees, 10 deku sticks, 20 deku nuts)."""
     display_name = "Start With Consumables"
 
 
-class PermanentChateauRomani(DefaultOnToggle):
+class PermanentChateauRomani(Toggle):
     """Choose whether the Chateau Romani stays even after a reset."""
     display_name = "Permanent Chateau Romani"
 
@@ -117,7 +104,7 @@ class ResetWithInvertedTime(Toggle):
     display_name = "Reset With Inverted Time"
 
 
-class ReceiveFilledWallets(DefaultOnToggle):
+class ReceiveFilledWallets(Toggle):
     """Choose whether you receive wallets pre-filled (not including the starting wallet)."""
     display_name = "Receive Filled Wallets"
 
@@ -135,10 +122,8 @@ class MMROptions(PerGameCommonOptions):
     camc: CAMC
     swordless: Swordless
     shieldless: Shieldless
-    start_with_soaring: StartWithSoaring
     starting_hearts: StartingHeartQuarters
     starting_hearts_are_containers_or_pieces: StartingHeartsAreContainersOrPieces
-    shuffle_regional_maps: ShuffleRegionalMaps
     shuffle_boss_remains: ShuffleBossRemains
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
