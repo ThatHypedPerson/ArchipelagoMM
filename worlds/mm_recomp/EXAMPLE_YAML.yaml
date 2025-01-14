@@ -158,6 +158,9 @@ Majora's Mask Recompiled:
     'false': 50
     'true': 0
 
+  link_tunic_color:
+    [30, 105, 27]
+
   death_link:
     # When you die, everyone who enabled death link dies. Of course, the reverse is true too.
     'false': 50
