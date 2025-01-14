@@ -794,6 +794,8 @@ def get_baby_location_rules(player):
         # Stone Tower has 4 keys total
         "Stone Tower Temple Entrance Room Eye Switch Chest":
             lambda state: state.has("Progressive Bow", player),
+        "Stone Tower Temple Entrance Room Lower Chest":
+            lambda state: state.has("Small Key (Stone Tower)", player, 4) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and can_use_light_arrows(state, player) and can_use_ice_arrows(state, player) and state.has("Hookshot", player),
         "Stone Tower Temple Armos Room Back Chest":
             lambda state: can_use_light_arrows(state, player) and has_mirror_shield(state, player) and baby_has_explosives(state, player),
         "Stone Tower Temple Armos Room Upper Chest":
