@@ -1,9 +1,3 @@
-from typing import Callable, Dict
-
-from BaseClasses import CollectionState, MultiWorld
-
-
-
 def baby_has_bombchus(state, player):
     return state.has("Bombchu (1)", player) and state.has("Bombchu (5)", player) and state.has("Bombchu (10)", player)
 
@@ -207,7 +201,7 @@ def get_baby_location_rules(player):
         "Laundry Pool Curiosity Shop Salesman #2":
             lambda state: state.has("Letter to Kafei", player),
         "South Clock Town Moon's Tear Trade":
-            lambda state: state.has("Moon's Tear", player),
+            lambda state: state.has("Moon's Tear", player) and state.has("Deku Mask", player),
         "South Clock Town Corner Chest":
             lambda state: state.has("Hookshot", player),
         "South Clock Town Final Day Tower Chest":
@@ -818,6 +812,8 @@ def get_baby_location_rules(player):
         # Stone Tower has 4 keys total
         "Stone Tower Temple Entrance Room Eye Switch Chest":
             lambda state: state.has("Progressive Bow", player),
+        "Stone Tower Temple Entrance Room Lower Chest":
+            lambda state: state.has("Small Key (Stone Tower)", player, 4) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and can_use_light_arrows(state, player) and can_use_ice_arrows(state, player) and state.has("Hookshot", player),
         "Stone Tower Temple Armos Room Back Chest":
             lambda state: can_use_light_arrows(state, player) and has_mirror_shield(state, player) and baby_has_explosives(state, player),
         "Stone Tower Temple Armos Room Upper Chest":
