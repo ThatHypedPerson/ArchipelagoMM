@@ -308,6 +308,36 @@ item_data_table: Dict[str, MMRItemData] = {
         # ~ code=0x346942000005D,
         # ~ type=ItemClassification.progression
     # ~ ),
+    "Clock Town Map": MMRItemData(
+        code=0x34694200000B4,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_regional_maps.value
+    ),
+    "Woodfall Map": MMRItemData(
+        code=0x34694200000B5,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_regional_maps.value
+    ),
+    "Snowhead Map": MMRItemData(
+        code=0x34694200000B6,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_regional_maps.value
+    ),
+    "Romani Ranch Map": MMRItemData(
+        code=0x34694200000B7,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_regional_maps.value
+    ),
+    "Great Bay Map": MMRItemData(
+        code=0x34694200000B8,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_regional_maps.value
+    ),
+    "Stone Tower Map": MMRItemData(
+        code=0x34694200000B9,
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_regional_maps.value
+    ),
     "Stray Fairy (Woodfall)": MMRItemData(
         code=0x3469420010000,
         type=ItemClassification.progression,

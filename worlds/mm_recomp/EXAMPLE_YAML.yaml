@@ -102,6 +102,12 @@ Majora's Mask Recompiled:
     containers: 50
     pieces: 0
 
+  shuffle_regional_maps:
+    # Choose whether to shuffle every regional map from Tingle.
+    vanilla: 0
+    starting: 50
+    anywhere: 0
+
   shuffle_boss_remains:
     # Choose whether to shuffle the Boss Remains received after beating a boss at the end of a dungeon.
     #
