@@ -92,6 +92,29 @@ class Skullsanity(Choice):
     default = 0
 
 
+class Shopsanity(Choice):
+    """Choose whether shops and their items are shuffled into the pool.
+    This includes Trading Post, Bomb Shop, Goron Shop, and Zora Shop, along with the Gorman Ranch and Milk Bar purchases.
+    
+    vanilla: Shop items are not shuffled.
+    enabled: Every item in shops are shuffled, with alternate shops sharing the same items.
+    advanced: Every single item in shops are shuffled, including the alternate Night Trading Post and Spring Goron Shop. Also adds an extra Heart Piece to Spring Goron Village."""
+    display_name = "Shopsanity"
+    option_vanilla = 0
+    option_enabled = 1
+    option_advanced = 2
+    default = 0
+
+
+class Scrubsanity(Toggle):
+    """Choose whether to shuffle Business Scrub purchases."""
+    display_name = "Shuffle Business Scrub Purchases"
+
+class Cowsanity(Toggle):
+    """Choose whether to shuffle Cows."""
+    display_name = "Shuffle Cows"
+
+
 class ShuffleGreatFairyRewards(Toggle):
     """Choose whether to shuffle Great Fairy rewards."""
     display_name = "Shuffle Great Fairy Rewards"
@@ -165,6 +188,9 @@ class MMROptions(PerGameCommonOptions):
     shuffle_boss_remains: ShuffleBossRemains
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
+    shopsanity: Shopsanity
+    scrubsanity: Scrubsanity
+    cowsanity: Cowsanity
     shuffle_great_fairy_rewards: ShuffleGreatFairyRewards
     fairysanity: Fairysanity
     start_with_consumables: StartWithConsumables

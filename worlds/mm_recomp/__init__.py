@@ -113,6 +113,60 @@ class MMRWorld(World):
             locked_item = self.create_item(location_data_table[location_name].locked_item)
             mw.get_location(location_name, player).place_locked_item(locked_item)
 
+        # this is honestly some of the worst code i've ever made, i hate it so much
+        if self.options.shopsanity.value == 0:
+            mw.get_location("Clock Town Trading Post Shop Item 1", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 2", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 3", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 4", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 5", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 6", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 7", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Trading Post Shop Item 8", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Bomb Shop Item 1", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Bomb Shop Item 2", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Clock Town Bomb Shop Item 3", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Bomb Bag Purchase", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Southern Swamp Witch Shop Item 1", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Southern Swamp Witch Shop Item 2", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Southern Swamp Witch Shop Item 3", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Goron Village Shop Item 1", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Goron Village Shop Item 2", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Goron Village Shop Item 3", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Zora Hall Shop 1", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Zora Hall Shop 2", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+            mw.get_location("Zora Hall Shop 3", player).place_locked_item(self.create_item("Deku Nuts (1)"))
+        
+        if self.options.shopsanity.value != 2:
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 1", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 2", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 3", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 4", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 5", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 6", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 7", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Clock Town Trading Post Shop (Night) Item 8", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Goron Village Shop (Spring) Item 1", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Goron Village Shop (Spring) Item 2", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Goron Village Shop (Spring) Item 3", player).place_locked_item(self.create_item("Gold Rupee"))
+            mw.get_location("Goron Village Deku Trade Freestanding HP (Spring)", player).place_locked_item(self.create_item("Gold Rupee"))
+
+        if not self.options.cowsanity:
+            mw.get_location("Termina Log Bombable Grotto Left Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Termina Log Bombable Grotto Right Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Romani Ranch Barn Free Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Romani Ranch Barn Stables Front Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Romani Ranch Barn Stables Back Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Great Bay Ledge Grotto Left Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Great Bay Ledge Grotto Right Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Ikana Well Cow", player).place_locked_item(self.create_item("Milk"))
+
+        if not self.options.scrubsanity:
+            mw.get_location("Southern Swamp Deku Scrub Purchase Beans", player).place_locked_item(self.create_item("Deku Nuts (10)"))
+            mw.get_location("Goron Village Deku Scrub Purchase Bomb Bag", player).place_locked_item(self.create_item("Deku Nuts (10)"))
+            mw.get_location("Zora Hall Deku Scrub Purchase Green Potion", player).place_locked_item(self.create_item("Deku Nuts (10)"))
+            mw.get_location("Ikana Canyon Deku Scrub Purchase Blue Potion", player).place_locked_item(self.create_item("Deku Nuts (10)"))
+
         if self.options.shuffle_regional_maps.value == 0:
             mw.get_location("Tingle Clock Town Map Purchase", player).place_locked_item(self.create_item("Clock Town Map"))
             mw.get_location("Tingle Woodfall Map Purchase", player).place_locked_item(self.create_item("Woodfall Map"))
@@ -292,6 +346,9 @@ class MMRWorld(World):
         shuffled_pieces = (12 - shp) % 4
         return {
             "skullsanity": self.options.skullsanity.value,
+            "shopsanity": self.options.shopsanity.value,
+            "scrubsanity": self.options.scrubsanity.value,
+            "cowsanity": self.options.cowsanity.value,
             "damage_multiplier": self.options.damage_multiplier.value,
             "death_behavior": self.options.death_behavior.value,
             "death_link": self.options.death_link.value,
