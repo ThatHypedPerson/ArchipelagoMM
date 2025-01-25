@@ -9,7 +9,7 @@ class LogicDifficulty(Choice):
     """Set the logic difficulty used when generating."""
     display_name = "Logic Difficulty"
     option_easy = 0
-    #option_normal = 1
+    option_normal = 1
     #option_obscure_glitchless = 2
     #option_glitched = 3
     option_no_logic = 4
