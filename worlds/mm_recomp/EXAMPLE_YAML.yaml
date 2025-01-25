@@ -154,11 +154,21 @@ Majora's Mask Recompiled:
 
   damage_multiplier:
     # Adjust the amount of damage taken.
-    'half': 0
-    'normal': 50
-    'double': 0
-    'quad': 0
-    'ohko': 0
+    half: 0
+    normal: 50
+    double: 0
+    quad: 0
+    ohko: 0
+  
+  death_behavior:
+    # Change what happens when you die.
+    #
+    # vanilla: The normal death cutscene plays when you die.
+    # fast: The death cutscene is massively sped up.
+    # moon_crash: Triggers a moon crash and restarts the current cycle.
+    vanilla: 50
+    fast: 0
+    moon_crash: 0
 
   link_tunic_color:
     [30, 105, 27]

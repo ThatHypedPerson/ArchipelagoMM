@@ -55,7 +55,7 @@ class ShuffleBossRemains(Choice):
     anything: Any item can be given by any of the Boss Remains, and Boss Remains can be found anywhere in any world.
     bosses: Boss Remains are shuffled amongst themselves as the rewards for defeating bosses."""
     display_name = "Shuffle Boss Remains"
-    option_vanila = 0
+    option_vanilla = 0
     option_anywhere = 1
     option_bosses = 2
     default = 1
@@ -119,6 +119,18 @@ class DamageMultiplier(Choice):
     option_ohko = 4
     default = 1
 
+class DeathBehavior(Choice):
+    """Change what happens when you die.
+    
+    vanilla: The normal death cutscene plays when you die.
+    fast: The death cutscene is massively sped up.
+    moon_crash: Triggers a moon crash and restarts the current cycle."""
+    display_name = "Death Behavior"
+    option_vanilla = 0
+    option_fast = 1
+    option_moon_crash = 2
+    default = 0
+
 
 class LinkTunicColor(OptionList):
     """Choose a color for Link's tunic."""
@@ -145,5 +157,6 @@ class MMROptions(PerGameCommonOptions):
     reset_with_inverted_time: ResetWithInvertedTime
     receive_filled_wallets: ReceiveFilledWallets
     damage_multiplier: DamageMultiplier
+    death_behavior: DeathBehavior
     death_link: DeathLink
     link_tunic_color: LinkTunicColor
