@@ -154,6 +154,7 @@ Majora's Mask Recompiled:
 
   damage_multiplier:
     # Adjust the amount of damage taken.
+    'half': 0
     'normal': 50
     'double': 0
     'quad': 0

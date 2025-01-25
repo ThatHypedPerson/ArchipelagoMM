@@ -112,11 +112,12 @@ class ReceiveFilledWallets(Toggle):
 class DamageMultiplier(Choice):
     """Adjust the amount of damage taken."""
     display_name = "Damage Multiplier"
-    option_normal = 0
-    option_double = 1
-    option_quad = 2
-    option_ohko = 3
-    default = 0
+    option_half = 0
+    option_normal = 1
+    option_double = 2
+    option_quad = 3
+    option_ohko = 4
+    default = 1
 
 
 class LinkTunicColor(OptionList):
