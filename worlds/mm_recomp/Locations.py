@@ -273,6 +273,30 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x346942000006F
     ),
+    "Tingle Clock Town Map Purchase": MMRLocationData(
+        region="Clock Town",
+        address=0x34694200000B4
+    ),
+    "Tingle Woodfall Map Purchase": MMRLocationData(
+        region="Southern Swamp",
+        address=0x34694200000B5
+    ),
+    "Tingle Snowhead Map Purchase": MMRLocationData(
+        region="Twin Islands",
+        address=0x34694200000B6
+    ),
+    "Tingle Romani Ranch Map Purchase": MMRLocationData(
+        region="Milk Road",
+        address=0x34694200000B7
+    ),
+    "Tingle Great Bay Map Purchase": MMRLocationData(
+        region="Great Bay",
+        address=0x34694200000B8
+    ),
+    "Tingle Stone Tower Map Purchase": MMRLocationData(
+        region="Ikana Canyon",
+        address=0x34694200000B9
+    ),
     "Termina Stump Chest": MMRLocationData(
         region="Termina Field",
         address=0x3469420062D02
@@ -292,6 +316,14 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Termina Peahat Grotto Chest": MMRLocationData(
         region="Termina Field",
         address=0x3469420060704
+    ),
+    "Termina Log Bombable Grotto Left Cow": MMRLocationData(
+        region="Termina Field",
+        address=0x3469420BEEF14
+    ),
+    "Termina Log Bombable Grotto Right Cow": MMRLocationData(
+        region="Termina Field",
+        address=0x3469420BEEF13
     ),
     "Termina Dodongo Grotto Chest": MMRLocationData(
         region="Termina Field",
@@ -807,6 +839,18 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Gorman Brothers Track",
         address=0x3469420000081
     ),
+    "Romani Ranch Barn Free Cow": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420BEEF10
+    ),
+    "Romani Ranch Barn Stables Front Cow": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420BEEF11
+    ),
+    "Romani Ranch Barn Stables Back Cow": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420BEEF12
+    ),
     "Romani Ranch Grog": MMRLocationData(
         region="Romani Ranch",
         address=0x346942000007F
@@ -830,6 +874,14 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Great Bay Behind Fishermans Hut Grotto Chest": MMRLocationData(
         region="Great Bay",
         address=0x3469420060717
+    ),
+    "Great Bay Ledge Grotto Left Cow": MMRLocationData(
+        region="Great Bay",
+        address=0x3469420BEEF16
+    ),
+    "Great Bay Ledge Grotto Right Cow": MMRLocationData(
+        region="Great Bay",
+        address=0x3469420BEEF15
     ),
     "Great Bay Scarecrow Ledge HP": MMRLocationData(
         region="Great Bay",
@@ -1253,6 +1305,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Beneath the Well",
         address=0x3469420064B01
     ),
+    "Ikana Well Cow": MMRLocationData(
+        region="Beneath the Well",
+        address=0x3469420BEEF17
+    ),
     "Ikana Castle Pillar Freestanding HP": MMRLocationData(
         region="Ikana Castle",
         address=0x3469420051D0A
@@ -1277,11 +1333,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Stone Tower (Inverted)",
         address=0x346942006591D
     ),
-    "Stone Tower Temple First Room Eye Switch Chest": MMRLocationData(
+    "Stone Tower Temple Entrance Room Eye Switch Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061616
     ),
-    "Stone Tower Temple First Room Lower Chest": MMRLocationData(
+    "Stone Tower Temple Entrance Room Lower Chest": MMRLocationData(
         region="Stone Tower Temple",
         address=0x3469420061612
     ),
