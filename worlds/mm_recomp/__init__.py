@@ -152,14 +152,14 @@ class MMRWorld(World):
             mw.get_location("Goron Village Deku Trade Freestanding HP (Spring)", player).place_locked_item(self.create_item("Gold Rupee"))
 
         if not self.options.cowsanity:
-            mw.get_location("Termina Log Bombable Grotto Left Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Termina Log Bombable Grotto Right Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Romani Ranch Barn Free Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Romani Ranch Barn Stables Front Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Romani Ranch Barn Stables Back Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Great Bay Ledge Grotto Left Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Great Bay Ledge Grotto Right Cow", player).place_locked_item(self.create_item("Milk"))
-            mw.get_location("Ikana Well Cow", player).place_locked_item(self.create_item("Milk"))
+            mw.get_location("Termina Log Bombable Grotto Left Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Termina Log Bombable Grotto Right Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Romani Ranch Barn Free Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Romani Ranch Barn Stables Front Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Romani Ranch Barn Stables Back Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Great Bay Ledge Grotto Left Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Great Bay Ledge Grotto Right Cow", player).place_locked_item(self.create_item("Bombs (10)"))
+            mw.get_location("Ikana Well Cow", player).place_locked_item(self.create_item("Bombs (10)"))
 
         if not self.options.scrubsanity:
             mw.get_location("Southern Swamp Deku Scrub Purchase Beans", player).place_locked_item(self.create_item("Deku Nuts (10)"))

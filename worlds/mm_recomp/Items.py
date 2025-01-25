@@ -505,8 +505,8 @@ item_data_table: Dict[str, MMRItemData] = {
         num_exist=12,
         can_create=lambda options: options.shopsanity.value == 2
     ),
-    "Milk": MMRItemData(
-        code=0x3469420000092,
+    "Bombs (10)": MMRItemData(
+        code=0x3469420000016,
         type=ItemClassification.filler,
         num_exist=8,
         can_create=lambda options: options.cowsanity.value != 0
