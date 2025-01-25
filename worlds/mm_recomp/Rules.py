@@ -128,6 +128,12 @@ def can_reach_scarecrow(state, player):
 def can_reach_seahorse(state, player):
     return state.can_reach("Fisherman's House", 'Region', player) and state.has("Zora Mask", player) and (state.has("Hookshot", player) or state.has("Goron Mask", player)) #and state.has("Pictograph Box", player)
 
+def can_purchase(state, player, price):
+    if price > 200:
+        return state.has("Progressive Wallet", player, 2)
+    elif price > 99:
+        return state.has("Progressive Wallet", player)
+    return True
 
 
 def get_baby_region_rules(player):
@@ -226,6 +232,8 @@ def get_baby_location_rules(player):
             lambda state: state.has("Stray Fairy (Clock Town)", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player),
         "North Clock Town Great Fairy Reward":
             lambda state: state.has("Stray Fairy (Clock Town)", player),
+        "Tingle Clock Town Map Purchase":
+            lambda state: baby_has_projectiles(state, player) and state.can_reach("Ikana Canyon", 'Region', player) and can_use_ice_arrows(state, player),
         "West Clock Town Swordsman Expert Course":
             lambda state: state.has("Progressive Sword", player),
         "West Clock Town Postman Counting":
@@ -264,6 +272,10 @@ def get_baby_location_rules(player):
 
         "Termina Stump Chest":
             lambda state: state.has("Hookshot", player) and baby_can_plant_beans(state, player),
+        "Termina Log Bombable Grotto Left Cow":
+            lambda state: baby_has_explosives(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
+        "Termina Log Bombable Grotto Right Cow":
+            lambda state: baby_has_explosives(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
         "Termina Underwater Chest":
             lambda state: state.has("Zora Mask", player),
         "Termina Peahat Grotto Chest":
@@ -280,8 +292,12 @@ def get_baby_location_rules(player):
             lambda state: state.can_reach("Bomber's Hideout Astral Observatory", 'Location', player) and state.has("Moon's Tear", player) and state.has("Progressive Wallet", player),
         "Milk Road Gorman Ranch Race":
             lambda state: state.has("Ocarina of Time", player) and state.has("Epona's Song", player),
+        "Tingle Romani Ranch Map Purchase":
+            lambda state: baby_has_projectiles(state, player) and state.can_reach("Twin Islands", 'Region', player),
         "Road to Swamp Tree HP":
             lambda state: baby_has_projectiles(state, player),
+        "Tingle Woodfall Map Purchase":
+            lambda state: baby_has_projectiles(state, player) and state.can_reach("Clock Town", 'Region', player),
         "Swamp Shooting Gallery 2120 Points":
             lambda state: state.has("Progressive Bow", player),
         "Swamp Shooting Gallery 2180 Points":
@@ -432,6 +448,8 @@ def get_baby_location_rules(player):
             # ~ lambda state: state.has("Bottle of Gold Dust", player) and state.can_reach("Mountain Village Smithy Day 1", 'Location', player),
             
             
+       "Tingle Snowhead Map Purchase":
+            lambda state: baby_has_projectiles(state, player) and state.can_reach("Southern Swamp", 'Region', player),
         "Twin Islands Ramp Grotto Chest":
             lambda state: baby_has_explosives(state, player) and (state.has("Goron Mask", player) and state.has("Hookshot", player)),
         "Twin Islands Hot Water Grotto Chest":
@@ -531,12 +549,24 @@ def get_baby_location_rules(player):
             lambda state: state.has("Progressive Wallet", player, 2) and state.has("Mask of Truth", player),
         "Romani Ranch Romani Game":
             lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
+        "Romani Ranch Barn Free Cow":
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
+        "Romani Ranch Barn Stables Front Cow":
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
+        "Romani Ranch Barn Stables Back Cow":
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
 
 
         "Great Bay Healing Zora":
             lambda state: can_play_song("Song of Healing", state, player),
         "Great Bay Scarecrow Ledge HP":
             lambda state: state.has("Hookshot", player) and baby_can_plant_beans(state, player),
+        "Great Bay Ledge Grotto Left Cow":
+            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
+        "Great Bay Ledge Grotto Right Cow":
+            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) and baby_has_bottle(state, player),
+        "Tingle Great Bay Map Purchase":
+            lambda state: baby_has_projectiles(state, player) and state.can_reach("Milk Road", 'Region', player),
         "Pinnacle Rock HP":
             lambda state: baby_can_reach_seahorse(state, player) and state.has("Progressive Magic", player) and baby_has_bottle(state, player),
         "Pinnacle Rock Upper Eel Chest":
@@ -744,6 +774,8 @@ def get_baby_location_rules(player):
             lambda state: can_play_song("Sonata of Awakening", state, player) and baby_can_smack_hard(state, player) and state.has("Progressive Bow", player),
         "Graveyard Day 1 Iron Knuckle Song":
             lambda state: state.has("Captain's Hat", player) and baby_can_smack_hard(state, player) and can_use_fire_arrows(state, player),
+        "Tingle Stone Tower Map Purchase":
+            lambda state: can_use_ice_arrows(state, player) and baby_has_projectiles(state, player) and state.can_reach("Great Bay", 'Region', player),
         # Does this account for Upper Ikana Canyon access?
         "Ikana Canyon Music Box Mummy":
             lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and state.has("Gibdo Mask", player) and state.has("Garo Mask", player) and can_play_song("Song of Healing", state, player) and can_play_song("Song of Storms", state, player) and baby_has_explosives(state, player) and state.has("Stone Mask", player),
@@ -777,7 +809,8 @@ def get_baby_location_rules(player):
             lambda state: baby_has_bottle(state, player, 3) and state.has("Progressive Wallet", player) and state.has("Mask of Scents", player) and can_use_lens(state, player),
         "Beneath the Well Final Chest":
             lambda state: can_use_light_arrows(state, player) and baby_has_bottle(state, player, 3) and baby_can_plant_beans(state, player),
-            
+        "Ikana Well Cow":
+            lambda state: baby_has_bottle(state, player) and baby_can_plant_beans(state, player) and state.can_reach("Twin Islands Hot Water Grotto Chest", 'Location', player) and can_use_light_arrows(state, player),
             
         "Ikana Castle Pillar Freestanding HP":
             lambda state: state.has("Deku Mask", player) and can_use_lens(state, player) and can_use_fire_arrows(state, player),
@@ -794,6 +827,8 @@ def get_baby_location_rules(player):
         # Stone Tower has 4 keys total
         "Stone Tower Temple Entrance Room Eye Switch Chest":
             lambda state: state.has("Progressive Bow", player),
+        "Stone Tower Temple Entrance Room Lower Chest":
+            lambda state: state.has("Small Key (Stone Tower)", player, 4) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and can_use_light_arrows(state, player) and can_use_ice_arrows(state, player) and state.has("Hookshot", player),
         "Stone Tower Temple Armos Room Back Chest":
             lambda state: can_use_light_arrows(state, player) and has_mirror_shield(state, player) and baby_has_explosives(state, player),
         "Stone Tower Temple Armos Room Upper Chest":
