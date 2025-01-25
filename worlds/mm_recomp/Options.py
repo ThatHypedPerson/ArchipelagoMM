@@ -135,7 +135,7 @@ class PermanentChateauRomani(DefaultOnToggle):
     display_name = "Permanent Chateau Romani"
 
 
-class ResetWithInvertedTime(Toggle):
+class StartWithInvertedTime(Toggle):
     """Choose whether time starts out inverted at Day 1, even after a reset."""
     display_name = "Reset With Inverted Time"
 
@@ -195,7 +195,7 @@ class MMROptions(PerGameCommonOptions):
     fairysanity: Fairysanity
     start_with_consumables: StartWithConsumables
     permanent_chateau_romani: PermanentChateauRomani
-    reset_with_inverted_time: ResetWithInvertedTime
+    start_with_inverted_time: StartWithInvertedTime
     receive_filled_wallets: ReceiveFilledWallets
     damage_multiplier: DamageMultiplier
     death_behavior: DeathBehavior
