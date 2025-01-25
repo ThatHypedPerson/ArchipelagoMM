@@ -8,6 +8,7 @@ from .Locations import MMRLocation, location_data_table, location_table, code_to
 from .Options import MMROptions
 from .Regions import region_data_table, get_exit
 from .Rules import *
+from .NormalRules import *
 
 
 class MMRWebWorld(WebWorld):
@@ -325,12 +326,17 @@ class MMRWorld(World):
         if (self.options.logic_difficulty == 4):
             return
 
-        region_rules = get_baby_region_rules(player)
+        if (self.options.logic_difficulty == 0):
+            region_rules = get_baby_region_rules(player)
+            location_rules = get_baby_location_rules(player)
+        if (self.options.logic_difficulty == 1):
+            region_rules = get_region_rules(player)
+            location_rules = get_location_rules(player)
+
         for entrance_name, rule in region_rules.items():
             entrance = mw.get_entrance(entrance_name, player)
             entrance.access_rule = rule
 
-        location_rules = get_baby_location_rules(player)
         for location in mw.get_locations(player):
             name = location.name
             if self.options.skullsanity.value == 2 and (name == "Swamp Spider House Reward" or name == "Ocean Spider House Reward"):

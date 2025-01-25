@@ -197,9 +197,9 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3469420090013
     ),
-    "Curiosity Shop Night 2 & 3 Thief Item": MMRLocationData(
+    "Curiosity Shop Night 3 Thief Stolen Item": MMRLocationData(
         region="Clock Town",
-        address=0x3469420090015
+        address=0x3469420090015    
     ),
     "Laundry Pool Stray Fairy (Clock Town)": MMRLocationData(
         region="Clock Town",
@@ -433,6 +433,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x3469420060704
     ),
+    "Termina Dodongo Grotto Chest": MMRLocationData(
+        region="Termina Field",
+        address=0x3469420060700
+    ),
     "Termina Log Bombable Grotto Left Cow": MMRLocationData(
         region="Termina Field",
         address=0x3469420BEEF14,
@@ -442,10 +446,6 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x3469420BEEF13,
         # can_create=lambda options: options.cowsanity.value
-    ),
-    "Termina Dodongo Grotto Chest": MMRLocationData(
-        region="Termina Field",
-        address=0x3469420060700
     ),
     "Termina Ikana Pillar Grotto Chest": MMRLocationData(
         region="Termina Field",
@@ -500,7 +500,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Southern Swamp",
         address=0x3469420000059
     ),
-    "Southern Swamp Mystery Woods Grotto Chest": MMRLocationData(
+    "Southern Swamp Mystery Woods Day 2 Grotto Chest": MMRLocationData(
         region="Southern Swamp",
         address=0x346942006071C
     ),
@@ -1021,6 +1021,18 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Gorman Brothers Track",
         address=0x3469420006792
     ),
+    "Romani Ranch Bremen Mask March Baby Cuccos": MMRLocationData(
+        region="Romani Ranch",
+        address=0x346942000007F
+    ),
+    "Romani Ranch Doggy Racetrack Rooftop Chest": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420064100
+    ),
+    "Romani Ranch Doggy Race": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420070117
+    ),
     "Romani Ranch Barn Free Cow": MMRLocationData(
         region="Romani Ranch",
         address=0x3469420BEEF10,
@@ -1035,18 +1047,6 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Romani Ranch",
         address=0x3469420BEEF12,
         # can_create=lambda options: options.cowsanity.value
-    ),
-    "Romani Ranch Grog": MMRLocationData(
-        region="Romani Ranch",
-        address=0x346942000007F
-    ),
-    "Romani Ranch Doggy Racetrack Rooftop Chest": MMRLocationData(
-        region="Romani Ranch",
-        address=0x3469420064100
-    ),
-    "Romani Ranch Doggy Race": MMRLocationData(
-        region="Romani Ranch",
-        address=0x3469420070117
     ),
     # ~ "Romani Ranch Helping Cremia": MMRLocationData(
         # ~ region="Romani Ranch",
@@ -1484,9 +1484,9 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Secret Shrine",
         address=0x346942006600A
     ),
-    "Secret Shrine Grotto Chest": MMRLocationData(
-        region="Secret Shrine",
-        address=0x3469420060714
+    "Ikana Canyon Grotto Chest": MMRLocationData(
+            region="Ikana Canyon",
+            address=0x3469420060714
     ),
     "Ikana Canyon Deku Scrub Purchase Blue Potion": MMRLocationData(
         region="Ikana Canyon",
@@ -1513,7 +1513,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Beneath the Well",
         address=0x3469420064B02
     ),
-    "Ikana Well Torch Chest": MMRLocationData(
+    "Ikana Well Rightside Torch Chest": MMRLocationData(
         region="Beneath the Well",
         address=0x3469420064B01
     ),
