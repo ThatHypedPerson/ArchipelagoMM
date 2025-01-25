@@ -68,7 +68,7 @@ class ShuffleBossRemains(Choice):
     anything: Any item can be given by any of the Boss Remains, and Boss Remains can be found anywhere in any world.
     bosses: Boss Remains are shuffled amongst themselves as the rewards for defeating bosses."""
     display_name = "Shuffle Boss Remains"
-    option_vanila = 0
+    option_vanilla = 0
     option_anywhere = 1
     option_bosses = 2
     default = 0
@@ -92,6 +92,29 @@ class Skullsanity(Choice):
     default = 0
 
 
+class Shopsanity(Choice):
+    """Choose whether shops and their items are shuffled into the pool.
+    This includes Trading Post, Bomb Shop, Goron Shop, and Zora Shop, along with the Gorman Ranch and Milk Bar purchases.
+    
+    vanilla: Shop items are not shuffled.
+    enabled: Every item in shops are shuffled, with alternate shops sharing the same items.
+    advanced: Every single item in shops are shuffled, including the alternate Night Trading Post and Spring Goron Shop. Also adds an extra Heart Piece to Spring Goron Village."""
+    display_name = "Shopsanity"
+    option_vanilla = 0
+    option_enabled = 1
+    option_advanced = 2
+    default = 0
+
+
+class Scrubsanity(Toggle):
+    """Choose whether to shuffle Business Scrub purchases."""
+    display_name = "Shuffle Business Scrub Purchases"
+
+class Cowsanity(Toggle):
+    """Choose whether to shuffle Cows."""
+    display_name = "Shuffle Cows"
+
+
 class ShuffleGreatFairyRewards(Toggle):
     """Choose whether to shuffle Great Fairy rewards."""
     display_name = "Shuffle Great Fairy Rewards"
@@ -112,7 +135,7 @@ class PermanentChateauRomani(DefaultOnToggle):
     display_name = "Permanent Chateau Romani"
 
 
-class ResetWithInvertedTime(Toggle):
+class StartWithInvertedTime(Toggle):
     """Choose whether time starts out inverted at Day 1, even after a reset."""
     display_name = "Reset With Inverted Time"
 
@@ -120,6 +143,29 @@ class ResetWithInvertedTime(Toggle):
 class ReceiveFilledWallets(DefaultOnToggle):
     """Choose whether you receive wallets pre-filled (not including the starting wallet)."""
     display_name = "Receive Filled Wallets"
+
+
+class DamageMultiplier(Choice):
+    """Adjust the amount of damage taken."""
+    display_name = "Damage Multiplier"
+    option_half = 0
+    option_normal = 1
+    option_double = 2
+    option_quad = 3
+    option_ohko = 4
+    default = 1
+
+class DeathBehavior(Choice):
+    """Change what happens when you die.
+    
+    vanilla: The normal death cutscene plays when you die.
+    fast: The death cutscene is massively sped up.
+    moon_crash: Triggers a moon crash and restarts the current cycle."""
+    display_name = "Death Behavior"
+    option_vanilla = 0
+    option_fast = 1
+    option_moon_crash = 2
+    default = 0
 
 
 class LinkTunicColor(OptionList):
@@ -142,11 +188,16 @@ class MMROptions(PerGameCommonOptions):
     shuffle_boss_remains: ShuffleBossRemains
     shuffle_swamphouse_reward: ShuffleSwamphouseReward
     skullsanity: Skullsanity
+    shopsanity: Shopsanity
+    scrubsanity: Scrubsanity
+    cowsanity: Cowsanity
     shuffle_great_fairy_rewards: ShuffleGreatFairyRewards
     fairysanity: Fairysanity
     start_with_consumables: StartWithConsumables
     permanent_chateau_romani: PermanentChateauRomani
-    reset_with_inverted_time: ResetWithInvertedTime
+    start_with_inverted_time: StartWithInvertedTime
     receive_filled_wallets: ReceiveFilledWallets
+    damage_multiplier: DamageMultiplier
+    death_behavior: DeathBehavior
     death_link: DeathLink
     link_tunic_color: LinkTunicColor

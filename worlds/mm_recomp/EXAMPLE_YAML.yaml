@@ -133,6 +133,27 @@ Majora's Mask Recompiled:
     anything: 0
     ignore: 0
 
+  shopsanity:
+    # Choose whether shops and their items are shuffled into the pool.
+    # This includes Trading Post, Bomb Shop, Goron Shop, and Zora Shop, along with the Gorman Ranch and Milk Bar purchases.
+    #
+    # vanilla: Shop items are not shuffled.
+    # enabled: Every item in shops are shuffled, with alternate shops sharing the same items.
+    # advanced: Every single item in shops are shuffled, including the alternate Night Trading Post and Spring Goron Shop. Also adds an extra Heart Piece to Spring Goron Village.
+    vanilla: 50
+    enabled: 0
+    advanced: 0
+
+  scrubsanity:
+    # Choose whether to shuffle Business Scrub purchases.
+    'false': 50
+    'true': 0
+
+  cowsanity:
+    # Choose whether to shuffle Cows.
+    'false': 50
+    'true': 0
+
   shuffle_great_fairy_rewards:
     # Choose whether to shuffle Great Fairy rewards.
     'false': 50
@@ -153,8 +174,8 @@ Majora's Mask Recompiled:
     'false': 0
     'true': 50
 
-  reset_with_inverted_time:
-    # Choose whether time starts out inverted at Day 1, even after a reset.
+  start_with_inverted_time:
+    # Choose whether time starts out inverted at Day 1.
     'false': 50
     'true': 0
 
@@ -162,6 +183,24 @@ Majora's Mask Recompiled:
     # Choose whether you receive wallets pre-filled (not including the starting wallet).
     'false': 0
     'true': 50
+
+  damage_multiplier:
+    # Adjust the amount of damage taken.
+    half: 0
+    normal: 50
+    double: 0
+    quad: 0
+    ohko: 0
+  
+  death_behavior:
+    # Change what happens when you die.
+    #
+    # vanilla: The normal death cutscene plays when you die.
+    # fast: The death cutscene is massively sped up.
+    # moon_crash: Triggers a moon crash and restarts the current cycle.
+    vanilla: 50
+    fast: 0
+    moon_crash: 0
 
   link_tunic_color:
     [30, 105, 27]

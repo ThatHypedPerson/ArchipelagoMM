@@ -483,8 +483,33 @@ item_data_table: Dict[str, MMRItemData] = {
     "Red Rupee": MMRItemData(
         code=0x3469420000004,
         type=ItemClassification.filler,
-        num_exist=37 # lol
+        num_exist=34
         # ~ num_exist=29
+    ),
+    # this is horrible, please find something better
+    "Deku Nuts (10)": MMRItemData(
+        code=0x346942000002A,
+        type=ItemClassification.filler,
+        num_exist=4,
+        can_create=lambda options: options.scrubsanity.value != 0
+    ),
+    "Deku Nuts (1)": MMRItemData(
+        code=0x3469420000028,
+        type=ItemClassification.filler,
+        num_exist=21,
+        can_create=lambda options: options.shopsanity.value != 0
+    ),
+    "Gold Rupee": MMRItemData(
+        code=0x3469420000007,
+        type=ItemClassification.filler,
+        num_exist=12,
+        can_create=lambda options: options.shopsanity.value == 2
+    ),
+    "Bombs (10)": MMRItemData(
+        code=0x3469420000016,
+        type=ItemClassification.filler,
+        num_exist=8,
+        can_create=lambda options: options.cowsanity.value != 0
     ),
     "Purple Rupee": MMRItemData(
         code=0x3469420000005,
