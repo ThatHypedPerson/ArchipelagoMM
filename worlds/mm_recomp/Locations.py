@@ -1485,8 +1485,8 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x346942006600A
     ),
     "Ikana Canyon Grotto Chest": MMRLocationData(
-            region="Ikana Canyon",
-            address=0x3469420060714
+        region="Ikana Canyon",
+        address=0x3469420060714
     ),
     "Ikana Canyon Deku Scrub Purchase Blue Potion": MMRLocationData(
         region="Ikana Canyon",
