@@ -383,11 +383,13 @@ location_data_table: Dict[str, MMRLocationData] = {
     ),
     "East Clock Town Milk Bar Milk Purchase": MMRLocationData(
         region="Clock Town",
-        address=0x3469420026392
+        address=0x3469420026392,
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "East Clock Town Milk Bar Chateau Romani Purchase": MMRLocationData(
         region="Clock Town",
-        address=0x3469420000091
+        address=0x3469420000091,
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Tingle Clock Town Map Purchase": MMRLocationData(
         region="Clock Town",
@@ -1019,7 +1021,8 @@ location_data_table: Dict[str, MMRLocationData] = {
     ),
     "Milk Road Gorman Ranch Purchase": MMRLocationData(
         region="Gorman Brothers Track",
-        address=0x3469420006792
+        address=0x3469420006792,
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Romani Ranch Bremen Mask March Baby Cuccos": MMRLocationData(
         region="Romani Ranch",
