@@ -486,7 +486,7 @@ item_data_table: Dict[str, MMRItemData] = {
         num_exist=34
         # ~ num_exist=29
     ),
-    # this is horrible, please find something better
+    # TODO: change the following 4 to actual items instead of random filler
     "Deku Nuts (10)": MMRItemData(
         code=0x346942000002A,
         type=ItemClassification.filler,

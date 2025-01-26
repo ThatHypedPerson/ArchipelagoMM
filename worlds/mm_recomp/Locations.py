@@ -96,102 +96,102 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Clock Town Trading Post Shop Item 1": MMRLocationData(
         region="Clock Town",
         address=0x346942009000A,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 2": MMRLocationData(
         region="Clock Town",
         address=0x3469420090005,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 3": MMRLocationData(
         region="Clock Town",
         address=0x3469420090006,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 4": MMRLocationData(
         region="Clock Town",
         address=0x3469420090003,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 5": MMRLocationData(
         region="Clock Town",
         address=0x3469420090007,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 6": MMRLocationData(
         region="Clock Town",
         address=0x3469420090008,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 7": MMRLocationData(
         region="Clock Town",
         address=0x3469420090009,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop Item 8": MMRLocationData(
         region="Clock Town",
         address=0x3469420090004,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Trading Post Shop (Night) Item 1": MMRLocationData(
         region="Clock Town",
         address=0x3469420090012,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 2": MMRLocationData(
         region="Clock Town",
         address=0x346942009000E,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 3": MMRLocationData(
         region="Clock Town",
         address=0x3469420090011,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 4": MMRLocationData(
         region="Clock Town",
         address=0x346942009000B,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 5": MMRLocationData(
         region="Clock Town",
         address=0x3469420090010,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 6": MMRLocationData(
         region="Clock Town",
         address=0x346942009000C,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 7": MMRLocationData(
         region="Clock Town",
         address=0x346942009000F,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Trading Post Shop (Night) Item 8": MMRLocationData(
         region="Clock Town",
         address=0x346942009000D,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Clock Town Bomb Shop Item 1": MMRLocationData(
         region="Clock Town",
         address=0x346942009001A,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Bomb Shop Item 2": MMRLocationData(
         region="Clock Town",
         address=0x3469420090019,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Clock Town Bomb Shop Item 3": MMRLocationData(
         region="Clock Town",
         address=0x3469420090017,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Bomb Bag Purchase": MMRLocationData(
         region="Clock Town",
         address=0x3469420090018,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Curiosity Shop Night 3 (Stop Thief)": MMRLocationData(
         region="Clock Town",
@@ -436,12 +436,12 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Termina Log Bombable Grotto Left Cow": MMRLocationData(
         region="Termina Field",
         address=0x3469420BEEF14,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Termina Log Bombable Grotto Right Cow": MMRLocationData(
         region="Termina Field",
         address=0x3469420BEEF13,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Termina Dodongo Grotto Chest": MMRLocationData(
         region="Termina Field",
@@ -490,7 +490,7 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Southern Swamp Deku Scrub Purchase Beans": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420090135,
-        # can_create=lambda options: options.scrubsanity.value
+        can_create=lambda options: options.scrubsanity.value
     ),
     "Southern Swamp Deku Trade Freestanding HP": MMRLocationData(
         region="Southern Swamp",
@@ -511,17 +511,17 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Southern Swamp Witch Shop Item 1": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420090002,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Southern Swamp Witch Shop Item 2": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420090001,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Southern Swamp Witch Shop Item 3": MMRLocationData(
         region="Southern Swamp",
         address=0x3469420090000,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Swamp Spider House First Room Pot Near Entrance Token": MMRLocationData(
         region="Swamp Spider House",
@@ -860,37 +860,37 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Goron Village Shop Item 1": MMRLocationData(
         region="Goron Village",
         address=0x346942009001E,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Goron Village Shop Item 2": MMRLocationData(
         region="Goron Village",
         address=0x346942009001F,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Goron Village Shop Item 3": MMRLocationData(
         region="Goron Village",
         address=0x3469420090020,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Goron Village Shop (Spring) Item 1": MMRLocationData(
         region="Goron Village",
         address=0x3469420090021,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Goron Village Shop (Spring) Item 2": MMRLocationData(
         region="Goron Village",
         address=0x3469420090022,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Goron Village Shop (Spring) Item 3": MMRLocationData(
         region="Goron Village",
         address=0x3469420090023,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),    
     "Goron Village Deku Scrub Purchase Bomb Bag": MMRLocationData(
         region="Goron Village",
         address=0x346942009011D,
-        # can_create=lambda options: options.scrubsanity.value
+        can_create=lambda options: options.scrubsanity.value
     ),
     "Goron Village Deku Trade": MMRLocationData(
         region="Goron Village",
@@ -903,7 +903,7 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Goron Village Deku Trade Freestanding HP (Spring)": MMRLocationData(
         region="Goron Village",
         address=0x346942005481E,
-        # can_create=lambda options: options.shopsanity.value == 2
+        can_create=lambda options: options.shopsanity.value == 2
     ),
     "Path to Snowhead Grotto Chest": MMRLocationData(
         region="Path to Snowhead",
@@ -1024,17 +1024,17 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Romani Ranch Barn Free Cow": MMRLocationData(
         region="Romani Ranch",
         address=0x3469420BEEF10,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Romani Ranch Barn Stables Front Cow": MMRLocationData(
         region="Romani Ranch",
         address=0x3469420BEEF11,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Romani Ranch Barn Stables Back Cow": MMRLocationData(
         region="Romani Ranch",
         address=0x3469420BEEF12,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Romani Ranch Grog": MMRLocationData(
         region="Romani Ranch",
@@ -1063,12 +1063,12 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Great Bay Ledge Grotto Left Cow": MMRLocationData(
         region="Great Bay",
         address=0x3469420BEEF16,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Great Bay Ledge Grotto Right Cow": MMRLocationData(
         region="Great Bay",
         address=0x3469420BEEF15,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Great Bay Scarecrow Ledge HP": MMRLocationData(
         region="Great Bay",
@@ -1101,22 +1101,22 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Zora Hall Shop 1": MMRLocationData(
         region="Zora Hall",
         address=0x346942009001B,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Zora Hall Shop 2": MMRLocationData(
         region="Zora Hall",
         address=0x346942009001C,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Zora Hall Shop 3": MMRLocationData(
         region="Zora Hall",
         address=0x346942009001D,
-        # can_create=lambda options: options.shopsanity.value != 0
+        can_create=lambda options: options.shopsanity.value != 0
     ),
     "Zora Hall Deku Scrub Purchase Green Potion": MMRLocationData(
         region="Zora Hall",
         address=0x346942009015C,
-        # can_create=lambda options: options.scrubsanity.value
+        can_create=lambda options: options.scrubsanity.value
     ),
     "Zora Hall Goron Scrub Trade": MMRLocationData(
         region="Zora Hall",
@@ -1491,7 +1491,7 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Ikana Canyon Deku Scrub Purchase Blue Potion": MMRLocationData(
         region="Ikana Canyon",
         address=0x346942009015D,
-        # can_create=lambda options: options.scrubsanity.value
+        can_create=lambda options: options.scrubsanity.value
     ),
     "Ikana Canyon Zora Trade Freestanding HP": MMRLocationData(
         region="Ikana Canyon",
@@ -1520,7 +1520,7 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Ikana Well Cow": MMRLocationData(
         region="Beneath the Well",
         address=0x3469420BEEF17,
-        # can_create=lambda options: options.cowsanity.value
+        can_create=lambda options: options.cowsanity.value
     ),
     "Ikana Castle Pillar Freestanding HP": MMRLocationData(
         region="Ikana Castle",
