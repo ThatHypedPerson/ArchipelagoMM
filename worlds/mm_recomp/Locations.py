@@ -1051,10 +1051,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420BEEF12,
         can_create=lambda options: options.cowsanity.value
     ),
-    # ~ "Romani Ranch Helping Cremia": MMRLocationData(
-        # ~ region="Romani Ranch",
-        # ~ address=0x3469420000082
-    # ~ ),
+    "Romani Ranch Romani Game": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420000060
+    ),
+    "Romani Ranch Helping Cremia": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420000082
+    ),
     "Great Bay Healing Zora": MMRLocationData(
         region="Great Bay",
         address=0x346942000007A
