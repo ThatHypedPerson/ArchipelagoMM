@@ -483,7 +483,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Red Rupee": MMRItemData(
         code=0x3469420000004,
         type=ItemClassification.filler,
-        num_exist=33
+        num_exist=36
         # ~ num_exist=29
     ),
     # TODO: change the following 4 to actual items instead of random filler
@@ -505,8 +505,8 @@ item_data_table: Dict[str, MMRItemData] = {
         num_exist=12,
         can_create=lambda options: options.shopsanity.value == 2
     ),
-    "Bombs (10)": MMRItemData(
-        code=0x3469420000016,
+    "Deku Nuts (5)": MMRItemData(
+        code=0x3469420000029,
         type=ItemClassification.filler,
         num_exist=8,
         can_create=lambda options: options.cowsanity.value != 0

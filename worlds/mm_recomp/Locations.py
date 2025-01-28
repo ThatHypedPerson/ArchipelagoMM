@@ -827,10 +827,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Mountain Village",
         address=0x3469420000079
     ),
-    # ~ "Mountain Village Feeding Freezing Goron": MMRLocationData(
-        # ~ region="Mountain Village",
-        # ~ address=0x3469420000088
-    # ~ ),
+    "Mountain Village Feeding Freezing Goron": MMRLocationData(
+        region="Mountain Village",
+        address=0x3469420000088
+    ),
     "Twin Islands Spring Underwater Cave Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420065E00
@@ -842,6 +842,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Twin Islands Ramp Grotto Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420060719
+    ),
+    "Twin Islands Goron Elder Request": MMRLocationData(
+        region="Twin Islands",
+        address=0x34694200001AD
     ),
     "Twin Islands Hot Water Grotto Chest": MMRLocationData(
         region="Twin Islands",
@@ -858,6 +862,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Goron Village Lens Cave Center Chest": MMRLocationData(
         region="Goron Village",
         address=0x3469420060701
+    ),
+    "Goron Village Baby Goron Lullaby": MMRLocationData(
+        region="Goron Village",
+        address=0x34694200000AD
     ),
     "Goron Village Shop Item 1": MMRLocationData(
         region="Goron Village",

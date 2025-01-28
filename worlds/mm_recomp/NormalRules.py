@@ -460,8 +460,8 @@ def get_location_rules(player):
             
         "Mountain Village Invisible Ladder Cave Healing Invisible Goron":
             lambda state: can_use_lens(state, player) and can_play_song("Song of Healing", state, player),
-        #"Mountain Village Feeding Freezing Goron":
-           # lambda state: state.has("Goron Mask", player),
+        "Mountain Village Feeding Freezing Goron":
+            lambda state: state.has("Goron Mask", player),
         "Mountain Village Spring Waterfall Chest":
             lambda state: can_clear_snowhead(state, player),
         "Mountain Village Spring Ramp Grotto":
@@ -477,6 +477,8 @@ def get_location_rules(player):
             lambda state: has_projectiles(state, player) and state.can_reach("Southern Swamp", 'Region', player),    
         "Twin Islands Ramp Grotto Chest":
             lambda state: (has_explosives(state, player) and (state.has("Goron Mask", player) or state.has("Hookshot", player))),
+        "Twin Islands Goron Elder Request":
+            lambda state: state.has("Goron Mask", player) and ((state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and has_bottle(state, player)) or can_use_fire_arrows(state, player)),
         "Twin Islands Hot Water Grotto Chest":
             lambda state: (has_explosives(state, player) and can_use_fire_arrows(state, player)) or (state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and state.has("Goron Mask", player)) or (can_clear_snowhead(state, player) or state.can_reach("Ikana Well Invisible Chest", 'Location', player)),
         "Twin Islands Spring Underwater Cave Chest":
@@ -485,8 +487,6 @@ def get_location_rules(player):
             lambda state: state.has("Zora Mask", player) and can_clear_snowhead(state, player),
         "Goron Racetrack Bottle Prize":
             lambda state: state.has("Powder Keg", player) and can_clear_snowhead(state, player),
-       # "Goron Song":
-          #  lambda state: state.has("Goron Mask", player) and state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and has_bottle(state, player) or (can_use_fire_arrows(state, player)),
             
             
         "Goron Village Lens Cave Rock Chest":
@@ -503,6 +503,8 @@ def get_location_rules(player):
             lambda state: state.can_reach("Goron Village Deku Trade", 'Location', player),
         "Powder Keg Goron Reward":
             lambda state: can_clear_snowhead(state, player) or can_use_fire_arrows(state, player) and state.has("Goron Mask", player),
+        "Goron Village Baby Goron Lullaby":
+            lambda state: state.has("Goron Mask", player) and can_play_song("Goron Lullaby", state, player),
         "Goron Village Shop Item 1":
             lambda state: True or state.has("Goron Mask", player),
         "Goron Village Shop Item 2":
