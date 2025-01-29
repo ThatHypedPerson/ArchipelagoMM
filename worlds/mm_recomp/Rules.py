@@ -26,7 +26,7 @@ def baby_has_paper(state, player):
     return state.has("Land Title Deed", player) and state.has("Swamp Title Deed", player) and state.has("Mountain Title Deed", player) or state.has("Ocean Title Deed", player) or state.has("Letter to Kafei", player) or state.has("Priority Mail", player)
 
 def baby_has_bottle(state, player):
-    return state.has("Bottle of Red Potion", player) and state.has("Bottle of Chateau Romani", player)
+    return state.has("Bottle of Red Potion", player) and state.has("Bottle of Chateau Romani", player) and state.has("Bottle of Milk", player)
 
 def baby_can_plant_beans(state, player):
     return can_get_magic_beans(state, player) and baby_has_bottle(state, player) and can_play_song("Song of Storms", state, player)
@@ -91,6 +91,8 @@ def has_bottle(state, player, need_count=1):
     if state.has("Bottle", player, 2):
         bottle_count += 2
     elif state.has("Bottle", player):
+        bottle_count += 1
+    if state.has("Bottle of Milk", player):
         bottle_count += 1
     if state.has("Bottle of Chateau Romani", player):
         bottle_count += 1
@@ -501,7 +503,7 @@ def get_baby_location_rules(player):
             
             
         "Tour Witch Target Shooting":
-            lambda state: can_clear_woodfall(state, player) and state.has("Bottle of Red Potion", player) and state.has("Bottle of Chateau Romani", player) and state.has("Progressive Bow", player),
+            lambda state: can_clear_woodfall(state, player) and state.has("Bottle of Red Potion", player) and state.has("Bottle of Chateau Romani", player) and state.has("Bottle of Milk", player) and state.has("Progressive Bow", player),
             
             
         "Mountain Village Invisible Ladder Cave Healing Invisible Goron":
@@ -635,6 +637,8 @@ def get_baby_location_rules(player):
         "Romani Ranch Doggy Race":
             lambda state: state.has("Progressive Wallet", player, 2) and state.has("Mask of Truth", player),
         "Romani Ranch Romani Game":
+            lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
+        "Romani Ranch Defended Against Aliens":
             lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
 
 

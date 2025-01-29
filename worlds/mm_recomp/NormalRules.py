@@ -43,6 +43,8 @@ def has_bottle(state, player, need_count=1):
         bottle_count += 2
     elif state.has("Bottle", player):
         bottle_count += 1
+    if state.has("Bottle of Milk", player):
+        bottle_count += 1
     if state.has("Bottle of Chateau Romani", player):
         bottle_count += 1
     if state.has("Bottle of Red Potion", player):
@@ -455,7 +457,7 @@ def get_location_rules(player):
             
             
         "Tour Witch Target Shooting":
-            lambda state: (can_clear_woodfall(state, player) and (state.has("Bottle of Red Potion", player) or state.has("Bottle of Chateau Romani", player)) and state.has("Progressive Bow", player)),
+            lambda state: (can_clear_woodfall(state, player) and (state.has("Bottle of Red Potion", player) or state.has("Bottle of Chateau Romani", player) or state.has("Bottle of Milk", player)) and state.has("Progressive Bow", player)),
             
             
         "Mountain Village Invisible Ladder Cave Healing Invisible Goron":
@@ -591,6 +593,8 @@ def get_location_rules(player):
         "Romani Ranch Doggy Race":
             lambda state: state.has("Mask of Truth", player),
         "Romani Ranch Romani Game":
+            lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
+        "Romani Ranch Defended Against Aliens":
             lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player),
         "Romani Ranch Barn Free Cow":
             lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player),
