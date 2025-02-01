@@ -623,7 +623,7 @@ def get_location_rules(player):
         # ~ maybe require 3 bottles for eggs
        # "Zora Egg Delivery Song":
            # lambda state: can_reach_seahorse(state, player) and has_bottle(state, player, 3) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
-        "Fisherman Island Game HP":
+        "Great Bay (Cleared) Fisherman Island Game HP":
             lambda state: can_clear_greatbay(state, player),
         
             
@@ -833,6 +833,8 @@ def get_location_rules(player):
 
         "Tingle Stone Tower Map Purchase":
             lambda state: has_projectiles(state, player) and state.can_reach("Great Bay", 'Region', player),
+        "Ikana Canyon Spirit House":
+            lambda state: can_use_ice_arrows(state, player) and (state.has("Progressive Bow", player) or state.has("Hookshot", player)),
         "Ikana Canyon Music Box Mummy":
             lambda state: can_use_ice_arrows(state, player) and can_play_song("Song of Healing", state, player) and can_play_song("Song of Storms", state, player),
         "Ikana Canyon Deku Scrub Purchase Blue Potion":

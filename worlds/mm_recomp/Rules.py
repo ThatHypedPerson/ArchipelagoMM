@@ -658,7 +658,7 @@ def get_baby_location_rules(player):
         "Zora Baby Egg Delivery Song":
             lambda state: baby_can_reach_seahorse(state, player) and state.has("Progressive Magic", player) and baby_has_bottle(state,
             player, 2) and baby_has_hard_projectiles(state, player) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
-        "Fisherman Island Game HP":
+        "Great Bay (Cleared) Fisherman Island Game HP":
             lambda state: can_clear_greatbay(state, player),
         
             
@@ -866,6 +866,8 @@ def get_baby_location_rules(player):
             lambda state: state.has("Captain's Hat", player) and baby_can_smack_hard(state, player) and can_use_fire_arrows(state, player),
         "Tingle Stone Tower Map Purchase":
             lambda state: can_use_ice_arrows(state, player) and baby_has_projectiles(state, player) and state.can_reach("Great Bay", 'Region', player),
+        "Ikana Canyon Spirit House":
+            lambda state: can_use_ice_arrows(state, player) and baby_has_projectiles(state, player) and state.has("Progressive Shield", player) and baby_can_smack(state, player),
         # Does this account for Upper Ikana Canyon access?
         "Ikana Canyon Music Box Mummy":
             lambda state: can_use_ice_arrows(state, player) and state.has("Gibdo Mask", player) and state.has("Garo Mask", player) and can_play_song("Song of Healing", state, player) and can_play_song("Song of Storms", state, player) and baby_has_explosives(state, player) and state.has("Stone Mask", player),

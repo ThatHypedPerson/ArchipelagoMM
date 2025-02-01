@@ -1093,6 +1093,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay",
         address=0x3469420053705
     ),
+    "Great Bay (Cleared) Fisherman Island Game HP": MMRLocationData(
+        region="Great Bay",
+        address=0x3469420070292
+    ),
     "Zora Cape Underwater Like-Like HP": MMRLocationData(
         region="Zora Cape",
         address=0x3469420053807
@@ -1519,6 +1523,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Ikana Canyon Music Box Mummy": MMRLocationData(
         region="Ikana Canyon",
         address=0x3469420000087
+    ),
+    "Ikana Canyon Spirit House": MMRLocationData(
+        region="Ikana Canyon",
+        address=0x34694200701DE
     ),
     "Stone Tower Great Fairy Reward": MMRLocationData(
         region="Ikana Canyon",
