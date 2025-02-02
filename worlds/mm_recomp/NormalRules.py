@@ -714,7 +714,7 @@ def get_location_rules(player):
         "Pirates' Fortress Hub Upper Chest":
             lambda state: state.has("Hookshot", player),
         "Pirates' Fortress Leader's Room Chest":
-            lambda state: (state.has("Hookshot", player) or state.has("Goron Mask", player) and state.has("Progressive Bow", player)) or (state.has("Hookshot", player) or state.has("Goron Mask", player) and state.has("Deku Mask", player) and state.has("Progressive Magic", player)),
+            lambda state: (state.has("Hookshot", player) or state.has("Goron Mask", player)) and (state.has("Progressive Bow", player) or (state.has("Deku Mask", player) and state.has("Progressive Magic", player))),
         "Pirates' Fortress Near Egg Chest":
             lambda state: state.has("Hookshot", player) and can_smack_hard(state, player),
         "Pirates' Fortress Pirates Surrounding Chest":
