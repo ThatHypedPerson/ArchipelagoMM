@@ -125,7 +125,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Song of Soaring": MMRItemData(
         code=0x346942004006A,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.start_with_soaring.value == 0
     ),
     "Song of Storms": MMRItemData(
         code=0x346942004006B,
@@ -315,32 +316,32 @@ item_data_table: Dict[str, MMRItemData] = {
     "Clock Town Map": MMRItemData(
         code=0x34694200000B4,
         type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
+        can_create=lambda options: options.shuffle_regional_maps.value != 1
     ),
     "Woodfall Map": MMRItemData(
         code=0x34694200000B5,
         type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
+        can_create=lambda options: options.shuffle_regional_maps.value != 1
     ),
     "Snowhead Map": MMRItemData(
         code=0x34694200000B6,
         type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
+        can_create=lambda options: options.shuffle_regional_maps.value != 1
     ),
     "Romani Ranch Map": MMRItemData(
         code=0x34694200000B7,
         type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
+        can_create=lambda options: options.shuffle_regional_maps.value != 1
     ),
     "Great Bay Map": MMRItemData(
         code=0x34694200000B8,
         type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
+        can_create=lambda options: options.shuffle_regional_maps.value != 1
     ),
     "Stone Tower Map": MMRItemData(
         code=0x34694200000B9,
         type=ItemClassification.useful,
-        can_create=lambda options: options.shuffle_regional_maps.value
+        can_create=lambda options: options.shuffle_regional_maps.value != 1
     ),
     "Stray Fairy (Woodfall)": MMRItemData(
         code=0x3469420010000,

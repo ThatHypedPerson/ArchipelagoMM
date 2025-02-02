@@ -68,6 +68,7 @@ class MMRWorld(World):
             
         if self.options.start_with_soaring.value:
             mw.push_precollected(self.create_item("Song of Soaring"))
+            self.create_and_add_filler_items();
 
         if self.options.shuffle_regional_maps.value == 1:
             mw.push_precollected(self.create_item("Clock Town Map"))
@@ -76,6 +77,7 @@ class MMRWorld(World):
             mw.push_precollected(self.create_item("Romani Ranch Map"))
             mw.push_precollected(self.create_item("Great Bay Map"))
             mw.push_precollected(self.create_item("Stone Tower Map"))
+            self.create_and_add_filler_items(6);
             
         shp = self.options.starting_hearts.value
         if self.options.starting_hearts_are_containers_or_pieces.value == 0:
@@ -259,8 +261,15 @@ class MMRWorld(World):
         # ~ mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
         # ~ mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
 
+    def create_and_add_filler_items(self, count: int = 1):
+        for i in range(count):
+            self.multiworld.itempool.append(self.create_item(self.get_filler_item_name()))
+
     def get_filler_item_name(self) -> str:
-        return "Blue Rupee"
+        filler_items = ["Blue Rupee", "Red Rupee", "Purple Rupee", "Silver Rupee", "Gold Rupee"]
+        return self.random.choice(filler_items)
+        # filler_weights = (50, 25, 10, 5, 1)
+        # return self.random.choices(filler_items, weights=filler_weights)[0]
 
     def set_rules(self) -> None:
         player = self.player
