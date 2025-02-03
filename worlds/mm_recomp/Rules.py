@@ -658,6 +658,8 @@ def get_baby_location_rules(player):
         "Zora Baby Egg Delivery Song":
             lambda state: baby_can_reach_seahorse(state, player) and state.has("Progressive Magic", player) and baby_has_bottle(state,
             player, 2) and baby_has_hard_projectiles(state, player) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
+        "Great Bay Marine Research Lab Feeding Fish":
+            lambda state: baby_has_bottle(state, player) and state.has("Zora Mask", player),
         "Great Bay (Cleared) Fisherman Island Game HP":
             lambda state: can_clear_greatbay(state, player),
         

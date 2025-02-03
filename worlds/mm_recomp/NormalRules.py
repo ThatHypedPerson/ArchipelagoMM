@@ -623,6 +623,8 @@ def get_location_rules(player):
         # ~ maybe require 3 bottles for eggs
        # "Zora Egg Delivery Song":
            # lambda state: can_reach_seahorse(state, player) and has_bottle(state, player, 3) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
+        "Great Bay Marine Research Lab Feeding Fish":
+            lambda state: has_bottle(state, player),
         "Great Bay (Cleared) Fisherman Island Game HP":
             lambda state: can_clear_greatbay(state, player),
         

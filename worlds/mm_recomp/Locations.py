@@ -1079,6 +1079,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay",
         address=0x3469420060717
     ),
+    "Great Bay Marine Research Lab Feeding Fish": MMRLocationData(
+        region="Great Bay",
+        address=0x34694200701D9
+    ),
     "Great Bay Ledge Grotto Left Cow": MMRLocationData(
         region="Great Bay",
         address=0x3469420BEEF16,
