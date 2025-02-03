@@ -1530,7 +1530,7 @@ location_data_table: Dict[str, MMRLocationData] = {
     ),
     "Stone Tower Great Fairy Reward": MMRLocationData(
         region="Ikana Canyon",
-        address=0x3469420000010
+        address=0x3469420030004
     ),
     "Ikana Well Final Chest": MMRLocationData(
         region="Beneath the Well",
