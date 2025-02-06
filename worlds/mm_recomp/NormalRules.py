@@ -829,8 +829,8 @@ def get_location_rules(player):
             lambda state: (state.has("Captain's Hat", player) and state.has("Progressive Bow", player)) or (state.has("Captain's Hat", player) and state.has("Zora Mask", player)),
         "Graveyard Sonata To Wake Sleeping Skeleton Chest":
             lambda state: can_play_song("Sonata of Awakening", state, player) and can_smack_hard(state, player),
-       #"Graveyard Day 1 Iron Knuckle Song":
-           #lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player),
+        "Graveyard Day 1 Iron Knuckle Song":
+            lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player),
 
 
         "Tingle Stone Tower Map Purchase":
