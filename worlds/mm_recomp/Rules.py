@@ -509,7 +509,7 @@ def get_baby_location_rules(player):
         "Mountain Village Invisible Ladder Cave Healing Invisible Goron":
             lambda state: can_use_lens(state, player) and can_play_song("Song of Healing", state, player),
         "Mountain Village Feeding Freezing Goron":
-            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and can_play_song("Goron Lullaby", state, player) and can_use_fire_arrows(player, state),
+            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and can_play_song("Goron Lullaby", state, player) and can_use_fire_arrows(state, player),
         "Mountain Village Spring Waterfall Chest":
             lambda state: can_clear_snowhead(state, player),
         "Mountain Village Spring Ramp Grotto":
@@ -655,7 +655,7 @@ def get_baby_location_rules(player):
         "Pinnacle Rock Lower Eel Chest":
             lambda state: baby_can_reach_seahorse(state, player) and state.has("Progressive Magic", player) and baby_has_bottle(state, player),
         # ~ maybe require 3 bottles for eggs
-        "Zora Baby Egg Delivery Song":
+        "Great Bay Marine Research Lab Zora Egg Delivery Song":
             lambda state: baby_can_reach_seahorse(state, player) and state.has("Progressive Magic", player) and baby_has_bottle(state,
             player, 2) and baby_has_hard_projectiles(state, player) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
         "Great Bay Marine Research Lab Feeding Fish":

@@ -463,7 +463,7 @@ def get_location_rules(player):
         "Mountain Village Invisible Ladder Cave Healing Invisible Goron":
             lambda state: can_use_lens(state, player) and can_play_song("Song of Healing", state, player),
         "Mountain Village Feeding Freezing Goron":
-            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and (can_play_song("Goron Lullaby", state, player) or can_use_fire_arrows(player, state)),
+            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and (can_play_song("Goron Lullaby", state, player) or can_use_fire_arrows(state, player)),
         "Mountain Village Spring Waterfall Chest":
             lambda state: can_clear_snowhead(state, player),
         "Mountain Village Spring Ramp Grotto":
@@ -621,8 +621,8 @@ def get_location_rules(player):
         "Pinnacle Rock Lower Eel Chest":
             lambda state: can_reach_seahorse(state, player) and has_bottle(state, player) and state.has("Zora Mask", player),
         # ~ maybe require 3 bottles for eggs
-       # "Zora Egg Delivery Song":
-           # lambda state: can_reach_seahorse(state, player) and has_bottle(state, player, 3) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
+        "Great Bay Marine Research Lab Zora Egg Delivery Song":
+            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player, 3) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player),
         "Great Bay Marine Research Lab Feeding Fish":
             lambda state: has_bottle(state, player),
         "Great Bay (Cleared) Fisherman Island Game HP":
