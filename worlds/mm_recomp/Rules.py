@@ -509,7 +509,7 @@ def get_baby_location_rules(player):
         "Mountain Village Invisible Ladder Cave Healing Invisible Goron":
             lambda state: can_use_lens(state, player) and can_play_song("Song of Healing", state, player),
         "Mountain Village Feeding Freezing Goron":
-            lambda state: state.has("Goron Mask", player) and can_use_fire_arrows(state, player),
+            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and can_play_song("Goron Lullaby", state, player) and can_use_fire_arrows(player, state),
         "Mountain Village Spring Waterfall Chest":
             lambda state: can_clear_snowhead(state, player),
         "Mountain Village Spring Ramp Grotto":
@@ -533,7 +533,7 @@ def get_baby_location_rules(player):
         "Twin Islands Spring Underwater Near Ramp Chest":
             lambda state: state.has("Zora Mask", player) and can_clear_snowhead(state, player),
         "Twin Islands Goron Elder Request":
-            lambda state: state.has("Goron Mask", player) and state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and can_use_fire_arrows(state, player),
+            lambda state: state.has("Goron Mask", player) and can_use_fire_arrows(state, player) and state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and has_bottle(state, player),
         "Goron Racetrack Bottle Prize":
              lambda state: state.has("Powder Keg", player) and can_clear_snowhead(state, player),
             
