@@ -193,6 +193,22 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420090018,
         can_create=lambda options: options.shopsanity.value != 0
     ),
+    "Curiosity Shop Blue Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C402
+    ),
+    "Curiosity Shop Red Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C404
+    ),
+    "Curiosity Shop Purple Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C405
+    ),
+    "Curiosity Shop Gold Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C407
+    ),
     "Curiosity Shop Night 3 (Stop Thief)": MMRLocationData(
         region="Clock Town",
         address=0x3469420090013
@@ -1113,6 +1129,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Zora Cape",
         address=0x3469420063800
     ),
+    "Zora Cape Pot Game Silver Rupee": MMRLocationData(
+        region="Zora Cape",
+        address=0x3469420072806
+    ),
     "Zora Cape Upper Chest": MMRLocationData(
         region="Zora Cape",
         address=0x3469420063801
@@ -1160,6 +1180,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Zora Hall Piano Zora Song": MMRLocationData(
         region="Zora Hall",
         address=0x3469420070241
+    ),
+    "Zora Hall Torches Reward": MMRLocationData(
+        region="Zora Hall",
+        address=0x3469420072802
     ),
     "Pirates' Fortress Sewers Cage HP": MMRLocationData(
         region="Pirates' Fortress Sewers",

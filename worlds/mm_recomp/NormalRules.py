@@ -194,7 +194,7 @@ def get_location_rules(player):
         "Bomb Bag Purchase":
             lambda state: state.can_reach("North Clock Town Save Old Lady", 'Location', player),
          "Curiosity Shop Night 3 (Stop Thief)":
-            lambda state: can_purchase(state, player, 500) and state.can_reach("Bomb Bag Purchase", 'Location', player),
+            lambda state: can_purchase(state, player, 500) and state.can_reach("North Clock Town Save Old Lady", 'Location', player),
          "Curiosity Shop Night 3 Thief Stolen Item":
             lambda state: can_purchase(state, player, 100),
         "Laundry Pool Kafei's Request":
@@ -745,8 +745,8 @@ def get_location_rules(player):
             
         "Zora Hall Piano Zora Song":
             lambda state: state.has("Zora Mask", player),
-        #"Zora Hall Torches Reward":
-            #lambda state: can_use_fire_arrows(state, player),
+        "Zora Hall Torches Reward":
+            lambda state: can_use_fire_arrows(state, player),
         "Zora Hall Deku Scrub Purchase Green Potion":
             lambda state: state.has("Zora Mask", player) and has_bottle(state, player),
         "Zora Hall Goron Scrub Trade":
