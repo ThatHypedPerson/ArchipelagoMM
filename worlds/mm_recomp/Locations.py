@@ -847,6 +847,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Mountain Village",
         address=0x3469420000088
     ),
+    "Don Gero Mask Frog Song HP": MMRLocationData(
+        region="Mountain Village",
+        address=0x3469420070022
+    ),
     "Twin Islands Spring Underwater Cave Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420065E00
