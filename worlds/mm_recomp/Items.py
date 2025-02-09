@@ -32,7 +32,7 @@ item_data_table: Dict[str, MMRItemData] = {
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Double Defense": MMRItemData(
-        code=0x3469420000073,
+        code=0x3469420020003,
         type=ItemClassification.useful,
         can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
