@@ -193,6 +193,22 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420090018,
         can_create=lambda options: options.shopsanity.value != 0
     ),
+    "Curiosity Shop Blue Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C402
+    ),
+    "Curiosity Shop Red Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C404
+    ),
+    "Curiosity Shop Purple Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C405
+    ),
+    "Curiosity Shop Gold Rupee Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x346942007C407
+    ),
     "Curiosity Shop Night 3 (Stop Thief)": MMRLocationData(
         region="Clock Town",
         address=0x3469420090013
@@ -827,10 +843,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Mountain Village",
         address=0x3469420000079
     ),
-    # ~ "Mountain Village Feeding Freezing Goron": MMRLocationData(
-        # ~ region="Mountain Village",
-        # ~ address=0x3469420000088
-    # ~ ),
+    "Mountain Village Feeding Freezing Goron": MMRLocationData(
+        region="Mountain Village",
+        address=0x3469420000088
+    ),
+    "Don Gero Mask Frog Song HP": MMRLocationData(
+        region="Mountain Village",
+        address=0x3469420070022
+    ),
     "Twin Islands Spring Underwater Cave Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420065E00
@@ -842,6 +862,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Twin Islands Ramp Grotto Chest": MMRLocationData(
         region="Twin Islands",
         address=0x3469420060719
+    ),
+    "Twin Islands Goron Elder Request": MMRLocationData(
+        region="Twin Islands",
+        address=0x34694200001AD
     ),
     "Twin Islands Hot Water Grotto Chest": MMRLocationData(
         region="Twin Islands",
@@ -858,6 +882,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Goron Village Lens Cave Center Chest": MMRLocationData(
         region="Goron Village",
         address=0x3469420060701
+    ),
+    "Goron Village Baby Goron Lullaby": MMRLocationData(
+        region="Goron Village",
+        address=0x34694200000AD
     ),
     "Goron Village Shop Item 1": MMRLocationData(
         region="Goron Village",
@@ -1051,10 +1079,18 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420BEEF12,
         can_create=lambda options: options.cowsanity.value
     ),
-    # ~ "Romani Ranch Helping Cremia": MMRLocationData(
-        # ~ region="Romani Ranch",
-        # ~ address=0x3469420000082
-    # ~ ),
+    "Romani Ranch Romani Game": MMRLocationData(
+        region="Romani Ranch",
+        address=0x34694200000A5
+    ),
+    "Romani Ranch Defended Against Aliens": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420000060
+    ),
+    "Romani Ranch Helping Cremia": MMRLocationData(
+        region="Romani Ranch",
+        address=0x3469420000082
+    ),
     "Great Bay Healing Zora": MMRLocationData(
         region="Great Bay",
         address=0x346942000007A
@@ -1062,6 +1098,14 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Great Bay Behind Fishermans Hut Grotto Chest": MMRLocationData(
         region="Great Bay",
         address=0x3469420060717
+    ),
+    "Great Bay Marine Research Lab Zora Egg Delivery Song": MMRLocationData(
+        region="Great Bay",
+        address=0x34694200000AC
+    ),
+    "Great Bay Marine Research Lab Feeding Fish": MMRLocationData(
+        region="Great Bay",
+        address=0x34694200701D9
     ),
     "Great Bay Ledge Grotto Left Cow": MMRLocationData(
         region="Great Bay",
@@ -1077,6 +1121,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Great Bay",
         address=0x3469420053705
     ),
+    "Great Bay (Cleared) Fisherman Island Game HP": MMRLocationData(
+        region="Great Bay",
+        address=0x3469420070292
+    ),
     "Zora Cape Underwater Like-Like HP": MMRLocationData(
         region="Zora Cape",
         address=0x3469420053807
@@ -1084,6 +1132,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Zora Cape Underwater Chest": MMRLocationData(
         region="Zora Cape",
         address=0x3469420063800
+    ),
+    "Zora Cape Pot Game Silver Rupee": MMRLocationData(
+        region="Zora Cape",
+        address=0x3469420072806
     ),
     "Zora Cape Upper Chest": MMRLocationData(
         region="Zora Cape",
@@ -1132,6 +1184,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Zora Hall Piano Zora Song": MMRLocationData(
         region="Zora Hall",
         address=0x3469420070241
+    ),
+    "Zora Hall Torches Reward": MMRLocationData(
+        region="Zora Hall",
+        address=0x3469420072802
     ),
     "Pirates' Fortress Sewers Cage HP": MMRLocationData(
         region="Pirates' Fortress Sewers",
@@ -1455,6 +1511,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Ikana Graveyard",
         address=0x3469420060C03
     ),
+    "Graveyard Day 1 Iron Knuckle Song": MMRLocationData(
+        region="Ikana Graveyard",
+        address=0x34694200000A2
+    ),
     "Graveyard Day 2 Iron Knuckle Chest": MMRLocationData(
         region="Ikana Graveyard",
         address=0x3469420060C00
@@ -1504,9 +1564,13 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Ikana Canyon",
         address=0x3469420000087
     ),
+    "Ikana Canyon Spirit House": MMRLocationData(
+        region="Ikana Canyon",
+        address=0x34694200701DE
+    ),
     "Stone Tower Great Fairy Reward": MMRLocationData(
         region="Ikana Canyon",
-        address=0x3469420000010
+        address=0x3469420030004
     ),
     "Ikana Well Final Chest": MMRLocationData(
         region="Beneath the Well",
