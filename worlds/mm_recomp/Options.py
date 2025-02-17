@@ -2,16 +2,16 @@ from dataclasses import dataclass
 
 from typing import Dict
 
-from Options import Choice, Option, DefaultOnToggle, Toggle, Range, OptionList, StartInventoryPool, DeathLink, PerGameCommonOptions
+from Options import Choice, Option, DefaultOnToggle, Toggle, Range, OptionList, OptionSet, StartInventoryPool, DeathLink, PerGameCommonOptions
 
+from .Constants import Tricks, Glitches
 
 class LogicDifficulty(Choice):
     """Set the logic difficulty used when generating."""
     display_name = "Logic Difficulty"
     option_easy = 0
     option_normal = 1
-    #option_obscure_glitchless = 2
-    #option_glitched = 3
+    option_glitched = 2
     option_no_logic = 4
     default = 0
 
@@ -174,6 +174,19 @@ class LinkTunicColor(OptionList):
     default = [30, 105, 27]
 
 
+class EnabledTricks(OptionSet):
+    """Choose which tricks should be considered to be in logic."""
+    display_name = "Enabled Tricks"
+    default = {}
+    valid_keys = [trick.value for trick in Tricks]
+
+
+class EnabledGlitches(OptionSet):
+    """Choose which glitches should be considered to be in logic."""
+    display_name = "Enabled Glitches"
+    default = {}
+    valid_keys = [glitch.value for glitch in Glitches]
+
 @dataclass
 class MMROptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
@@ -201,3 +214,5 @@ class MMROptions(PerGameCommonOptions):
     death_behavior: DeathBehavior
     death_link: DeathLink
     link_tunic_color: LinkTunicColor
+    enabled_tricks: EnabledTricks
+    enabled_glitches: EnabledGlitches

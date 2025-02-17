@@ -9,6 +9,7 @@ from .Options import MMROptions
 from .Regions import region_data_table, get_exit
 from .Rules import *
 from .NormalRules import *
+from .GlitchedRules import *
 
 
 class MMRWebWorld(WebWorld):
@@ -293,12 +294,15 @@ class MMRWorld(World):
         if (self.options.logic_difficulty == 4):
             return
 
-        if (self.options.logic_difficulty == 0):
+        elif (self.options.logic_difficulty == 0):
             region_rules = get_baby_region_rules(player)
             location_rules = get_baby_location_rules(player)
-        if (self.options.logic_difficulty == 1):
+        elif (self.options.logic_difficulty == 1):
             region_rules = get_region_rules(player)
             location_rules = get_location_rules(player)
+        elif (self.options.logic_difficulty == 2):
+            region_rules = get_glitched_region_rules(player, self.options)
+            location_rules = get_glitched_location_rules(player, self.options)
 
         for entrance_name, rule in region_rules.items():
             entrance = mw.get_entrance(entrance_name, player)
