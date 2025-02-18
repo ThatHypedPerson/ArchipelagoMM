@@ -298,8 +298,8 @@ class MMRWorld(World):
             region_rules = get_baby_region_rules(player)
             location_rules = get_baby_location_rules(player)
         elif (self.options.logic_difficulty == 1):
-            region_rules = get_region_rules(player)
-            location_rules = get_location_rules(player)
+            region_rules = get_region_rules(player, self.options)
+            location_rules = get_location_rules(player, self.options)
         elif (self.options.logic_difficulty == 2):
             region_rules = get_glitched_region_rules(player, self.options)
             location_rules = get_glitched_location_rules(player, self.options)

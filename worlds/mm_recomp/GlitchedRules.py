@@ -1,10 +1,14 @@
 from .Constants import *
 
-def trick_enabled(state, player, options, tricks):
-    return any(trick in tricks for trick in options.enabled_tricks)
+def trick_enabled(trick, options):
+    if trick in options.enabled_tricks:
+        return True
+    return False
     
-def glitch_enabled(state, player, options, glitches):
-    return any(glitch in glitches for glitch in options.enabled_glitches)
+def glitch_enabled(glitch, options):
+    if glitch in options.enabled_glitches:
+        return True
+    return False
 
 def can_play_song(song, state, player):
     return state.has(song, player) and state.has("Ocarina of Time", player)
@@ -131,63 +135,63 @@ def can_indexwarp(state, player):
 def get_glitched_region_rules(player, options):
     return {
         "Clock Town -> Great Bay":
-            lambda state: "Index Warp" in options.enabled_glitches,
+            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Clock Town -> Snowhead":
-            lambda state: "Index Warp" in options.enabled_glitches,
+            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Deku Palace -> Mountain Village":
-            lambda state: "Index Warp" in options.enabled_glitches,
+            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Goron Village -> Stone Tower":
-            lambda state: "Index Warp" in options.enabled_glitches,
+            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Snowhead -> Woodfall":
-            lambda state: "Index Warp" in options.enabled_glitches,
+            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Ikana Graveyard -> Southern Swamp":
-            lambda state: "Index Warp" in options.enabled_glitches,
+            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         
         "Clock Town -> The Moon":
             lambda state: state.has("Ocarina of Time", player) and state.has("Oath to Order", player) and state.has("Odolwa's Remains", player) and state.has("Goht's Remains", player) and state.has("Gyorg's Remains", player) and state.has("Twinmold's Remains", player),
         "Southern Swamp -> Southern Swamp (Deku Palace)":
-            lambda state: state.has("Bottle of Red Potion", player) or (has_hard_projectiles(state, player) and state.has("Deku Mask", player)) or (state.has("Pictograph Box", player) and state.has("Deku Mask", player)) or trick_enabled(state, player, options, ("Run Through Poisoned Water",)) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: state.has("Bottle of Red Potion", player) or (has_hard_projectiles(state, player) and state.has("Deku Mask", player)) or (state.has("Pictograph Box", player) and state.has("Deku Mask", player)) or trick_enabled("Run Through Poisoned Water", options) or glitch_enabled("Long Bomb Hover", options),
         "Southern Swamp (Deku Palace) -> Swamp Spider House":
-            lambda state: state.has("Deku Mask", player) or trick_enabled(state, player, options, ("Run Through Poisoned Water",)) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: state.has("Deku Mask", player) or trick_enabled("Run Through Poisoned Water", options) or glitch_enabled("Long Bomb Hover", options),
         "Southern Swamp (Deku Palace) -> Deku Palace":
-            lambda state: state.has("Deku Mask", player) or trick_enabled(state, player, options, ("Run Through Poisoned Water",)) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: state.has("Deku Mask", player) or trick_enabled("Run Through Poisoned Water", options) or glitch_enabled("Long Bomb Hover", options),
         "Southern Swamp (Deku Palace) -> Woodfall":
-            lambda state: state.has("Deku Mask", player) or trick_enabled(state, player, options, ("Fierce Deity Jumps",)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Deku Mask", player) or trick_enabled("Fierce Deity Jumps", options) or glitch_enabled("Bomb Hover", options),
         "Woodfall -> Woodfall Temple":
             lambda state: can_play_song("Sonata of Awakening", state, player),
         "Termina Field -> Path to Mountain Village":
-            lambda state: glitch_enabled(state, player, options, ("Seamwalk",)),
+            lambda state: glitch_enabled("Seamwalk", options),
         "Path to Mountain Village -> Mountain Village":
-            lambda state: trick_enabled(state, player, options, ("Backflip Over Snowballs",)),
+            lambda state: trick_enabled("Backflip Over Snowballs", options),
         # I didn't add HESS logic to SHT entry cause I'm not a masochist or a sadist
         "Path to Snowhead -> Snowhead Temple":
-            lambda state: (state.has("Goron Mask", player) and can_play_song("Goron Lullaby", state, player)) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: (state.has("Goron Mask", player) and can_play_song("Goron Lullaby", state, player)) or glitch_enabled("Long Bomb Hover", options),
         "Termina Field -> Great Bay":
-            lambda state: can_play_song("Epona's Song", state, player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Goron Damage Boost", "Fierce Deity Damage Boost",)),
+            lambda state: can_play_song("Epona's Song", state, player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Goron Damage Boost", options) or trick_enabled("Fierce Deity Damage Boost", options),
         "Great Bay -> Ocean Spider House":
-            lambda state: has_explosives(state, player) and trick_enabled(state, player, options, ("Goron Damage Boost",)),
+            lambda state: has_explosives(state, player) and trick_enabled("Goron Damage Boost", options),
         "Great Bay -> Pirates' Fortress":
-            lambda state: state.has("Zora Mask", player) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: state.has("Zora Mask", player) or glitch_enabled("Long Bomb Hover", options),
         "Pirates' Fortress -> Pirates' Fortress (Sewers)":
-            lambda state: state.has("Zora Mask", player) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: state.has("Zora Mask", player) or glitch_enabled("Long Bomb Hover", options),
         "Pirates' Fortress -> Pirates' Fortress (Interior)":
-            lambda state: state.has("Goron Mask", player) or state.has("Hookshot", player) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Goron Mask", player) or state.has("Hookshot", player) or glitch_enabled("Bomb Hover", options),
         "Zora Cape -> Great Bay Temple":
-            lambda state: can_play_song("New Wave Bossa Nova", state, player) and state.has("Hookshot", player) and state.has("Zora Mask", player) or (glitch_enabled(state, player, options, ("Bomb Hover", "Fierce Deity Jumps",)) and can_play_song("New Wave Bossa Nova", state, player) and state.has("Zora Mask", player)),
+            lambda state: can_play_song("New Wave Bossa Nova", state, player) and state.has("Hookshot", player) and state.has("Zora Mask", player) or ((glitch_enabled("Bomb Hover", options) or glitch_enabled("Fierce Deity Jumps", options)) and can_play_song("New Wave Bossa Nova", state, player) and state.has("Zora Mask", player)),
         "Road to Ikana -> Ikana Graveyard":
-            lambda state: can_play_song("Epona's Song", state, player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Goron Damage Boost",)),
+            lambda state: can_play_song("Epona's Song", state, player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Goron Damage Boost", options),
         "Road to Ikana -> Ikana Canyon":
-            lambda state: can_play_song("Epona's Song", state, player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)) or trick_enabled(state, player, options, ("Goron Damage Boost", "Fierce Deity Gainer",)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: can_play_song("Epona's Song", state, player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)) or trick_enabled("Goron Damage Boost", options) or trick_enabled("Fierce Deity Gainer", options) or glitch_enabled("Bomb Hover", options),
         "Ikana Canyon -> Secret Shrine":
             lambda state: True,
         "Ikana Canyon -> Beneath the Well":
-            lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and state.has("Gibdo Mask", player) and has_bottle(state, player) or trick_enabled(state, player, options, ("Hookshot Pixelshots",)),
+            lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and state.has("Gibdo Mask", player) and has_bottle(state, player) or trick_enabled("Hookshot Pixelshots", options),
         "Ikana Canyon -> Ikana Castle":
-            lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and (can_use_light_arrows(state, player) or has_mirror_shield(state, player)) or trick_enabled(state, player, options, ("Hookshot Pixelshots", "Zora Gainer")),
+            lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and (can_use_light_arrows(state, player) or has_mirror_shield(state, player)) or trick_enabled("Hookshot Pixelshots", options) or trick_enabled("Zora Gainer", options),
         "Stone Tower -> Stone Tower Temple":
-            lambda state: (can_play_song("Elegy of Emptiness", state, player) and state.has("Goron Mask", player) and state.has("Zora Mask", player)) or (glitch_enabled(state, player, options, ("Time Stop", "Bomb Hover",)) and glitch_enabled(state, player, options, ("Index Warp",))) or (trick_enabled(state, player, options, ("One Mask Climb"))),
+            lambda state: (can_play_song("Elegy of Emptiness", state, player) and state.has("Goron Mask", player) and state.has("Zora Mask", player)) or ((glitch_enabled("Time Stop", options) or glitch_enabled("Bomb Hover", options)) and glitch_enabled("Index Warp", options)) or (trick_enabled("One Mask Climb", options)),
         "Stone Tower -> Stone Tower (Inverted)":
-            lambda state: (state.can_reach("Stone Tower Temple", 'Region', player) and can_use_light_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player)) or (state.can_reach("Stone Tower Temple", 'Region', player) and glitch_enabled(state, player, options, ("Flip Stone Tower without Light Arrows",))) or (glitch_enabled(state, player, options, ("Flip Stone Tower without Light Arrows",)) and glitch_enabled(state, player, options, ("Index Warp",))),
+            lambda state: (state.can_reach("Stone Tower Temple", 'Region', player) and can_use_light_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player)) or (state.can_reach("Stone Tower Temple", 'Region', player) and glitch_enabled("Flip Stone Tower without Light Arrows", options)) or (glitch_enabled("Flip Stone Tower without Light Arrows", options) and glitch_enabled("Index Warp", options)),
     }
 
 def get_glitched_location_rules(player, options):
@@ -205,15 +209,15 @@ def get_glitched_location_rules(player, options):
         "Laundry Pool Kafei's Request":
             lambda state: state.has("Letter to Kafei", player),
         "Laundry Pool Curiosity Shop Salesman #1":
-            lambda state: state.has("Letter to Kafei", player) or glitch_enabled(state, player, options, ("Deku Recoil", "Fierce Deity Out Of Bounds",)) or trick_enabled(state, player, options, ("Zora Gainer",)),
+            lambda state: state.has("Letter to Kafei", player) or glitch_enabled("Deku Recoil", options) or glitch_enabled("Fierce Deity Out Of Bounds", options) or trick_enabled("Zora Gainer", options),
         "Laundry Pool Curiosity Shop Salesman #2":
-            lambda state: state.has("Letter to Kafei", player) or glitch_enabled(state, player, options, ("Deku Recoil", "Fierce Deity Out Of Bounds",)) or trick_enabled(state, player, options, ("Zora Gainer",)),
+            lambda state: state.has("Letter to Kafei", player) or glitch_enabled("Deku Recoil", options) or glitch_enabled("Fierce Deity Out Of Bounds", options) or trick_enabled("Zora Gainer", options),
         "South Clock Town Moon's Tear Trade":
             lambda state: state.has("Moon's Tear", player),
         "South Clock Town Corner Chest":
-            lambda state: state.has("Hookshot", player) or trick_enabled(state, player, options, ("One Sided Collision", "Fierce Deity Jumps", "One Sided Collision Itemless",)),
+            lambda state: state.has("Hookshot", player) or trick_enabled("One Sided Collision", options) or trick_enabled("Fierce Deity Jumps", options) or trick_enabled("One Sided Collision Itemless", options),
         "South Clock Town Final Day Tower Chest":
-            lambda state: state.has("Hookshot", player) or (state.has("Deku Mask", player) and state.has("Moon's Tear", player)) or trick_enabled(state, player, options, ("Fierce Deity Jumps",)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Hookshot", player) or (state.has("Deku Mask", player) and state.has("Moon's Tear", player)) or trick_enabled("Fierce Deity Jumps", options) or glitch_enabled("Bomb Hover", options),
         "East Clock Town Couples Mask on Mayor":
             lambda state: state.has("Couple's Mask", player),
         "East Clock Town Shooting Gallery 40-49 Points":
@@ -227,9 +231,9 @@ def get_glitched_location_rules(player, options):
         "East Clock Town Treasure Game Chest (Goron)":
             lambda state: state.has("Goron Mask", player),
         "Bomber's Hideout Chest":
-            lambda state: state.can_reach("Clock Town Hide-and-Seek", 'Location', player) and has_explosives(state, player) or (trick_enabled(state, player, options, ("Backflip over Bomber Kids",)) and has_explosives(state, player)),
+            lambda state: state.can_reach("Clock Town Hide-and-Seek", 'Location', player) and has_explosives(state, player) or (trick_enabled("Backflip over Bomber Kids", options) and has_explosives(state, player)),
         "Bomber's Hideout Astral Observatory":
-            lambda state: has_projectiles(state, player) or trick_enabled(state, player, options, ("Backflip over Bomber Kids",)),
+            lambda state: has_projectiles(state, player) or trick_enabled("Backflip over Bomber Kids", options),
         "North Clock Town Deku Playground Any Day":
             lambda state: state.has("Deku Mask", player),
         "North Clock Town Deku Playground All Days":
@@ -241,11 +245,11 @@ def get_glitched_location_rules(player, options):
         "North Clock Town Great Fairy Reward":
             lambda state: state.has("Stray Fairy (Clock Town)", player),
         "Tingle Clock Town Map Purchase":
-            lambda state: has_projectiles(state, player) or trick_enabled(state, player, options, ("Hit Tingle with a Sword", "Hit Tingle with Fierce Deity",)),
+            lambda state: has_projectiles(state, player) or trick_enabled("Hit Tingle with a Sword", options) or trick_enabled("Hit Tingle with Fierce Deity", options),
         "West Clock Town Swordsman Expert Course":
             lambda state: state.has("Progressive Sword", player),
         "West Clock Town Postman Counting":
-            lambda state: state.has("Bunny Hood", player) or trick_enabled(state, player, options, ("Postman Counting Itemless",)),
+            lambda state: state.has("Bunny Hood", player) or trick_enabled("Postman Counting Itemless", options),
         "West Clock Town Dancing Sisters":
             lambda state: state.has("Kamaro Mask", player),
         "West Clock Town Bank 200 Rupees":
@@ -257,11 +261,11 @@ def get_glitched_location_rules(player, options):
         "West Clock Town Priority Mail to Postman":
             lambda state: state.has("Priority Mail", player),
         "Top of Clock Tower (Ocarina of Time)":
-            lambda state: has_projectiles(state, player) or trick_enabled(state, player, options, ("Hit Skull Kid with Explosives",)),
+            lambda state: has_projectiles(state, player) or trick_enabled("Hit Skull Kid with Explosives", options),
         "Top of Clock Tower (Song of Time)":
-            lambda state: has_projectiles(state, player) or trick_enabled(state, player, options, ("Hit Skull Kid with Explosives",)),
+            lambda state: has_projectiles(state, player) or trick_enabled("Hit Skull Kid with Explosives", options),
         "Stock Pot Inn Midnight Meeting":
-            lambda state: state.has("Kafei's Mask", player) and (state.has("Deku Mask", player) or state.has("Room Key", player) or trick_enabled(state, player, options, ("Stock Pot Inn with Zora", "Stock Pot Inn with Goron", "Fierce Deity Jumps", "Bomb Long Jumps",))),
+            lambda state: state.has("Kafei's Mask", player) and (state.has("Deku Mask", player) or state.has("Room Key", player) or trick_enabled("Stock Pot Inn with Zora", options) or trick_enabled("Stock Pot Inn with Goron", options) or trick_enabled("Fierce Deity Jumps", options) or trick_enabled("Bomb Long Jumps", options)),
         "Stock Pot Inn Upstairs Middle Room Chest":
             lambda state: state.has("Room Key", player),
         "Stock Pot Inn Midnight Toilet Hand":
@@ -273,13 +277,13 @@ def get_glitched_location_rules(player, options):
         "Stock Pot Inn Anju and Kafei":
             lambda state: (state.has("Kafei's Mask", player) and can_play_song("Epona's Song", state, player) and state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player))),
         "Milk Bar Show":
-            lambda state: state.has("Romani Mask", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player) or (state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player) and glitch_enabled(state, player, options, ("Bomb Hover",))),
+            lambda state: state.has("Romani Mask", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player) or (state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player) and glitch_enabled("Bomb Hover", options)),
         "Milk Bar Priority Mail to Aroma":
-            lambda state: state.has("Romani Mask", player) and state.has("Kafei's Mask", player) and state.has("Priority Mail", player) or (trick_enabled(state, player, options, ("Good Time Management",)) and state.has("Priority Mail", player) or (glitch_enabled(state, player, options, ("Bomb Hover",)) and state.has("Priority Mail", player))),
+            lambda state: state.has("Romani Mask", player) and state.has("Kafei's Mask", player) and state.has("Priority Mail", player) or (trick_enabled("Good Time Management", options) and state.has("Priority Mail", player) or (glitch_enabled("Bomb Hover", options) and state.has("Priority Mail", player))),
 
 
         "Termina Stump Chest":
-            lambda state: state.has("Hookshot", player) or can_plant_beans(state, player) or glitch_enabled(state, player, options, ("Seamwalk",)),
+            lambda state: state.has("Hookshot", player) or can_plant_beans(state, player) or glitch_enabled("Seamwalk", options),
         "Termina Underwater Chest":
             lambda state: state.has("Zora Mask", player),
         "Termina Peahat Grotto Chest":
@@ -289,23 +293,23 @@ def get_glitched_location_rules(player, options):
         "Termina Bio Baba Grotto HP":
             lambda state: has_explosives(state, player) and state.has("Zora Mask", player) or (state.has("Goron Mask", player) and state.has("Zora Mask", player)),
         "Termina Northern Midnight Dancer":
-            lambda state: (state.has("Ocarina of Time", player) or glitch_enabled(state, player, options, ("Ocarina Items",))) and state.has("Song of Healing", player),
+            lambda state: (state.has("Ocarina of Time", player) or glitch_enabled("Ocarina Items", options)) and state.has("Song of Healing", player),
         "Termina Gossip Stones HP":
             lambda state: state.has("Deku Mask", player) and can_play_song("Sonata of Awakening", state, player) or (state.has("Goron Mask", player) and can_play_song("Goron Lullaby", state, player)) or (state.has("Zora Mask", player) and can_play_song("New Wave Bossa Nova", state, player)),
         "Termina Moon's Tear Scrub HP":
             lambda state: state.can_reach("Bomber's Hideout Astral Observatory", 'Location', player) and state.has("Ocarina of Time", player) and state.has("Progressive Wallet", player) or (state.has("Deku Mask", player) and state.has("Ocarina of Time", player) and state.has("Progressive Wallet", player)),
         "Termina Log Bombable Grotto Left Cow":
-            lambda state: has_explosives(state, player) and can_play_song("Epona's Song", state, player) or (glitch_enabled(state, player, options, ("Ocarina Items",)) and state.has("Epona's Song", player) and has_explosives(state, player)),
+            lambda state: has_explosives(state, player) and can_play_song("Epona's Song", state, player) or (glitch_enabled("Ocarina Items", options) and state.has("Epona's Song", player) and has_explosives(state, player)),
         "Termina Log Bombable Grotto Right Cow":
-            lambda state: has_explosives(state, player) and can_play_song("Epona's Song", state, player) or (glitch_enabled(state, player, options, ("Ocarina Items",)) and state.has("Epona's Song", player) and has_explosives(state, player)),
+            lambda state: has_explosives(state, player) and can_play_song("Epona's Song", state, player) or (glitch_enabled("Ocarina Items", options) and state.has("Epona's Song", player) and has_explosives(state, player)),
         "Milk Road Gorman Ranch Race":
-            lambda state: state.has("Ocarina of Time", player) and state.has("Epona's Song", player) or (glitch_enabled(state, player, options, ("Ocarina Items",)) and state.has("Epona's Song", player)),
+            lambda state: state.has("Ocarina of Time", player) and state.has("Epona's Song", player) or (glitch_enabled("Ocarina Items", options) and state.has("Epona's Song", player)),
         "Tingle Romani Ranch Map Purchase":
-            lambda state: has_projectiles(state, player) or state.can_reach("Twin Islands", 'Region', player) or (trick_enabled(state, player, options, ("Hit Tingle with Fierce Deity", "Fierce Deity Out Of Bounds",))) or (glitch_enabled(state, player, options, ("Seamwalk",)) and trick_enabled(state, player, options, ("Backflip Over Snowballs", "Hit Tingle with Fierce Deity",))),
+            lambda state: has_projectiles(state, player) or state.can_reach("Twin Islands", 'Region', player) or (trick_enabled("Hit Tingle with Fierce Deity", options) or trick_enabled("Fierce Deity Out Of Bounds", options)) or (glitch_enabled("Seamwalk", options) and trick_enabled("Backflip Over Snowballs", options) or trick_enabled("Hit Tingle with Fierce Deity", options)),
         "Road to Swamp Tree HP":
-            lambda state: has_projectiles(state, player) or trick_enabled(state, player, options("Climb Road to Southern Swamp Tree Itemless",)),
+            lambda state: has_projectiles(state, player) or trick_enabled("Climb Road to Southern Swamp Tree Itemless", options),
         "Tingle Woodfall Map Purchase":
-            lambda state: has_projectiles(state, player) and state.can_reach("Clock Town", 'Region', player) or trick_enabled(state, player, options, ("Hit Tingle with a Sword", "Hit Tingle with Fierce Deity",)),
+            lambda state: has_projectiles(state, player) and state.can_reach("Clock Town", 'Region', player) or trick_enabled("Hit Tingle with a Sword", options) or trick_enabled("Hit Tingle with Fierce Deity", options),
         "Swamp Shooting Gallery 2120 Points":
             lambda state: state.has("Progressive Bow", player),
         "Swamp Shooting Gallery 2180 Points":
@@ -315,7 +319,7 @@ def get_glitched_location_rules(player, options):
         "Southern Swamp Deku Trade":
             lambda state: state.has("Land Title Deed", player),
         "Southern Swamp Deku Trade Freestanding HP":
-            lambda state: state.has("Land Title Deed", player) and state.has("Deku Mask", player) or trick_enabled(state, player, options,("One Sided Goron Collision", "Fierce Deity Gainer",)) or glitch_enabled(state, player, options("Bomb Hover",)),
+            lambda state: state.has("Land Title Deed", player) and state.has("Deku Mask", player) or (trick_enabled("One Sided Goron Collision", options) and trick_enabled("Fierce Deity Gainer", options)) or glitch_enabled("Bomb Hover", options),
         "Southern Swamp Tour Witch Gift":
             lambda state: state.has("Bottle of Red Potion", player),
         "Southern Swamp Tour Guide Winning Picture":
@@ -325,22 +329,22 @@ def get_glitched_location_rules(player, options):
         "Southern Swamp Tour Guide Okay Picture":
             lambda state: state.has("Pictograph Box", player),
         "Southern Swamp Near Swamp Spider House Grotto Chest":
-            lambda state: (state.has("Deku Mask", player) and has_projectiles(state, player)) or state.has("Zora Mask", player) or trick_enabled(state, player, options, ("Run Through Poisoned Water",)) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: (state.has("Deku Mask", player) and has_projectiles(state, player)) or state.has("Zora Mask", player) or trick_enabled("Run Through Poisoned Water", options) or glitch_enabled("Long Bomb Hover", options),
         "Southern Swamp Song Tablet":
-            lambda state: state.has("Deku Mask", player) or (trick_enabled(state, player, options, ("Fierce Deity Jumps",)) and trick_enabled(state, player, options, ("Run Through Poisoned Water",))) or glitch_enabled(state, player, options, ("Long Bomb Hover",)),
+            lambda state: state.has("Deku Mask", player) or (trick_enabled("Fierce Deity Jumps", options) and trick_enabled("Run Through Poisoned Water", options)) or glitch_enabled("Long Bomb Hover", options),
         "Southern Swamp Mystery Woods Day 2 Grotto Chest":
             lambda state: True,
 
         "Swamp Spider House First Room Pot Near Entrance Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House First Room Crawling In Water Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House First Room Crawling Right Column Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House First Room Crawling Left Column Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House First Room Against Far Wall Token":
-            lambda state: (can_bring_to_player(state, player) and has_projectiles(state, player) or (state.has("Deku Mask", player) and state.has("Progressive Magic", player))) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: (can_bring_to_player(state, player) and has_projectiles(state, player) or (state.has("Deku Mask", player) and state.has("Progressive Magic", player))) or glitch_enabled("Bomb Hover", options),
         "Swamp Spider House First Room Lower Left Bugpatch Token":
             lambda state: can_smack(state, player) and has_bottle(state, player),
         "Swamp Spider House First Room Lower Right Bugpatch Token":
@@ -348,49 +352,49 @@ def get_glitched_location_rules(player, options):
         "Swamp Spider House First Room Upper Right Bugpatch Token":
             lambda state: can_smack(state, player) and has_bottle(state, player),
         "Swamp Spider House Monument Room Left Crate Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Monument Room Right Crate Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Monument Room Crawling Wall Token":
             lambda state: can_smack(state, player) and can_bring_to_player(state, player) or (can_plant_beans(state, player) and has_explosives(state, player) or state.has("Goron Mask", player)),
         "Swamp Spider House Monument Room Crawling On Monument Token":
             lambda state: can_smack(state, player) and can_bring_to_player(state, player) and has_projectiles(state, player),
         "Swamp Spider House Monument Room Behind Torch Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Pottery Room Beehive #1 Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
         "Swamp Spider House Pottery Room Beehive #2 Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
         "Swamp Spider House Pottery Room Small Pot Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Pottery Room Left Large Pot Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Pottery Room Right Large Pot Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Pottery Room Behind Vines Token":
             lambda state: state.has("Progressive Sword", player) or (state.has("Great Fairy Sword", player) or state.has("Fierce Deity's Mask", player)),
         "Swamp Spider House Pottery Room Upper Wall Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Golden Room Crawling Left Wall Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Golden Room Crawling Right Column Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Golden Room Against Far Wall Token":
-            lambda state: can_smack(state, player) and (can_bring_to_player(state, player) or (can_smack(state, player) and can_plant_beans(state, player))) or (trick_enabled(state, player, options, ("Kill with sticks",)) and can_plant_beans(state, player)),
+            lambda state: can_smack(state, player) and (can_bring_to_player(state, player) or (can_smack(state, player) and can_plant_beans(state, player))) or (trick_enabled("Kill with sticks", options) and can_plant_beans(state, player)),
         "Swamp Spider House Golden Room Beehive Token":
             lambda state: can_smack(state, player) and has_projectiles(state, player),
         "Swamp Spider House Tree Room Tall Grass #1 Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Tree Room Tall Grass #2 Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Tree Room Tree #1 Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Tree Room Tree #2 Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Tree Room Tree #3 Token":
-            lambda state: can_smack(state, player) or trick_enabled(state, player, options, ("Kill with sticks",)),
+            lambda state: can_smack(state, player) or trick_enabled("Kill with sticks", options),
         "Swamp Spider House Tree Room Beehive Token":
-            lambda state: can_smack(state, player) and has_projectiles(state, player) or (trick_enabled(state, player, options, ("Kill with sticks",)) and has_projectiles(state, player)),
+            lambda state: can_smack(state, player) and has_projectiles(state, player) or (trick_enabled("Kill with sticks", options) and has_projectiles(state, player)),
         "Swamp Spider House Reward":
             lambda state: state.has("Swamp Skulltula Token", player, 30),
 
@@ -398,9 +402,9 @@ def get_glitched_location_rules(player, options):
         "Deku Palace Bean Seller":
             lambda state: True,
         "Deku Palace Bean Grotto Chest":
-            lambda state: can_plant_beans(state, player) or state.has("Hookshot", player) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: can_plant_beans(state, player) or state.has("Hookshot", player) or glitch_enabled("Bomb Hover", options),
         "Deku Palace Monkey Song":
-            lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player) and state.has("Deku Mask", player) or (trick_enabled(state, player, options, ("Deku Palace Bean Skip",)) and state.has("Ocarina of Time", player) and state.has("Deku Mask", player)),
+            lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player) and state.has("Deku Mask", player) or (trick_enabled("Deku Palace Bean Skip", options) and state.has("Ocarina of Time", player) and state.has("Deku Mask", player)),
         "Deku Palace Butler Race":
             lambda state: can_clear_woodfall(state, player) and has_bottle(state, player) and (state.has("Progressive Sword", player) or state.has("Great Fairy Sword", player) or state.has("Fierce Deity's Mask", player)),
 
@@ -408,21 +412,21 @@ def get_glitched_location_rules(player, options):
         "Woodfall Great Fairy Reward":
             lambda state: state.has("Stray Fairy (Woodfall)", player, 15),
         "Woodfall Near Owl Statue Chest":
-            lambda state: state.has("Deku Mask", player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Fierce Deity Jumps",)),
+            lambda state: state.has("Deku Mask", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Fierce Deity Jumps", options),
         "Woodfall After Great Fairy Cave Chest":
-            lambda state: state.has("Deku Mask", player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Fierce Deity Jumps",)) or state.has("Hookshot", player),
+            lambda state: state.has("Deku Mask", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Fierce Deity Jumps", options) or state.has("Hookshot", player),
         "Woodfall Near Swamp Entrance Chest":
-            lambda state: state.has("Deku Mask", player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Fierce Deity Jumps",)) or state.has("Hookshot", player),
+            lambda state: state.has("Deku Mask", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Fierce Deity Jumps", options) or state.has("Hookshot", player),
 
 
         "Woodfall Temple Dragonfly Chest":
-            lambda state: state.has("Small Key (Woodfall)", player) or state.has("Progressive Bow", player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("WFT Second Floor Skip",)),
+            lambda state: state.has("Small Key (Woodfall)", player) or state.has("Progressive Bow", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("WFT Second Floor Skip", options),
         "Woodfall Temple Black Boe Room Chest":
-            lambda state: state.has("Small Key (Woodfall)", player) or state.has("Progressive Bow", player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("WFT Second Floor Skip",)),
+            lambda state: state.has("Small Key (Woodfall)", player) or state.has("Progressive Bow", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("WFT Second Floor Skip", options),
         "Woodfall Temple Wooden Flower Switch Chest":
-            lambda state: state.has("Progressive Bow", player) or (trick_enabled(state, player, options, ("WFT Second floor skip",)) and trick_enabled(state, player, options, ("Bomb Long Jump",))),
+            lambda state: state.has("Progressive Bow", player) or (trick_enabled("WFT Second floor skip", options) and trick_enabled("Bomb Long Jump", options)),
         "Woodfall Temple Dinolfos Chest":
-            lambda state: (state.has("Small Key (Woodfall)", player) and can_smack(state, player)) or state.has("Progressive Bow", player) or trick_enabled(state, player, options, ("WFT Second Floor Skip",)),
+            lambda state: (state.has("Small Key (Woodfall)", player) and can_smack(state, player)) or state.has("Progressive Bow", player) or trick_enabled("WFT Second Floor Skip", options),
         "Woodfall Temple Boss Key Chest":
             lambda state: state.has("Progressive Bow", player) and can_smack(state, player) and (has_explosives(state, player) or state.has("Goron Mask", player)),
         "Woodfall Temple Wooden Flower Bubble SF":
@@ -434,7 +438,7 @@ def get_glitched_location_rules(player, options):
         "Woodfall Temple Push Block Bubble SF":
             lambda state: state.has("Small Key (Woodfall)", player) and has_projectiles(state, player) and state.has("Great Fairy Mask", player) or (state.has("Progressive Bow", player) and state.has("Great Fairy Mask", player)),
         "Woodfall Temple Push Block Beehive SF":
-            lambda state: (state.has("Small Key (Woodfall)", player) and has_projectiles(state, player) or state.has("Progressive Bow", player)) or trick_enabled(state, player, options, ("WFT Second Floor Skip",)),
+            lambda state: (state.has("Small Key (Woodfall)", player) and has_projectiles(state, player) or state.has("Progressive Bow", player)) or trick_enabled("WFT Second Floor Skip", options),
         "Woodfall Temple Final Room Right Lower Platform SF":
             lambda state: state.has("Progressive Bow", player) or can_use_fire_arrows(state, player),
         "Woodfall Temple Final Room Right Upper Platform SF":
@@ -444,9 +448,9 @@ def get_glitched_location_rules(player, options):
         "Woodfall Temple Final Room Bubble SF":
             lambda state: state.has("Progressive Bow", player) or can_use_fire_arrows(state, player),
         "Woodfall Temple Heart Container":
-            lambda state: state.has("Progressive Bow", player) and can_smack(state, player) and state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player) or glitch_enabled(state, player, options, ("WFT BK Skip",)),
+            lambda state: state.has("Progressive Bow", player) and can_smack(state, player) and state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player) or glitch_enabled("WFT BK Skip", options),
         "Woodfall Temple Odolwa's Remains":
-            lambda state: state.has("Progressive Bow", player) and can_smack(state, player) and state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player) or glitch_enabled(state, player, options, ("WFT BK Skip",)),
+            lambda state: state.has("Progressive Bow", player) and can_smack(state, player) and state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player) or glitch_enabled("WFT BK Skip", options),
 
 
         "Tour Witch Target Shooting":
@@ -479,9 +483,9 @@ def get_glitched_location_rules(player, options):
         "Twin Islands Spring Underwater Near Ramp Chest":
             lambda state: state.has("Zora Mask", player) and can_clear_snowhead(state, player),
         "Goron Racetrack Bottle Prize":
-            lambda state: state.has("Powder Keg", player) and can_clear_snowhead(state, player) or (can_clear_snowhead(state, player) and glitch_enabled(state, player, options, ("Bomb Hover",))),
+            lambda state: state.has("Powder Keg", player) and can_clear_snowhead(state, player) or (can_clear_snowhead(state, player) and glitch_enabled("Bomb Hover", options)),
         "Goron Song":
-            lambda state: state.has("Goron Mask", player) and state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and (has_bottle(state, player) or can_use_fire_arrows(state, player) or glitch_enabled(state, player, options, ("Action Swap",))),
+            lambda state: state.has("Goron Mask", player) and state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and (has_bottle(state, player) or can_use_fire_arrows(state, player) or glitch_enabled("Action Swap", options)),
 
 
         "Goron Village Lens Cave Rock Chest":
@@ -493,17 +497,17 @@ def get_glitched_location_rules(player, options):
         "Goron Village Deku Trade":
             lambda state: state.has("Deku Mask", player) and state.has("Swamp Title Deed", player),
         "Goron Village Deku Trade Freestanding HP":
-            lambda state: state.can_reach("Goron Village Deku Trade", 'Location', player) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.can_reach("Goron Village Deku Trade", 'Location', player) or glitch_enabled("Bomb Hover", options),
         "Powder Keg Goron Reward":
-            lambda state: can_clear_snowhead(state, player) or (can_use_fire_arrows(state, player) and state.has("Goron Mask", player)) or (glitch_enabled(state, player, options, ("Action Swap",)) and state.has("Goron Mask", player)) or (trick_enabled(state, player, options, ("Melt Ice as Fierce Deity",)) and state.has("Goron Mask")),
+            lambda state: can_clear_snowhead(state, player) or (can_use_fire_arrows(state, player) and state.has("Goron Mask", player)) or (glitch_enabled("Action Swap", options) and state.has("Goron Mask", player)) or (trick_enabled("Melt Ice as Fierce Deity", options) and state.has("Goron Mask")),
         "Goron Village Deku Scrub Bomb Bag":
             lambda state: state.has("Goron Mask", player) and state.has("Progressive Wallet", player) or (state.can_reach("Goron Village Deku Trade Freestanding HP", 'Location', player) and state.can_reach("Southern Swamp Deku Trade Freestanding HP", 'Location', player) and state.has("Moon's Tear", player) and state.has("Progressive Wallet", player)),
 
 
         "Path to Snowhead Grotto Chest":
-            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and has_explosives(state, player) or (trick_enabled(state, player, options, ("PTSH as Zora",)) and has_explosives(state, player)) or (trick_enabled(state, player, options, ("PTSH as Goron without Magic",)) and has_explosives(state, player)) or (trick_enabled(state, player, options, ("Fierce Deity Jumps",)) and has_explosives(state, player)) or (trick_enabled(state, player, options, ("PTSH as Link with Sword or Sticks",)) and has_explosives(state, player)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) and has_explosives(state, player) or (trick_enabled("PTSH as Zora", options) and has_explosives(state, player)) or (trick_enabled("PTSH as Goron without Magic", options) and has_explosives(state, player)) or (trick_enabled("Fierce Deity Jumps", options) and has_explosives(state, player)) or (trick_enabled("PTSH as Link with Sword or Sticks", options) and has_explosives(state, player)) or glitch_enabled("Bomb Hover", options),
         "Path to Snowhead Scarecrow Pillar HP":
-            lambda state: can_reach_scarecrow(state, player) and state.has("Goron Mask", player) and can_use_lens(state, player) and state.has("Hookshot", player) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: can_reach_scarecrow(state, player) and state.has("Goron Mask", player) and can_use_lens(state, player) and state.has("Hookshot", player) or glitch_enabled("Bomb Hover", options),
 
 
         "Snowhead Great Fairy Reward":
@@ -511,111 +515,111 @@ def get_glitched_location_rules(player, options):
 
         # Snowhead has 3 small keys
         "Snowhead Temple Initial Runway Under Platform Bubble SF":
-            lambda state: state.has("Progressive Bow", player) and state.has("Great Fairy Mask", player) or trick_enabled(state, player, options, ("Recoil Flip",)),
+            lambda state: state.has("Progressive Bow", player) and state.has("Great Fairy Mask", player) or trick_enabled("Recoil Flip", options),
         "Snowhead Temple Initial Runway Tower Bubble SF":
-            lambda state: state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) or (can_use_fire_arrows(state, player) and can_smack_hard(state,player)) or trick_enabled(state, player, options, ("Difficult Jumps",)),
+            lambda state: state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) or (can_use_fire_arrows(state, player) and can_smack_hard(state,player)) or trick_enabled("Difficult Jumps", options),
         "Snowhead Temple Grey Door Near Bombable Stairs Box SF":
-            lambda state: state.has("Small Key (Snowhead)", player) and state.has("Great Fairy Mask", player) and has_explosives(state, player) or (state.has("Hookshot", player) and state.can_reach("Snowhead Temple Initial Runway Tower Bubble SF", 'Location', player) and has_explosives(state, player)) or trick_enabled(state, player, options, ("Fierce Deity Climbing", "Bomb Long Jump",)),
+            lambda state: state.has("Small Key (Snowhead)", player) and state.has("Great Fairy Mask", player) and has_explosives(state, player) or (state.has("Hookshot", player) and state.can_reach("Snowhead Temple Initial Runway Tower Bubble SF", 'Location', player) and has_explosives(state, player)) or trick_enabled("Fierce Deity Climbing", options) or trick_enabled("Bomb Long Jump", options),
         # "Snowhead Temple Timed Switch Room Bubble SF" needs 2 small keys following the 'vanilla path' \/
         "Snowhead Temple Timed Switch Room Bubble SF":
-            lambda state: (state.has("Small Key (Snowhead)", player, 2) and state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) and can_use_lens(state, player) and has_explosives(state, player) or (can_use_fire_arrows(state, player) and can_reach_scarecrow(state, player) and state.has("Hookshot", player) and state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) and can_use_lens(state, player))) or trick_enabled(state, player, options, ("Hookshot Pixelshots",)) and state.has("Great Fairy's Mask", player) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: (state.has("Small Key (Snowhead)", player, 2) and state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) and can_use_lens(state, player) and has_explosives(state, player) or (can_use_fire_arrows(state, player) and can_reach_scarecrow(state, player) and state.has("Hookshot", player) and state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) and can_use_lens(state, player))) or trick_enabled("Hookshot Pixelshots", options) and state.has("Great Fairy's Mask", player) or glitch_enabled("Bomb Hover", options),
         # "Snowhead Temple Snowmen Bubble SF" needs 3 small keys following the 'vanilla' path' - this is the final small key too. \/
         "Snowhead Temple Snowmen Bubble SF":
-            lambda state: state.has("Small Key (Snowhead)", player, 3) and state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) and has_explosives(state, player) or (state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player) and state.has("Great Fairy Mask", player)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and glitch_enabled(state, player, options, ("Bomb Hover",)) and state.has("Small Key (Snowhead)", player, 1)),
+            lambda state: state.has("Small Key (Snowhead)", player, 3) and state.has("Great Fairy Mask", player) and state.has("Progressive Bow", player) and has_explosives(state, player) or (state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player) and state.has("Great Fairy Mask", player)) or (trick_enabled("Hookshot Pixelshot", options) and glitch_enabled("Bomb Hover", options) and state.has("Small Key (Snowhead)", player, 1)),
         # Both Dinolfos checks require 3 small keys following vanilla path
         "Snowhead Temple Dinolfos Room First SF":
-            lambda state: state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) and can_use_fire_arrows(state, player) or (state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and glitch_enabled(state, player, options, ("Bomb Hover",)) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and can_use_fire_arrows(state, player) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and glitch_enabled(state, player, options, ("Bomb Hover",))),
+            lambda state: state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) and can_use_fire_arrows(state, player) or (state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player)) or (trick_enabled("Hookshot Pixelshot", options) and glitch_enabled("Bomb Hover", options) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled("Hookshot Pixelshot", options) and can_use_fire_arrows(state, player) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled("Hookshot Pixelshot", options) and glitch_enabled("Bomb Hover", options)),
         "Snowhead Temple Dinolfos Room Second SF":
-            lambda state: state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) and can_use_fire_arrows(state, player) or (state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and glitch_enabled(state, player, options, ("Bomb Hover",)) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and can_use_fire_arrows(state, player) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled(state, player, options, ("Hookshot Pixelshot",)) and glitch_enabled(state, player, options, ("Bomb Hover",))),
+            lambda state: state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) and can_use_fire_arrows(state, player) or (state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player)) or (trick_enabled("Hookshot Pixelshot", options) and glitch_enabled("Bomb Hover", options) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled("Hookshot Pixelshot", options) and can_use_fire_arrows(state, player) and state.has("Small Key (Snowhead)", player, 1)) or (trick_enabled("Hookshot Pixelshot", options) and glitch_enabled("Bomb Hover", options)),
         "Snowhead Temple Initial Runway Ice Blowers Chest":
-            lambda state: can_use_fire_arrows(state, player) or state.has("Hookshot", player) or trick_enabled(state, player, options, ("Fierce Deity Jumps", "Bomb Long Jump",)),
+            lambda state: can_use_fire_arrows(state, player) or state.has("Hookshot", player) or trick_enabled("Fierce Deity Jumps", options) or trick_enabled("Bomb Long Jump", options),
         "Snowhead Temple Green Door Ice Blowers Chest":
-            lambda state: can_use_fire_arrows(state, player) or glitch_enabled(state, player, options, ("Action Swap",)) or trick_enabled(state, player, options, ("SHT Green Door Shoot Through Torch",)),
+            lambda state: can_use_fire_arrows(state, player) or glitch_enabled("Action Swap", options) or trick_enabled("SHT Green Door Shoot Through Torch", options),
         #  "Snowhead Temple Orange Door Upper Chest" only needs 1 small key
         "Snowhead Temple Orange Door Upper Chest":
-            lambda state: (state.has("Hookshot", player) and state.has("Small Key (Snowhead)", player) or state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player)) or (glitch_enabled(state, player, options, ("Action Swap",)) and state.has("Zora Mask", player) or state.has("Fierce Deity Mask", player)) or trick_enabled(state, player, options("Fierce Deity Jumps",)) or glitch_enabled(player, state, options, ("Bomb Hover",)) or (state.has("Small Key (Snowhead)", player, 1) and trick_enabled(state, player, options, ("Bomb Long Jump",))),
+            lambda state: (state.has("Hookshot", player) and state.has("Small Key (Snowhead)", player) or state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player)) or (glitch_enabled("Action Swap", options) and state.has("Zora Mask", player) or state.has("Fierce Deity Mask", player)) or trick_enabled("Fierce Deity Jumps", options) or glitch_enabled("Bomb Hover", options) or (state.has("Small Key (Snowhead)", player, 1) and trick_enabled("Bomb Long Jump", options)),
         "Snowhead Temple Orange Door Behind Block Chest":
             lambda state: state.can_reach("Snowhead Temple Orange Door Upper Chest", 'Location', player),
         #  "Snowhead Temple Grey Door Center Chest" requires one key (either im colour blind or you are but that door is like, light blue)
         "Snowhead Temple Light Blue Door Center Chest":
-            lambda state: state.has("Small Key (Snowhead)", player) or state.has("Hookshot", player) or trick_enabled(state, player, options, ("Fierce Deity Jumps", "Bomb Long Jumps",)),
+            lambda state: state.has("Small Key (Snowhead)", player) or state.has("Hookshot", player) or trick_enabled("Fierce Deity Jumps", options) or trick_enabled("Bomb Long Jumps", options),
         "Snowhead Temple Light Blue Door Upper Chest":
-            lambda state: state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player) or (state.has("Hookshot", player) and can_use_fire_arrows(state, player)) or (trick_enabled(state, player, options, ("SHT Ice Block Switch Clip",)) and trick_enabled(state, player, options, ("Fierce Deity Jumps", "Zora Gainer",))),
+            lambda state: state.has("Small Key (Snowhead)", player) and can_use_fire_arrows(state, player) or (state.has("Hookshot", player) and can_use_fire_arrows(state, player)) or (trick_enabled("SHT Ice Block Switch Clip", options) and trick_enabled("Fierce Deity Jumps", options) or trick_enabled("Zora Gainer", options)),
         "Snowhead Temple Upstairs 2F Icicle Room Hidden Chest":
-            lambda state: state.has("Small Key (Snowhead)", player) and can_use_lens(state, player) and has_explosives(state, player) and state.has("Progressive Bow", player) or (state.has("Small Key (Snowhead", player) and can_use_fire_arrows(state, player)) or state.has("Small Key (Snowhead", player) and can_reach_scarecrow(state, player) or glitch_enabled(state, player, options("Bomb Hover",)) or (can_reach_scarecrow(state, player) and state.has("Fierce Deity", player) and state.has("Small Key (Snowhead", player)) or (can_use_fire_arrows(state, player) and state.has("Fierce Deity", player) and state.has("Small Key (Snowhead", player)) or (can_use_fire_arrows(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Snowhead", player)) or (can_reach_scarecrow(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Snowhead", player)),
+            lambda state: state.has("Small Key (Snowhead)", player) and can_use_lens(state, player) and has_explosives(state, player) and state.has("Progressive Bow", player) or (state.has("Small Key (Snowhead", player) and can_use_fire_arrows(state, player)) or state.has("Small Key (Snowhead", player) and can_reach_scarecrow(state, player) or glitch_enabled("Bomb Hover", options) or (can_reach_scarecrow(state, player) and state.has("Fierce Deity", player) and state.has("Small Key (Snowhead", player)) or (can_use_fire_arrows(state, player) and state.has("Fierce Deity", player) and state.has("Small Key (Snowhead", player)) or (can_use_fire_arrows(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Snowhead", player)) or (can_reach_scarecrow(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Snowhead", player)),
         "Snowhead Temple Upstairs 2F Icicle Room Snowball Chest":
-            lambda state: state.has("Small Key (Snowhead)", player) and can_use_lens(state, player) and has_explosives(state, player) and state.has("Progressive Bow", player) or (state.has("Small Key (Snowhead", player) and can_use_fire_arrows(state, player)) or state.has("Small Key (Snowhead", player) and can_reach_scarecrow(state, player) or glitch_enabled(state, player, options("Bomb Hover",)) or (can_use_fire_arrows(state, player) and state.has("Fierce Deity", player) and state.has("Small Key (Snowhead", player)) or (can_use_fire_arrows(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Snowhead", player)),
+            lambda state: state.has("Small Key (Snowhead)", player) and can_use_lens(state, player) and has_explosives(state, player) and state.has("Progressive Bow", player) or (state.has("Small Key (Snowhead", player) and can_use_fire_arrows(state, player)) or state.has("Small Key (Snowhead", player) and can_reach_scarecrow(state, player) or glitch_enabled("Bomb Hover", options) or (can_use_fire_arrows(state, player) and state.has("Fierce Deity", player) and state.has("Small Key (Snowhead", player)) or (can_use_fire_arrows(state, player) and state.has("Zora Mask", player) and state.has("Small Key (Snowhead", player)),
         "Snowhead Temple Elevator Room Invisible Platform Chest":
-            lambda state: can_use_lens(state, player) and state.has("Small Key (Snowhead)", player, 2) and has_explosives(state, player) or can_use_lens(state, player) and can_use_fire_arrows(state, player) or glitch_enabled(state, player, options("Bomb Hover",)),
+            lambda state: can_use_lens(state, player) and state.has("Small Key (Snowhead)", player, 2) and has_explosives(state, player) or can_use_lens(state, player) and can_use_fire_arrows(state, player) or glitch_enabled("Bomb Hover", options),
         "Snowhead Temple Elevator Room Lower Chest":
             lambda state: state.can_reach("Snowhead Temple Initial Runway Tower Bubble SF", 'Location', player),
         "Snowhead Temple 1st Wizzrobe Chest":
-            lambda state: state.has("Small Key (Snowhead)", player, 2) and has_explosives(state, player) and has_projectiles(state, player) and can_smack(state, player) or can_use_fire_arrows(state, player) or trick_enabled(state, player, options("Hookshot Pixelshot",)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Small Key (Snowhead)", player, 2) and has_explosives(state, player) and has_projectiles(state, player) and can_smack(state, player) or can_use_fire_arrows(state, player) or trick_enabled("Hookshot Pixelshot", options) or glitch_enabled("Bomb Hover", options),
         "Snowhead Temple Column Room 2F Hidden Chest":
-            lambda state: state.has("Small Key (Snowhead)", player, 3) and can_use_lens(state, player) and has_explosives(state, player) and state.has("Deku Mask", player) or (can_use_fire_arrows(state, player) and can_reach_scarecrow(state, player) and state.has("Hookshot", player)) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Hookshot Pixelshot", "SHT Jump to Hidden Wall in Main Room",)),
+            lambda state: state.has("Small Key (Snowhead)", player, 3) and can_use_lens(state, player) and has_explosives(state, player) and state.has("Deku Mask", player) or (can_use_fire_arrows(state, player) and can_reach_scarecrow(state, player) and state.has("Hookshot", player)) or glitch_enabled("Bomb Hover", options) or trick_enabled("Hookshot Pixelshot", options) or trick_enabled("SHT Jump to Hidden Wall in Main Room", options),
         "Snowhead Temple 2nd Wizzrobe Chest":
-            lambda state: state.has("Small Key (Snowhead)", player, 3) and can_use_fire_arrows(state, player) and has_explosives(state, player) and can_smack(state, player) or state.has("Small Key (Snowhead)", player, 1) and can_use_fire_arrows(state, player) and can_reach_scarecrow(state, player) and state.has("Deku Mask", player) or glitch_enabled(state, player, options,("Long Bomb Hover",)),
+            lambda state: state.has("Small Key (Snowhead)", player, 3) and can_use_fire_arrows(state, player) and has_explosives(state, player) and can_smack(state, player) or state.has("Small Key (Snowhead)", player, 1) and can_use_fire_arrows(state, player) and can_reach_scarecrow(state, player) and state.has("Deku Mask", player) or glitch_enabled("Long Bomb Hover", options),
         "Snowhead Temple Heart Container":
-            lambda state: can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) and state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) or state.has("Small Key (Snowhead)", player, 1) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) or can_use_fire_arrows(state, player) and state.has("Goht's Remains", player) or glitch_enabled(state, player, options, ("SHT BK Skip", "Action Swap", "Equip Swap", "Long Bomb Hover",)) or (glitch_enabled(state, player, options, ("SHT BK Skip", "Long Bomb Hover",)) and can_use_fire_arrows(state, player)) or (glitch_enabled(state, player, options, ("Long Bomb Hover",)) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player)) or (state.has("Goht's Remains", player) and glitch_enabled(state, player, options, ("Action Swap", "Equip Swap",))),
+            lambda state: can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) and state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) or state.has("Small Key (Snowhead)", player, 1) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) or can_use_fire_arrows(state, player) and state.has("Goht's Remains", player) or glitch_enabled("SHT BK Skip", options) or glitch_enabled("Action Swap", options) or glitch_enabled("Equip Swap", options) or glitch_enabled("Long Bomb Hover", options) or (glitch_enabled("SHT BK Skip", options) or glitch_enabled("Long Bomb Hover", options) and can_use_fire_arrows(state, player)) or (glitch_enabled("Long Bomb Hover", options) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player)) or (state.has("Goht's Remains", player) and glitch_enabled("Action Swap", options) or glitch_enabled("Equip Swap", options)),
         "Snowhead Temple Goht's Remains":
-            lambda state: can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) and state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) or state.has("Small Key (Snowhead)", player, 1) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) or can_use_fire_arrows(state, player) and state.has("Goht's Remains", player) or glitch_enabled(state, player, options, ("SHT BK Skip", "Action Swap", "Equip Swap", "Long Bomb Hover",)) or (glitch_enabled(state, player, options, ("SHT BK Skip", "Long Bomb Hover",)) and can_use_fire_arrows(state, player)) or (glitch_enabled(state, player, options, ("Long Bomb Hover",)) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player)) or (state.has("Goht's Remains", player) and glitch_enabled(state, player, options, ("Action Swap", "Equip Swap",))),
+            lambda state: can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) and state.has("Small Key (Snowhead)", player, 3) and has_explosives(state, player) or state.has("Small Key (Snowhead)", player, 1) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player) or can_use_fire_arrows(state, player) and state.has("Goht's Remains", player) or glitch_enabled("SHT BK Skip", options) or glitch_enabled("Action Swap", options) or glitch_enabled("Equip Swap", options) or glitch_enabled("Long Bomb Hover", options) or (glitch_enabled("SHT BK Skip", options) or glitch_enabled("Long Bomb Hover", options) and can_use_fire_arrows(state, player)) or (glitch_enabled("Long Bomb Hover", options) and can_use_fire_arrows(state, player) and state.has("Boss Key (Snowhead)", player)) or (state.has("Goht's Remains", player) and glitch_enabled("Action Swap", options) or glitch_enabled("Equip Swap", options)),
 
 
         "Romani Ranch Breman March Baby Cuccos":
             lambda state: state.has("Bremen Mask", player),
         "Romani Ranch Helping Cremia":
-            lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled(state, player, options, ("Fierce Deity Out Of Bounds",)) and state.has("Progressive Bow", player)) or (glitch_enabled(state, player, options, ("Bomb Hover",)) and state.has("Progressive Bow", player)),
+            lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled("Fierce Deity Out Of Bounds", options) and state.has("Progressive Bow", player)) or (glitch_enabled("Bomb Hover", options) and state.has("Progressive Bow", player)),
         "Romani Ranch Doggy Racetrack Rooftop Chest":
-            lambda state: state.has("Hookshot", player) or can_plant_beans(state, player) or trick_enabled(state, player, options, ("One Sided Collision Itemless", "One Sided Collision",)),
+            lambda state: state.has("Hookshot", player) or can_plant_beans(state, player) or trick_enabled("One Sided Collision Itemless", options) or trick_enabled("One Sided Collision", options),
         "Romani Ranch Doggy Race":
             lambda state: state.has("Mask of Truth", player),
         "Romani Ranch Romani Game":
-            lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled(state, player, options, ("Fierce Deity Out Of Bounds",)) and state.has("Progressive Bow", player)) or (glitch_enabled(state, player, options, ("Bomb Hover",)) and state.has("Progressive Bow", player)),
+            lambda state: can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled("Fierce Deity Out Of Bounds", options) and state.has("Progressive Bow", player)) or (glitch_enabled("Bomb Hover", options) and state.has("Progressive Bow", player)),
         "Romani Ranch Barn Free Cow":
-            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) or can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled(state, player, options, ("Fierce Deity Out Of Bounds",)) and can_play_song("Epona's Song", state, player)) or (glitch_enabled(state, player, options, ("Bomb Hover",)) and can_play_song("Epona's Song", state, player)),
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) or can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled("Fierce Deity Out Of Bounds", options) and can_play_song("Epona's Song", state, player)) or (glitch_enabled("Bomb Hover", options) and can_play_song("Epona's Song", state, player)),
         "Romani Ranch Barn Stables Front Cow":
-            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) or can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled(state, player, options, ("Fierce Deity Out Of Bounds",)) and can_play_song("Epona's Song", state, player)) or (glitch_enabled(state, player, options, ("Bomb Hover",)) and can_play_song("Epona's Song", state, player)),
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) or can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled("Fierce Deity Out Of Bounds", options) and can_play_song("Epona's Song", state, player)) or (glitch_enabled("Bomb Hover", options) and can_play_song("Epona's Song", state, player)),
         "Romani Ranch Barn Stables Back Cow":
-            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) or can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled(state, player, options, ("Fierce Deity Out Of Bounds",)) and can_play_song("Epona's Song", state, player)) or (glitch_enabled(state, player, options, ("Bomb Hover",)) and can_play_song("Epona's Song", state, player)),
+            lambda state: can_use_powder_keg(state, player) and can_play_song("Epona's Song", state, player) or can_use_powder_keg(state, player) and state.has("Progressive Bow", player) or (glitch_enabled("Fierce Deity Out Of Bounds", options) and can_play_song("Epona's Song", state, player)) or (glitch_enabled("Bomb Hover", options) and can_play_song("Epona's Song", state, player)),
 
 
         "Great Bay Healing Zora":
-            lambda state: can_play_song("Song of Healing", state, player) or (glitch_enabled(state, player, options, ("Ocarina Items",)) and can_play_song("Song of Healing", state, player)),
+            lambda state: can_play_song("Song of Healing", state, player) or (glitch_enabled("Ocarina Items", options) and can_play_song("Song of Healing", state, player)),
         "Great Bay Scarecrow Ledge HP":
-            lambda state: can_plant_beans(state, player) and can_reach_scarecrow(state, player) or glitch_enabled(state, player, options, ("Bomb Hover", "Bomb Long Jumps",)),
+            lambda state: can_plant_beans(state, player) and can_reach_scarecrow(state, player) or glitch_enabled("Bomb Hover", options) or glitch_enabled("Bomb Long Jumps", options),
         "Tingle Great Bay Map Purchase":
             lambda state: has_projectiles(state, player) and state.can_reach("Milk Road", 'Region', player),
         "Great Bay Ledge Grotto Left Cow":
-            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) or (glitch_enabled(state, player, options, ("Bomb Hover", "Bomb Long Jumps",)) and can_play_song("Epona's Song", state, player)),
+            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) or (glitch_enabled("Bomb Hover", options) or glitch_enabled("Bomb Long Jumps", options) and can_play_song("Epona's Song", state, player)),
         "Great Bay Ledge Grotto Right Cow":
-            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) or (glitch_enabled(state, player, options, ("Bomb Hover", "Bomb Long Jumps",)) and can_play_song("Epona's Song", state, player)),
+            lambda state: state.has("Hookshot", player) and can_play_song("Epona's Song", state, player) or (glitch_enabled("Bomb Hover", options) or glitch_enabled("Bomb Long Jumps", options) and can_play_song("Epona's Song", state, player)),
         "Pinnacle Rock HP":
             lambda state: can_reach_seahorse(state, player) and has_bottle(state, player) and state.has("Zora Mask", player),
         "Pinnacle Rock Upper Eel Chest":
-            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player) and state.has("Zora Mask", player) or trick_enabled(state, options, player, ("Pinnacle Rock without Seahorse",)),
+            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player) and state.has("Zora Mask", player) or trick_enabled("Pinnacle Rock without Seahorse", options),
         "Pinnacle Rock Lower Eel Chest":
-            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player) and state.has("Zora Mask", player) or trick_enabled(state, options, player, ("Pinnacle Rock without Seahorse",)),
+            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player) and state.has("Zora Mask", player) or trick_enabled("Pinnacle Rock without Seahorse", options),
         # ~ maybe require 3 bottles for eggs
         "Zora Egg Delivery Song":
-            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player, 3) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player) or (trick_enabled(state, player, options, ("Pinnacle Rock without Seahorse", "Equip Swap",)) and has_bottle(state, player, 1)) or (trick_enabled(state, player, options, ("Pinnacle Rock without Seahorse",)) and glitch_enabled(state, player, options,("Bomb Hover",)) and has_bottle(state, player, 1)) or (trick_enabled(state, player, options, ("Pinnacle Rock without Seahorse",)) and state.has("Hookshot", player) and has_bottle(state, player, 1)) or (trick_enabled(state, player, options, ("Pinnacle Rock without Seahorse",)) and state.has("Hookshot", player)),
+            lambda state: can_reach_seahorse(state, player) and has_bottle(state, player, 3) and state.can_reach("Pirates' Fortress Leader's Room Chest", "Location", player) or (trick_enabled("Pinnacle Rock without Seahorse", options) or trick_enabled("Equip Swap", options) and has_bottle(state, player, 1)) or (trick_enabled("Pinnacle Rock without Seahorse", options) and glitch_enabled("Bomb Hover", options) and has_bottle(state, player, 1)) or (trick_enabled("Pinnacle Rock without Seahorse", options) and state.has("Hookshot", player) and has_bottle(state, player, 1)) or (trick_enabled("Pinnacle Rock without Seahorse", options) and state.has("Hookshot", player)),
         "Fisherman Island Game HP":
             lambda state: can_clear_greatbay(state, player),
 
 
         "Ocean Spider House Ramp Upper Token":
-            lambda state: state.has("Hookshot", player) or trick_enabled(state, player, options, ("Ocean Spider House Ramp Spiders with nothing",)) or trick_enabled(state, player, options, ("Ocean Spider House Ramp Spider with Goron",)),
+            lambda state: state.has("Hookshot", player) or trick_enabled("Ocean Spider House Ramp Spiders with nothing", options) or trick_enabled("Ocean Spider House Ramp Spider with Goron", options),
         "Ocean Spider House Ramp Lower Token":
-            lambda state: state.has("Hookshot", player) or trick_enabled(state, player, options, ("Ocean Spider House Ramp Spiders with nothing",)) or trick_enabled(state, player, options, ("Ocean Spider House Ramp Spider with Goron",)),
+            lambda state: state.has("Hookshot", player) or trick_enabled("Ocean Spider House Ramp Spiders with nothing", options) or trick_enabled("Ocean Spider House Ramp Spider with Goron", options),
         "Ocean Spider House Lobby Ceiling Token":
-            lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player) or (trick_enabled(state, player, options, ("Goron Damage Boost",)) and glitch_enabled(state, player, options, ("Bomb Hover",))) or trick_enabled(state, player, options("Hookshot Pixelshots", "Goron Damage Boost",)),
+            lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player) or (trick_enabled("Goron Damage Boost", options) and glitch_enabled("Bomb Hover", options)) or trick_enabled("Hookshot Pixelshots", options) or trick_enabled("Goron Damage Boost", options),
         "Ocean Spider House First Room Rafter Token":
-            lambda state: state.has("Hookshot", player) or trick_enabled(state, player, options, ("Ocean Spider House Tokens as Zora",)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Hookshot", player) or trick_enabled("Ocean Spider House Tokens as Zora", options) or glitch_enabled("Bomb Hover", options),
         "Ocean Spider House First Room Open Pot #1 Token":
-            lambda state: state.has("Hookshot", player) or trick_enabled(state, player, options, ("Ocean Spider House Tokens as Zora",)) or glitch_enabled(state, player, options, ("Bomb Hover",)),
+            lambda state: state.has("Hookshot", player) or trick_enabled("Ocean Spider House Tokens as Zora", options) or glitch_enabled("Bomb Hover", options),
         "Ocean Spider House First Room Open Pot #2 Token":
-            lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player) or trick_enabled(state, player, options, ("Ocean Spider House bonk webbed pot",)),
+            lambda state: state.has("Hookshot", player) and can_use_fire_arrows(state, player) or trick_enabled("Ocean Spider House bonk webbed pot", options),
         "Ocean Spider House First Room Wall Token":
-            lambda state: state.has("Hookshot", player) or state.has("Zora Mask", player) or glitch_enabled(state, player, options, ("Bomb Hover",)) or trick_enabled(state, player, options, ("Fierce Deity Jumps",)),
+            lambda state: state.has("Hookshot", player) or state.has("Zora Mask", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Fierce Deity Jumps", options),
         "Ocean Spider House Library Top Bookcase Token":
             lambda state: state.has("Hookshot", player),
         "Ocean Spider House Library Passage Behind Bookcase Front Token":
