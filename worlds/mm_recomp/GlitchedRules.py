@@ -111,19 +111,9 @@ def can_purchase(state, player, price):
 
 def get_glitched_region_rules(player, options):
     return {
-        "Clock Town -> Great Bay":
+        "Clock Town -> Index Warp":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Clock Town -> Path to Snowhead":
-            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Deku Palace -> Mountain Village":
-            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Goron Village -> Stone Tower":
-            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Path to Snowhead -> Woodfall":
-            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Ikana Graveyard -> Southern Swamp":
-            lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        
+
         "Clock Town -> The Moon":
             lambda state: state.has("Ocarina of Time", player) and state.has("Oath to Order", player) and state.has("Odolwa's Remains", player) and state.has("Goht's Remains", player) and state.has("Gyorg's Remains", player) and state.has("Twinmold's Remains", player),
         "Southern Swamp -> Southern Swamp (Deku Palace)":
@@ -137,16 +127,16 @@ def get_glitched_region_rules(player, options):
         "Woodfall -> Woodfall Temple":
             lambda state: can_play_song("Sonata of Awakening", state, player),
         "Termina Field -> Path to Mountain Village":
-            lambda state: glitch_enabled("Seamwalk", options),
+            lambda state: state.has("Progressive Bow", player) or glitch_enabled("Seamwalk", options),
         "Path to Mountain Village -> Mountain Village":
-            lambda state: trick_enabled("Backflip Over Snowballs", options),
+            lambda state: state.has("Goron Mask", player) or (has_explosives(state, player)) or (can_use_fire_arrows(state, player)) or trick_enabled("Backflip Over Snowballs", options),
         # I didn't add HESS logic to SHT entry cause I'm not a masochist or a sadist
         "Path to Snowhead -> Snowhead Temple":
             lambda state: (state.has("Goron Mask", player) and can_play_song("Goron Lullaby", state, player)) or glitch_enabled("Long Bomb Hover", options),
         "Termina Field -> Great Bay":
             lambda state: can_play_song("Epona's Song", state, player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Goron Damage Boost", options) or trick_enabled("Fierce Deity Damage Boost", options),
         "Great Bay -> Ocean Spider House":
-            lambda state: has_explosives(state, player) and trick_enabled("Goron Damage Boost", options),
+            lambda state: has_explosives(state, player) or trick_enabled("Goron Damage Boost", options),
         "Great Bay -> Pirates' Fortress":
             lambda state: state.has("Zora Mask", player) or glitch_enabled("Long Bomb Hover", options),
         "Pirates' Fortress -> Pirates' Fortress (Sewers)":
@@ -443,7 +433,7 @@ def get_glitched_location_rules(player, options):
         "Mountain Village Spring Ramp Grotto":
             lambda state: can_clear_snowhead(state, player),
         "Don Gero Mask Frog Song HP":
-            lambda state: state.has("Don Gero Mask", player) and can_clear_snowhead(state, player) and state.can_reach("Woodfall Temple Boss Key Chest", 'Location', player) and state.can_reach("Great Bay Temple", 'Region', player) and can_use_ice_arrows(player, state) and can_use_fire_arrows(player, state),
+            lambda state: state.has("Don Gero Mask", player) and can_clear_snowhead(state, player) and state.can_reach("Woodfall Temple Boss Key Chest", 'Location', player) and state.can_reach("Great Bay Temple", 'Region', player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player),
         # ~ "Mountain Village Smithy Day 1":
         # ~ lambda state: state.has("Progressive Wallet", player) and can_clear_snowhead(state, player) and has_bottle(state, player) and state.can_reach("Mountain Village Invisible Ladder Cave Healing Invisible Goron", 'Location', player) and can_use_fire_arrows(state, player),
         # ~ "Mountain Village Smithy Day 2":

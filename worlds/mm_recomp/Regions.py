@@ -8,7 +8,7 @@ class MMRRegionData(NamedTuple):
 
 region_data_table: Dict[str, MMRRegionData] = {
     "Menu": MMRRegionData(["Clock Town"]),
-    "Clock Town": MMRRegionData(["The Moon", "Trading Post", "Bomber's Hideout", "Termina Field", "Great Bay", "Path to Snowhead"]),
+    "Clock Town": MMRRegionData(["The Moon", "Trading Post", "Bomber's Hideout", "Termina Field", "Index Warp"]),
     "The Moon": MMRRegionData([]),
     "Trading Post": MMRRegionData([]),
     "Bomber's Hideout": MMRRegionData(["Astral Observatory"]),
@@ -18,7 +18,7 @@ region_data_table: Dict[str, MMRRegionData] = {
     "Southern Swamp": MMRRegionData(["Southern Swamp (Deku Palace)"]),
     "Southern Swamp (Deku Palace)": MMRRegionData(["Swamp Spider House", "Deku Palace", "Woodfall"]),
     "Swamp Spider House": MMRRegionData([]),
-    "Deku Palace": MMRRegionData(["Mountain Village"]),
+    "Deku Palace": MMRRegionData([]),
     "Woodfall": MMRRegionData(["Woodfall Temple"]),
     "Woodfall Temple": MMRRegionData([]),
     "Milk Road": MMRRegionData(["Gorman Brothers Track", "Romani Ranch"]),
@@ -27,9 +27,9 @@ region_data_table: Dict[str, MMRRegionData] = {
     "Path to Mountain Village": MMRRegionData(["Mountain Village"]),
     "Mountain Village": MMRRegionData(["Twin Islands", "Path to Snowhead"]),
     "Twin Islands": MMRRegionData(["Goron Village"]),
-    "Goron Village": MMRRegionData(["Goron Shrine", "Stone Tower"]),
+    "Goron Village": MMRRegionData(["Goron Shrine"]),
     "Goron Shrine": MMRRegionData([]),
-    "Path to Snowhead": MMRRegionData(["Snowhead Temple", "Woodfall"]),
+    "Path to Snowhead": MMRRegionData(["Snowhead Temple"]),
     "Snowhead Temple": MMRRegionData([]),
     "Great Bay": MMRRegionData(["Ocean Spider House", "Fisherman's House", "Pirates' Fortress", "Pinnacle Rock", "Zora Cape"]),
     "Ocean Spider House": MMRRegionData([]),
@@ -42,7 +42,7 @@ region_data_table: Dict[str, MMRRegionData] = {
     "Zora Hall": MMRRegionData([]),
     "Great Bay Temple": MMRRegionData([]),
     "Road to Ikana": MMRRegionData(["Ikana Graveyard", "Ikana Canyon"]),
-    "Ikana Graveyard": MMRRegionData(["Southern Swamp"]),
+    "Ikana Graveyard": MMRRegionData([]),
     "Ikana Canyon": MMRRegionData(["Secret Shrine", "Beneath the Well", "Ikana Castle", "Stone Tower"]),
     "Secret Shrine": MMRRegionData([]),
     "Beneath the Well": MMRRegionData(["Ikana Castle"]),
@@ -52,6 +52,7 @@ region_data_table: Dict[str, MMRRegionData] = {
     "Stone Tower Temple": MMRRegionData([]),
     "Stone Tower (Inverted)": MMRRegionData(["Stone Tower Temple (Inverted)"]),
     "Stone Tower Temple (Inverted)": MMRRegionData([]),
+    "Index Warp": MMRRegionData(["Clock Town", "Southern Swamp", "Woodfall", "Great Bay", "Path to Snowhead", "Mountain Village", "Stone Tower"]),
 }
 
 def get_exit(region, exit_name):
