@@ -610,7 +610,7 @@ def get_glitched_location_rules(player, options):
         "Ocean Spider House Library Rafter Token":
             lambda state: state.has("Hookshot", player) or (trick_enabled("Goron Damage Boost", options) and state.has("Zora Mask")) or (trick_enabled("Goron Damage Boost", options) and glitch_enabled("Fierce Deity Out Of Bounds", options)) or glitch_enabled("Bomb Hover", options),
         "Ocean Spider House Library Bookshelf Hole Token":
-            lambda state: state.has("Hookshot", player) or (trick_enabled("Goron Damage Boost", options) and trick_enabled("Ocean Spider House Zora Boomerang Holes", options)) or (trick_enabled("Goron Damage Boost", options) and glitch_enabled("Ocean Spider House Out Of Bounds With Zora", options),
+            lambda state: state.has("Hookshot", player) or (trick_enabled("Goron Damage Boost", options) and trick_enabled("Ocean Spider House Zora Boomerang Holes", options)) or (trick_enabled("Goron Damage Boost", options) and glitch_enabled("Ocean Spider House Out Of Bounds With Zora", options)),
         "Ocean Spider House First Room Downstairs Rafter Token":
             lambda state: state.has("Hookshot", player) or (trick_enabled("Goron Damage Boost", options) and state.has("Zora Mask")) or (trick_enabled("Goron Damage Boost", options) and trick_enabled("Fierce Deity Jumps", options)) or glitch_enabled("Bomb Hover", options),
         "Ocean Spider House First Room Downstairs Open Pot Token":
@@ -644,7 +644,7 @@ def get_glitched_location_rules(player, options):
         "Ocean Spider House Storage Room Ceiling Pot Token":
             lambda state: state.has("Hookshot", player) or (trick_enabled("Goron Damage Boost", options) and trick_enabled("Ocean Spider House Storage Room Ceiling Pot with nothing", options)) or glitch_enabled("Bomb Hover", options),
         "Ocean Spider House Coloured Mask Sequence HP":
-            lambda state: state.has("Hookshot", player) and state.has("Captain's Hat", player) and state.has("Progressive Bow", player) or ((trick_enabled("Goron Damage Boost", options) and trick_enabled("Bomb Recoil", options)) or (trick_enabled("Goron Damage Boost", options) and glitch_enabled("Fierce Deity Out Of Bounds", options)),
+            lambda state: state.has("Hookshot", player) and state.has("Captain's Hat", player) and state.has("Progressive Bow", player) or ((trick_enabled("Goron Damage Boost", options) and trick_enabled("Bomb Recoil", options)) or (trick_enabled("Goron Damage Boost", options) and glitch_enabled("Fierce Deity Out Of Bounds", options))),
         "Ocean Spider House Reward":
             lambda state: state.has("Ocean Skulltula Token", player, 30),
 
@@ -672,7 +672,7 @@ def get_glitched_location_rules(player, options):
         "Pirates' Fortress Leader's Room Chest":
             lambda state: state.has("Progressive Bow", player) or (state.has("Deku Mask", player) and state.has("Progressive Magic", player)),
         "Pirates' Fortress Near Egg Chest":
-            lambda state: state.has("Hookshot", player) and can_smack_hard(state, player) or trick_enabled("Fierce Deity Jumps", options or (state.has("Goron Mask", player) and state.has("Progressive Magic", player)),
+            lambda state: state.has("Hookshot", player) and can_smack_hard(state, player) or trick_enabled("Fierce Deity Jumps", options) or (state.has("Goron Mask", player) and state.has("Progressive Magic", player)),
         "Pirates' Fortress Pirates Surrounding Chest":
             lambda state: state.has("Hookshot", player) or (trick_enabled("Fierce Deity Jumps", options) and has_projectiles(state, player)) or (trick_enabled("Pirate Fortress Jump past sloped roof", options) and can_smack_hard(state, player)),
 
@@ -740,7 +740,7 @@ def get_glitched_location_rules(player, options):
         "Great Bay Temple Froggy Entrance Room Underwater Chest":
             lambda state: state.has("Zora Mask", player),
         "Great Bay Temple Behind Locked Door Chest":
-            lambda state: state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and can_smack_hard(state, player) or (state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and has_explosives(state, player)) or (state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and state.has("Progressive Bow", player)) and (state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and trick_enabled("Hard Deku Fights", options),
+            lambda state: state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and can_smack_hard(state, player) or (state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and has_explosives(state, player)) or (state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and state.has("Progressive Bow", player)) and (state.has("Small Key (Great Bay)", player) and state.has("Zora Mask", player) and trick_enabled("Hard Deku Fights", options)),
         "Great Bay Temple Room Behind Waterfall Ceiling Chest":
             lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and state.has("Zora Mask", player) or glitch_enabled("Bomb Hover", options),
         "Great Bay Temple Green Pipe Freezable Waterwheel Upper Chest":
@@ -752,7 +752,7 @@ def get_glitched_location_rules(player, options):
         "Great Bay Temple Seesaw Room Chest":
             lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or trick_enabled("Great Bay Temple Fireless", options) or trick_enabled("Fierce Deity Jumps") or glitch_enabled("Bomb Hover", options),
         "Great Bay Temple Before Boss Room Underneath Platform Bubble SF":
-            lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or (trick_enabled("Great Bay Temple Fireless", options) and glitch_enabled("Bomb Hover", options),
+            lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or (trick_enabled("Great Bay Temple Fireless", options) and glitch_enabled("Bomb Hover", options)),
         "Great Bay Temple Before Boss Room Exit Tunnel Bubble SF":
             lambda state: state.can_reach("Great Bay Temple Before Boss Room Underneath Platform Bubble SF", 'Location', player),
         "Great Bay Temple Heart Container":
@@ -776,7 +776,7 @@ def get_glitched_location_rules(player, options):
         "Graveyard Day 2 Iron Knuckle Chest":
             lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player) and has_explosives(state, player) or (glitch_enabled("Clip into Day 2 Grave", options) and can_smack_hard(state, player)) or (glitch_enabled("Clip through Day 1 Grave", options) and can_smack_hard(state, player) and trick_enabled("Bomb Long Jump", options)),
         "Graveyard Day 3 Dampe Big Poe Chest":
-            lambda state: (state.has("Captain's Hat", player) and state.has("Progressive Bow", player) or state.has("Zora Mask", player)) or (glitch_enabled("Clip into Day 3 Grave", options) and has_projectiles(state, player)) or (gltich_enabled("Unload Day 3 Grave", options) and has_projectiles(state, player)),
+            lambda state: (state.has("Captain's Hat", player) and state.has("Progressive Bow", player) or state.has("Zora Mask", player)) or (glitch_enabled("Clip into Day 3 Grave", options) and has_projectiles(state, player)) or (glitch_enabled("Unload Day 3 Grave", options) and has_projectiles(state, player)),
         "Graveyard Sonata To Wake Sleeping Skeleton Chest":
             lambda state: can_play_song("Sonata of Awakening", state, player) and can_smack_hard(state, player) and state.has("Ocarina of Time", player),
         "Graveyard Day 1 Iron Knuckle Song":
@@ -813,7 +813,7 @@ def get_glitched_location_rules(player, options):
         "Ikana Well Torch Chest":
             lambda state: has_bottle(state, player) and can_plant_beans(state, player) and state.has("Gibdo Mask", player) or (can_use_light_arrows(state, player) and has_bottle(state, player) and state.has("Gibdo Mask", player)) or (glitch_enabled("Weirdshot", options) and has_bottle(state, player) and state.has("Gibdo Mask", player)),
         "Ikana Well Invisible Chest":
-            lambda state: (has_bottle(state, player) and state.has("Progressive Wallet", player) or state.has("Mask of Scents", player) and state.has("Gibdo Mask", player),
+            lambda state: (has_bottle(state, player) and state.has("Progressive Wallet", player) or state.has("Mask of Scents", player) and state.has("Gibdo Mask", player)),
         "Ikana Well Final Chest":
             lambda state: has_bottle(state, player) and can_plant_beans(state, player) and state.has("Progressive Bomb Bag", player) or (can_use_light_arrows(state, player) and has_bottle(state, player)) or (glitch_enabled("Weirdshot", options) and can_use_fire_arrows(state, player)) or (glitch_enabled("Weirdshot", options) and state.has("Gibdo Mask", player) and has_bottle(state, player)),
         "Ikana Well Cow":
