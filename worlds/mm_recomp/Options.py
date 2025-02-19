@@ -4,7 +4,7 @@ from typing import Dict
 
 from Options import Choice, Option, DefaultOnToggle, Toggle, Range, OptionList, OptionSet, StartInventoryPool, DeathLink, PerGameCommonOptions
 
-from .Constants import Tricks, Glitches
+from .Constants import tricks, glitches
 
 class LogicDifficulty(Choice):
     """Set the logic difficulty used when generating."""
@@ -178,14 +178,14 @@ class EnabledTricks(OptionSet):
     """Choose which tricks should be considered to be in logic."""
     display_name = "Enabled Tricks"
     default = {}
-    valid_keys = [trick.value for trick in Tricks]
+    valid_keys = tricks
 
 
 class EnabledGlitches(OptionSet):
     """Choose which glitches should be considered to be in logic."""
     display_name = "Enabled Glitches"
     default = {}
-    valid_keys = [glitch.value for glitch in Glitches]
+    valid_keys = glitches
 
 @dataclass
 class MMROptions(PerGameCommonOptions):
