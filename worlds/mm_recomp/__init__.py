@@ -298,8 +298,8 @@ class MMRWorld(World):
             region_rules = get_baby_region_rules(player)
             location_rules = get_baby_location_rules(player)
         elif (self.options.logic_difficulty == 1):
-            region_rules = get_region_rules(player, self.options)
-            location_rules = get_location_rules(player, self.options)
+            region_rules = get_region_rules(player)
+            location_rules = get_location_rules(player)
         elif (self.options.logic_difficulty == 2):
             region_rules = get_glitched_region_rules(player, self.options)
             location_rules = get_glitched_location_rules(player, self.options)
@@ -324,6 +324,7 @@ class MMRWorld(World):
         return {
             "skullsanity": self.options.skullsanity.value,
             "shopsanity": self.options.shopsanity.value,
+            "fairysanity": self.options.fairysanity.value,
             "scrubsanity": self.options.scrubsanity.value,
             "cowsanity": self.options.cowsanity.value,
             "damage_multiplier": self.options.damage_multiplier.value,
@@ -335,5 +336,19 @@ class MMRWorld(World):
             "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
             "start_with_inverted_time": self.options.start_with_inverted_time.value,
             "receive_filled_wallets": self.options.receive_filled_wallets.value,
-            "link_tunic_color": ((self.options.link_tunic_color.value[0] & 0xFF) << 16) | ((self.options.link_tunic_color.value[1] & 0xFF) << 8) | (self.options.link_tunic_color.value[2] & 0xFF)
+            "link_tunic_color": ((self.options.link_tunic_color.value[0] & 0xFF) << 16) | ((self.options.link_tunic_color.value[1] & 0xFF) << 8) | (self.options.link_tunic_color.value[2] & 0xFF),
+            "logic_difficulty": self.options.logic_difficulty.value,
+            "shuffle_boss_remains": self.options.shuffle_boss_remains.value,
+            "shuffle_great_fairy_rewards": self.options.shuffle_great_fairy_rewards.value,
+            "shuffle_swamphouse_reward": self.options.shuffle_swamphouse_reward.value,
+            "shuffle_regional_maps": self.options.shuffle_regional_maps.value,
+            "starting_hearts": self.options.starting_hearts.value,
+            "starting_hearts_are_containers_or_pieces": self.options.starting_hearts_are_containers_or_pieces.value,
+            "start_with_soaring": self.options.start_with_soaring.value,
+            "start_with_consumables": self.options.start_with_consumables.value,
+            "start_with_inverted_time": self.options.start_with_inverted_time.value,
+            "permanent_chateau_romani": self.options.permanent_chateau_romani.value,
+            "receive_filled_wallets": self.options.receive_filled_wallets.value,
+            "enabled_tricks": self.options.enabled_tricks.value,
+            "enabled_glitches": self.options.enabled_glitches.value,
         }
