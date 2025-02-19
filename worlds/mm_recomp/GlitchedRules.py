@@ -113,13 +113,13 @@ def get_glitched_region_rules(player, options):
     return {
         "Clock Town -> Great Bay":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Clock Town -> Snowhead":
+        "Clock Town -> Path to Snowhead":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Deku Palace -> Mountain Village":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Goron Village -> Stone Tower":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
-        "Snowhead -> Woodfall":
+        "Path to Snowhead -> Woodfall":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
         "Ikana Graveyard -> Southern Swamp":
             lambda state: glitch_enabled(Glitches.INDEX_WARP, options) and state.has("Progressive Bow", player),
@@ -691,10 +691,10 @@ def get_glitched_location_rules(player, options):
             lambda state: state.has("Hookshot", player) and state.has("Deku Mask", player) or glitch_enabled("Long Bomb Hover", options),
         # petition to rename this to 'pixel and muervo bottle reward
         "Beaver Bros. Race Bottle Reward":
-            lambda state: state.has("Hookshot", player) and state.has("Zora Mask", player) or (glitch_enabled("Long Bomb Hover", options) and state.has("Zora Mask", options)),
+            lambda state: state.has("Hookshot", player) and state.has("Zora Mask", player) or (glitch_enabled("Long Bomb Hover", options) and state.has("Zora Mask", player)),
         # petition to rename this to 'pixel and muervo's love'
         "Beaver Bros. Race HP":
-            lambda state: state.has("Hookshot", player) and state.has("Zora Mask", player) or (glitch_enabled("Long Bomb Hover", options) and state.has("Zora Mask", options)),
+            lambda state: state.has("Hookshot", player) and state.has("Zora Mask", player) or (glitch_enabled("Long Bomb Hover", options) and state.has("Zora Mask", player)),
 
 
         "Zora Hall Piano Zora Song":
@@ -708,7 +708,7 @@ def get_glitched_location_rules(player, options):
         "Zora Hall Goron Scrub Trade":
             lambda state: state.has("Zora Mask", player) and state.has("Mountain Title Deed", player) and state.has("Goron Mask", player) or (trick_enabled("Backflip Over Zora Guards", options) and state.has("Goron Mask", player) and state.has("Mountain Title Deed", player)),
         "Zora Hall Goron Scrub Trade Freestanding HP":
-            lambda state: state.has("Deku Mask", player) and state.can_reach("Zora Hall Goron Scrub Trade", 'Location', player) or (state.has("Zora Mask", options) and trick_enabled("Lulu's Room Freestanding HP with minimal items", options)) or (trick_enabled("Backflip Over Zora Guards", options) and trick_enabled("Lulu's Room Freestanding HP with minimal items", options)),
+            lambda state: state.has("Deku Mask", player) and state.can_reach("Zora Hall Goron Scrub Trade", 'Location', player) or (state.has("Zora Mask", player) and trick_enabled("Lulu's Room Freestanding HP with minimal items", options)) or (trick_enabled("Backflip Over Zora Guards", options) and trick_enabled("Lulu's Room Freestanding HP with minimal items", options)),
 
 
         "Great Bay Great Fairy Reward":
@@ -748,9 +748,9 @@ def get_glitched_location_rules(player, options):
         "Great Bay Temple Green Pipe Freezable Waterwheel Lower Chest":
             lambda state: can_use_ice_arrows(state, player) and state.has("Hookshot", player) and state.has("Zora Mask", player) and can_use_fire_arrows(state, player) or trick_enabled("Great Bay Temple Fireless", options) or glitch_enabled("Bomb Hover", options) or (trick_enabled("Fierce Deity Jumps", options) and can_use_ice_arrows(state, player)),
         "Great Bay Temple Seesaw Room Underwater Barrel SF":
-            lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or trick_enabled("Great Bay Temple Fireless", options) or trick_enabled("Fierce Deity Jumps") or glitch_enabled("Bomb Hover", options),
+            lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or trick_enabled("Great Bay Temple Fireless", options) or trick_enabled("Fierce Deity Jumps", options) or glitch_enabled("Bomb Hover", options),
         "Great Bay Temple Seesaw Room Chest":
-            lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or trick_enabled("Great Bay Temple Fireless", options) or trick_enabled("Fierce Deity Jumps") or glitch_enabled("Bomb Hover", options),
+            lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or trick_enabled("Great Bay Temple Fireless", options) or trick_enabled("Fierce Deity Jumps", options) or glitch_enabled("Bomb Hover", options),
         "Great Bay Temple Before Boss Room Underneath Platform Bubble SF":
             lambda state: state.has("Zora Mask", player) and can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) or (trick_enabled("Great Bay Temple Fireless", options) and glitch_enabled("Bomb Hover", options)),
         "Great Bay Temple Before Boss Room Exit Tunnel Bubble SF":

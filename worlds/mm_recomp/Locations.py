@@ -1210,51 +1210,51 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x3469420082282
     ),
     "Pirates' Fortress Sewers Cage HP": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x346942005230C
     ),
     "Pirates' Fortress Sewers Push Block Maze Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420062301
     ),
     "Pirates' Fortress Sewers Underwater Lower Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420062304
     ),
     "Pirates' Fortress Sewers Underwater Upper Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420062306
     ),
     "Pirates' Fortress Exterior Underwater Log Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420063B00
     ),
     "Pirates' Fortress Exterior Underwater Near Entrance Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420063B01
     ),
     "Pirates' Fortress Exterior Underwater Corner Near Fortress Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420063B02
     ),
     "Pirates' Fortress Near Egg Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420062300
     ),
     "Pirates' Fortress Pirates Surrounding Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420062303
     ),
     "Pirates' Fortress Hub Lower Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420061400
     ),
     "Pirates' Fortress Hub Upper Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420061401
     ),
     "Pirates' Fortress Leader's Room Chest": MMRLocationData(
-        region="Pirates' Fortress Sewers",
+        region="Pirates' Fortress (Sewers)",
         address=0x3469420062302
     ),
     "Pinnacle Rock Upper Eel Chest": MMRLocationData(

@@ -139,6 +139,20 @@ def get_region_rules(player):
             lambda state: can_use_ice_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player) and state.has("Goron Mask", player) and state.has("Zora Mask", player),
         "Stone Tower -> Stone Tower (Inverted)":
             lambda state: state.can_reach("Stone Tower Temple", 'Region', player) and can_use_light_arrows(state, player) and can_play_song("Elegy of Emptiness", state, player),
+
+        # Disable Index Warp accessibility for difficulties other than Glitched Logic
+        "Clock Town -> Great Bay":
+            lambda state: False,
+        "Clock Town -> Path to Snowhead":
+            lambda state: False,
+        "Deku Palace -> Mountain Village":
+            lambda state: False,
+        "Goron Village -> Stone Tower":
+            lambda state: False,
+        "Path to Snowhead -> Woodfall":
+            lambda state: False,
+        "Ikana Graveyard -> Southern Swamp":
+            lambda state: False,
     }
 
 def get_location_rules(player):
