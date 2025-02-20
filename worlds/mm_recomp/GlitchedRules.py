@@ -934,64 +934,64 @@ def get_glitched_location_rules(player, options):
             lambda state: (can_use_light_arrows(state, player) and can_use_ice_arrows(state, player) and state.has("Zora Mask", player)) or (trick_enabled("Spin attack Eyegore room switch", options) and state.has("Zora Mask", player) and trick_enabled("Zora Gainer", options)),
         # "Stone Tower Temple Eyegore Room Dexi Hand Ledge Chest" Vanilla route requires 1 small key
         "Stone Tower Temple Eyegore Room Dexi Hand Ledge Chest":
-            lambda state: state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) or can_use_light_arrows(state, player) and state.has("Zora Mask", player),
+            lambda state: state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) or can_use_light_arrows(state, player) and state.has("Zora Mask", player) or (state.has("Small Key (Stone Tower)", player) and glitch_enabled("Ocarina Dive", options) and state.has("Goron Mask", player)) or glitch_enabled("Stone Tower Clip Through Sun Block as Zora", options),
         # "Stone Tower Temple Eastern Water Room Underwater Chest" involves inverting STT then uninverting in vanilla gameplay, the Ice arrows allow you to bypass this, original logic was a 'trick' method
         "Stone Tower Temple Eastern Water Room Underwater Chest":
-            lambda state: state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) and (can_use_light_arrows(state, player) or has_mirror_shield(state, player)),
+            lambda state: state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) and (can_use_light_arrows(state, player) or has_mirror_shield(state, player)) or (glitch_enabled("Stone Tower Clip Through Sun Block as Zora") and trick_enabled("Stone Tower Hit Underwater Sun Switch with Ice Arrows")) or can_use_ice_arrows(state, player) and trick_enabled("Stone Tower Hit Underwater Sun Switch with Ice Arrows") and can_use_light_arrows(state, player),
         # Vanilla route requires you to route left through STT and end in the water room, this applies to check above
         # could clean code up below here removing light arrow requirements and using the can_reach function to massively reduce length of lines.
         # Also following vanilla routing, all checks below here in Uninverted STT require a second key
         "Stone Tower Temple Eastern Water Room Sun Block Chest":
-            lambda state: state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) and can_use_light_arrows(state, player),
+            lambda state: state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) and can_use_light_arrows(state, player) or glitch_enabled("Bomb Hover", options) and state.has("Small Key (Stone Tower)", player) or trick_enabled("Stone Tower Clip Through Sun Block as Zora", options) and trick_enabled("Zora Gainer", options),
         "Stone Tower Temple Mirror Room Sun Block Chest":
-            lambda state: state.has("Small Key (Stone Tower)", player, 1) and state.has("Zora Mask", player) and has_mirror_shield(state, player) or can_use_light_arrows(state, player) and state.has("Small Key (Stone Tower)", player),
+            lambda state: state.has("Small Key (Stone Tower)", player, 1) and state.has("Zora Mask", player) and has_mirror_shield(state, player) or can_use_light_arrows(state, player) and state.has("Small Key (Stone Tower)", player) or (state.has("Small Key (Stone Tower)", player, 1) and glitch_enabled("Bomb Hover", options)) or (state.has("Small Key (Stone Tower)", player, 1) and glitch_enabled("Weirdshot", options)),
         "Stone Tower Temple Mirror Room Sun Face Chest":
             lambda state: state.has("Small Key (Stone Tower)", player, 1) and state.has("Zora Mask", player) and has_mirror_shield(state, player) or can_use_light_arrows(state, player) and state.has("Small Key (Stone Tower)", player),
         "Stone Tower Temple Air Gust Room Side Chest":
-            lambda state: state.has("Small Key (Stone Tower)", player, 1) and state.has("Zora Mask", player) and has_mirror_shield(state, player) and state.has("Deku Mask", player) or (can_use_light_arrows(state, player) and state.has("Small Key (Stone Tower)", player) and state.has("Deku Mask", player)),
+            lambda state: state.has("Small Key (Stone Tower)", player, 1) and state.has("Zora Mask", player) and has_mirror_shield(state, player) and state.has("Deku Mask", player) or (can_use_light_arrows(state, player) and state.has("Small Key (Stone Tower)", player) and state.has("Deku Mask", player)) or (state.has("Small Key (Stone Tower)", player) and glitch_enabled("Bomb Hover", options)) or (state.has("Small Key (Stone Tower)", player) and can_use_light_arrows(state, player) and trick_enabled("Recoil Flip", options)),
         "Stone Tower Temple Air Gust Room Goron Switch Chest":
-            lambda state: state.can_reach("Stone Tower Temple Mirror Room Sun Block Chest", 'Location', player) and state.has("Goron Mask", player),
+            lambda state: state.can_reach("Stone Tower Temple Air Gust Room Side Chest", 'Location', player) and state.has("Goron Mask", player),
         "Stone Tower Temple Garo Master Chest":
-            lambda state: state.can_reach("Stone Tower Temple Air Gust Room Side Chest", 'Location', player) and can_smack_hard(state, player),
+            lambda state: state.can_reach("Stone Tower Temple Air Gust Room Side Chest", 'Location', player) and can_smack(state, player),
         "Stone Tower Temple After Garo Upside Down Chest":
-            lambda state: state.can_reach("Stone Tower Temple Inverted Eyegore Chest", 'Location', player),
-        "Stone Tower Temple Eyegore Chest":
             lambda state: state.can_reach("Stone Tower Temple Garo Master Chest", 'Location', player),
+        "Stone Tower Temple Eyegore Chest":
+            lambda state: state.can_reach("Stone Tower Temple Garo Master Chest", 'Location', player) or (state.can_reach("Stone Tower Temple Eyegore Room Dexi Hand Ledge Chest", 'Location', player) and trick_enabled("Stone Tower Precise Zora Diving", options)),
         "Stone Tower Temple Inverted Entrance Room Sun Face Chest":
             lambda state: can_use_light_arrows(state, player),
         "Stone Tower Temple Inverted Eastern Air Gust Room Fire Chest":
             lambda state: state.can_reach("Stone Tower Temple Entrance Room Eye Switch Chest", 'Location', player) and state.has("Small Key (Stone Tower)", player) and state.has("Zora Mask", player) and state.has("Deku Mask", player) and can_use_light_arrows(state, player),
         "Stone Tower Temple Inverted Eastern Air Gust Room Ice Eye Switch Chest":
-            lambda state: can_use_light_arrows(state, player) and state.has("Deku Mask", player) and can_use_fire_arrows(state, player),
+            lambda state: can_use_light_arrows(state, player) and state.has("Deku Mask", player) and can_use_fire_arrows(state, player) or (can_use_light_arrows(state, player) and (glitch_enabled("Action Swap") or can_use_fire_arrows(state, player)),
         "Stone Tower Temple Inverted Eastern Air Gust Room Hall Floor Switch Chest":
             lambda state: can_use_light_arrows(state, player) and state.has("Deku Mask", player),
         # "Stone Tower Temple Inverted Wizzrobe Chest" This is where the third key would be getting used on its way to that check
         "Stone Tower Temple Inverted Wizzrobe Chest":
-            lambda state: can_use_light_arrows(state, player) and state.has("Deku Mask", player) and state.has("Small Key (Stone Tower)", player, 3) and state.has("Hookshot", player),
+            lambda state: can_use_light_arrows(state, player) and state.has("Deku Mask", player) and state.has("Small Key (Stone Tower)", player, 3) and state.has("Hookshot", player) or (trick_enabled("Stone Tower Temple Left Side Entry", options) and state.has("Deku Mask", player) or glitch_enabled("Bomb Hover", options) or trick_enabled("Fierce Deity Jumps", options)),
         "Stone Tower Temple Inverted Death Armos Maze Chest":
-            lambda state: state.can_reach("Stone Tower Temple Inverted Wizzrobe Chest", 'Location', player) and can_play_song("Elegy of Emptiness", state, player),
+            lambda state: state.can_reach("Stone Tower Temple Inverted Wizzrobe Chest", 'Location', player) and can_play_song("Elegy of Emptiness", state, player) or (trick_enabled("Stone Tower Left Side Entry", options) and can_play_song("Elegy of Emptiness", state, player)) or (trick_enabled("Stone Tower Left Side Entry", options) and trick_enabled("Stone Tower Death Armos Maze Skip", options)),
         "Stone Tower Temple Inverted Gomess Chest":
-            lambda state: state.can_reach("Stone Tower Temple Inverted Wizzrobe Chest", 'Location', player) and can_use_light_arrows(state, player) and can_smack_hard(state, player),
+            lambda state: state.can_reach("Stone Tower Temple Inverted Wizzrobe Chest", 'Location', player) and can_use_light_arrows(state, player) and can_smack_hard(state, player) or (trick_enabled("Stone Tower Left Side Entry", options) and trick_enabled("Hard Deku Fights", options),
         # "Stone Tower Temple Inverted Eyegore Chest" is where the fourth key would be getting used
         "Stone Tower Temple Inverted Eyegore Chest":
-            lambda state: state.can_reach("Stone Tower Temple Inverted Wizzrobe Chest", 'Location', player) and state.has("Small Key (Stone Tower)", player, 4),
+            lambda state: state.can_reach("Stone Tower Temple Inverted Wizzrobe Chest", 'Location', player) and state.has("Small Key (Stone Tower)", player, 4) or (trick_enabled("Stone Tower Left Side Entry", options) and state.has("Small Key (Stone Tower)", player, 1)),
         "Stone Tower Temple Inverted Heart Container":
             lambda state: state.can_reach("Stone Tower Temple Inverted Eyegore Chest", 'Location', player) and state.has("Boss Key (Stone Tower)", player) and (state.has("Progressive Bow", player) or state.has("Fierce Deity's Mask", player) or (state.has("Giant's Mask", player) and state.has("Progressive Sword", player))) or state.has("Twinmold's Remains", player) and (state.has("Progressive Bow", player) or state.has("Fierce Deity's Mask", player) or (state.has("Giant's Mask", player) and state.has("Progressive Sword", player))),
         "Stone Tower Temple Inverted Twinmold's Remains":
             lambda state: state.can_reach("Stone Tower Temple Inverted Eyegore Chest", 'Location', player) and state.has("Boss Key (Stone Tower)", player) and (state.has("Progressive Bow", player) or state.has("Fierce Deity's Mask", player) or (state.has("Giant's Mask", player) and state.has("Progressive Sword", player))) or state.has("Twinmold's Remains", player) and (state.has("Progressive Bow", player) or state.has("Fierce Deity's Mask", player) or (state.has("Giant's Mask", player) and state.has("Progressive Sword", player))),
 
         "Moon Deku Trial HP":
-            lambda state: state.has("Deku Mask", player),
+            lambda state: state.has("Deku Mask", player) or glitch_enabled("Bomb Hover", options),
         "Moon Goron Trial HP":
-            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player),
+            lambda state: state.has("Goron Mask", player) and state.has("Progressive Magic", player) or glitch_enabled("Bomb Hover", options),
         "Moon Zora Trial HP":
-            lambda state: state.has("Zora Mask", player),
+            lambda state: state.has("Zora Mask", player) or trick_enabled("Zora Moon Trial with nothing", options),
         "Moon Link Trial Garo Master Chest":
-            lambda state: can_smack_hard(state, player) and state.has("Hookshot", player),
+            lambda state: can_smack_hard(state, player) and state.has("Hookshot", player) or glitch_enabled("Bomb Hover", options),
         "Moon Link Trial Iron Knuckle Lower Chest":
             lambda state: state.can_reach("Moon Link Trial Garo Master Chest", 'Location', player),
         "Moon Link Trial HP":
             lambda state: state.can_reach("Moon Link Trial Garo Master Chest", 'Location', player) or can_smack_hard(state, player) and has_bombchus(state, player) and state.has("Progressive Bow", player),
         "Defeat Majora":
-            lambda state: can_smack_hard(state, player) and (((state.has("Zora Mask", player) or has_mirror_shield(state, player)) and can_use_light_arrows(state, player)) or (state.has("Fierce Deity's Mask", player) and state.has("Progressive Magic", player))),
+            lambda state: can_smack_hard(state, player) and (((state.has("Zora Mask", player) or has_mirror_shield(state, player)) and can_use_light_arrows(state, player)) or (state.has("Fierce Deity's Mask", player) and state.has("Progressive Magic", player))) or trick_enabled("Difficult Majora Fight", options) or trick_enabled("Extremely Difficult Majora Fight", options) or trick_enabled("Majora as only Deku", options),
     }
